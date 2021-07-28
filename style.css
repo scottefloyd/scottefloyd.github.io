@@ -41,7 +41,7 @@ h2 {
 
 h4 {
     font-size: 15px;
-    font-weight: 300;
+    font-weight: 500;
     text-transform: uppercase;
     letter-spacing: 1px;
     color: #333333;
@@ -86,6 +86,8 @@ strong {
 }
 
 .caption {
+    font-family: "Open Sans";
+    font-size: 18px;
     padding-top: 10px;
     text-align: center;
     color: #727272;
@@ -118,6 +120,14 @@ strong {
     font-size: 18px;
     line-height: 2;
     letter-spacing: 1px;
+}
+
+.points {
+    background-color: #E8E8E8;
+    padding: 30px;
+    font-family: "Open Sans";
+    font-size: 18px;
+    line-height: 1.5;
 }
 
 .important ul {
