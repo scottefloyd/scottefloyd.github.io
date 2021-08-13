@@ -77,6 +77,11 @@ strong {
     height: auto;
 }
 
+.empathy-map {
+    width: 70%;
+    height: auto;
+}
+
 .content {
     width: 45%;
     margin: 0 auto;
