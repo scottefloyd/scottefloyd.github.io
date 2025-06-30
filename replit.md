@@ -104,6 +104,8 @@ This is a modern, responsive portfolio website for Scott Floyd, a UX/UI Designer
 ```
 Changelog:
 - June 30, 2025. Initial setup
+- June 30, 2025. Connected Formspree contact form (ID: xovwrkqg)
+- June 30, 2025. Prepared for GitHub Pages deployment with build files and GitHub Actions workflow
 ```
 
 ## User Preferences
