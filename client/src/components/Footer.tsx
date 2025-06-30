@@ -18,7 +18,7 @@ export default function Footer() {
           <p className="text-gray-300 mb-6">UX/UI Designer & QA Automation Developer</p>
           <div className="flex justify-center space-x-6 mb-8">
             <a 
-              href="https://linkedin.com/in/scott-floyd" 
+              href="https://www.linkedin.com/in/scottefloyd/" 
               target="_blank" 
               rel="noopener noreferrer"
               className="text-gray-400 hover:text-blue-400 transition-colors duration-200"

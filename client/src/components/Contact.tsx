@@ -56,7 +56,7 @@ export default function Contact() {
             
             <div className="flex space-x-6">
               <a 
-                href="https://linkedin.com/in/scott-floyd" 
+                href="https://www.linkedin.com/in/scottefloyd/" 
                 target="_blank" 
                 rel="noopener noreferrer"
                 className="text-gray-400 hover:text-blue-400 transition-colors duration-200"

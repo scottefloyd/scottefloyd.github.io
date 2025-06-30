@@ -88,7 +88,7 @@ export default function Hero() {
         {/* Social Links */}
         <div className="flex justify-center space-x-6 mb-12">
           <a 
-            href="https://linkedin.com/in/scott-floyd" 
+            href="https://www.linkedin.com/in/scottefloyd/" 
             target="_blank" 
             rel="noopener noreferrer"
             className="text-white/70 hover:text-white transition-colors duration-200"
