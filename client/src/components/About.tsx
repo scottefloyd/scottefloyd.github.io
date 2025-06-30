@@ -70,7 +70,7 @@ export default function About() {
             {/* Download Resume Button */}
             <Button 
               className="bg-blue-600 text-white px-6 py-3 rounded-lg font-medium hover:bg-blue-700 transition-colors duration-200 inline-flex items-center gap-2"
-              onClick={() => window.open('https://scottefloyd.github.io/assets/resume.pdf', '_blank')}
+              onClick={() => window.open('/scott-floyd-resume.pdf', '_blank')}
             >
               <Download size={20} />
               Download Resume
