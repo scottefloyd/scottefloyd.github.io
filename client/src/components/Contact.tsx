@@ -4,7 +4,7 @@ import { Input } from "@/components/ui/input";
 import { Textarea } from "@/components/ui/textarea";
 import { Label } from "@/components/ui/label";
 import { Card, CardContent } from "@/components/ui/card";
-import { Mail, MapPin, Linkedin, Github } from "lucide-react";
+import { Linkedin, Github } from "lucide-react";
 import { useToast } from "@/hooks/use-toast";
 
 export default function Contact() {
@@ -53,39 +53,26 @@ export default function Contact() {
         <div className="grid md:grid-cols-2 gap-12">
           <div className="text-white">
             <h3 className="text-2xl font-semibold mb-6">Get in touch</h3>
-            <div className="space-y-4 mb-8">
-              <div className="flex items-center">
-                <Mail className="w-5 h-5 text-blue-400 mr-3" />
-                <span>scott.floyd@email.com</span>
-              </div>
-              <div className="flex items-center">
-                <MapPin className="w-5 h-5 text-blue-400 mr-3" />
-                <span>Utah, United States</span>
-              </div>
-            </div>
             
-            <div>
-              <h4 className="font-semibold mb-4">Follow me</h4>
-              <div className="flex space-x-4">
-                <a 
-                  href="https://linkedin.com/in/scott-floyd" 
-                  target="_blank" 
-                  rel="noopener noreferrer"
-                  className="text-gray-400 hover:text-blue-400 transition-colors duration-200"
-                  aria-label="LinkedIn"
-                >
-                  <Linkedin className="w-6 h-6" />
-                </a>
-                <a 
-                  href="https://github.com/scottefloyd" 
-                  target="_blank" 
-                  rel="noopener noreferrer"
-                  className="text-gray-400 hover:text-blue-400 transition-colors duration-200"
-                  aria-label="GitHub"
-                >
-                  <Github className="w-6 h-6" />
-                </a>
-              </div>
+            <div className="flex space-x-6">
+              <a 
+                href="https://linkedin.com/in/scott-floyd" 
+                target="_blank" 
+                rel="noopener noreferrer"
+                className="text-gray-400 hover:text-blue-400 transition-colors duration-200"
+                aria-label="LinkedIn"
+              >
+                <Linkedin className="w-8 h-8" />
+              </a>
+              <a 
+                href="https://github.com/scottefloyd" 
+                target="_blank" 
+                rel="noopener noreferrer"
+                className="text-gray-400 hover:text-blue-400 transition-colors duration-200"
+                aria-label="GitHub"
+              >
+                <Github className="w-8 h-8" />
+              </a>
             </div>
           </div>
           
