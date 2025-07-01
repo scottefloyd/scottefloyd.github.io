@@ -46,7 +46,7 @@ export default function Hero() {
         <div className="mb-8">
           <div className="relative inline-block">
             <img 
-              src="client/public/me2.png" 
+              src="/client/public/me2.png"
               alt="Scott Floyd Professional Headshot" 
               className="w-32 h-32 rounded-full mx-auto border-4 border-white shadow-xl object-cover"
             />
