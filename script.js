@@ -1,27 +1,4 @@
-// Theme Management
-class ThemeManager {
-    constructor() {
-        this.theme = localStorage.getItem('theme') || 'light';
-        this.themeToggle = document.querySelector('.theme-toggle');
-        this.init();
-    }
-
-    init() {
-        this.setTheme(this.theme);
-        this.themeToggle.addEventListener('click', () => this.toggleTheme());
-    }
-
-    setTheme(theme) {
-        this.theme = theme;
-        document.documentElement.setAttribute('data-theme', theme);
-        localStorage.setItem('theme', theme);
-    }
-
-    toggleTheme() {
-        const newTheme = this.theme === 'light' ? 'dark' : 'light';
-        this.setTheme(newTheme);
-    }
-}
+// Modern Portfolio JavaScript
 
 // Navigation Management
 class NavigationManager {
@@ -36,7 +13,9 @@ class NavigationManager {
 
     init() {
         // Mobile menu toggle
-        this.navToggle.addEventListener('click', () => this.toggleMobileMenu());
+        if (this.navToggle) {
+            this.navToggle.addEventListener('click', () => this.toggleMobileMenu());
+        }
         
         // Close mobile menu when clicking links
         this.navLinks.forEach(link => {
@@ -56,13 +35,13 @@ class NavigationManager {
     }
 
     toggleMobileMenu() {
-        this.navToggle.classList.toggle('active');
-        this.navMenu.classList.toggle('active');
+        this.navToggle?.classList.toggle('active');
+        this.navMenu?.classList.toggle('active');
     }
 
     closeMobileMenu() {
-        this.navToggle.classList.remove('active');
-        this.navMenu.classList.remove('active');
+        this.navToggle?.classList.remove('active');
+        this.navMenu?.classList.remove('active');
     }
 
     handleNavClick(e) {
@@ -79,15 +58,7 @@ class NavigationManager {
     }
 
     handleScroll() {
-        // Update active navigation link based on scroll position
         this.updateActiveLink();
-        
-        // Add/remove nav background on scroll
-        if (window.scrollY > 50) {
-            this.nav.style.background = this.nav.style.background.replace('0.95', '0.98');
-        } else {
-            this.nav.style.background = this.nav.style.background.replace('0.98', '0.95');
-        }
     }
 
     updateActiveLink() {
@@ -111,56 +82,6 @@ class NavigationManager {
     }
 }
 
-// Typing Animation
-class TypingAnimation {
-    constructor() {
-        this.element = document.querySelector('.typing-text');
-        this.texts = [
-            'QA Automation Expert',
-            'AI Consultant',
-            'Playwright Specialist',
-            'Digital Transformer',
-            'Test Strategy Architect'
-        ];
-        this.currentIndex = 0;
-        this.currentText = '';
-        this.isDeleting = false;
-        this.speed = 100;
-        this.init();
-    }
-
-    init() {
-        if (this.element) {
-            this.type();
-        }
-    }
-
-    type() {
-        const fullText = this.texts[this.currentIndex];
-        
-        if (this.isDeleting) {
-            this.currentText = fullText.substring(0, this.currentText.length - 1);
-            this.speed = 50;
-        } else {
-            this.currentText = fullText.substring(0, this.currentText.length + 1);
-            this.speed = 100;
-        }
-
-        this.element.textContent = this.currentText;
-
-        if (!this.isDeleting && this.currentText === fullText) {
-            this.speed = 2000; // Pause at end
-            this.isDeleting = true;
-        } else if (this.isDeleting && this.currentText === '') {
-            this.isDeleting = false;
-            this.currentIndex = (this.currentIndex + 1) % this.texts.length;
-            this.speed = 500; // Pause before typing next
-        }
-
-        setTimeout(() => this.type(), this.speed);
-    }
-}
-
 // Intersection Observer for Animations
 class AnimationObserver {
     constructor() {
@@ -172,18 +93,12 @@ class AnimationObserver {
     }
 
     init() {
-        // Animate skill bars
         this.observeSkillBars();
-        
-        // Animate stats
-        this.observeStats();
-        
-        // Animate cards on scroll
         this.observeCards();
     }
 
     observeSkillBars() {
-        const skillBars = document.querySelectorAll('.skill-progress');
+        const skillBars = document.querySelectorAll('.progress');
         const observer = new IntersectionObserver((entries) => {
             entries.forEach(entry => {
                 if (entry.isIntersecting) {
@@ -196,21 +111,8 @@ class AnimationObserver {
         skillBars.forEach(bar => observer.observe(bar));
     }
 
-    observeStats() {
-        const stats = document.querySelectorAll('.stat h3');
-        const observer = new IntersectionObserver((entries) => {
-            entries.forEach(entry => {
-                if (entry.isIntersecting) {
-                    this.animateNumber(entry.target);
-                }
-            });
-        }, this.observerOptions);
-
-        stats.forEach(stat => observer.observe(stat));
-    }
-
     observeCards() {
-        const cards = document.querySelectorAll('.service-card, .project-card');
+        const cards = document.querySelectorAll('.expertise-card, .project-card, .skill-bar');
         const observer = new IntersectionObserver((entries) => {
             entries.forEach((entry, index) => {
                 if (entry.isIntersecting) {
@@ -228,29 +130,6 @@ class AnimationObserver {
             card.style.transition = 'opacity 0.6s ease, transform 0.6s ease';
             observer.observe(card);
         });
-    }
-
-    animateNumber(element) {
-        const text = element.textContent;
-        const number = parseInt(text.replace(/\D/g, ''));
-        const suffix = text.replace(/[\d.]/g, '');
-        const duration = 2000;
-        const steps = 60;
-        const increment = number / steps;
-        let current = 0;
-        let step = 0;
-
-        const timer = setInterval(() => {
-            current += increment;
-            step++;
-            
-            if (step >= steps) {
-                current = number;
-                clearInterval(timer);
-            }
-            
-            element.textContent = Math.floor(current) + suffix;
-        }, duration / steps);
     }
 }
 
@@ -311,7 +190,6 @@ class ContactForm {
         e.preventDefault();
         
         const submitButton = this.form.querySelector('button[type="submit"]');
-        const formData = new FormData(this.form);
         
         // Show loading state
         submitButton.classList.add('loading');
@@ -378,7 +256,6 @@ class SmoothScroll {
     }
 
     addSmoothScrollPolyfill() {
-        // Add smooth scroll polyfill for older browsers
         const links = document.querySelectorAll('a[href^="#"]');
         
         links.forEach(link => {
@@ -421,34 +298,6 @@ class SmoothScroll {
     }
 }
 
-// Performance monitoring
-class PerformanceMonitor {
-    constructor() {
-        this.init();
-    }
-
-    init() {
-        // Monitor page load performance
-        window.addEventListener('load', () => {
-            if ('performance' in window) {
-                const perfData = performance.getEntriesByType('navigation')[0];
-                console.log('Page Load Time:', perfData.loadEventEnd - perfData.loadEventStart, 'ms');
-            }
-        });
-
-        // Monitor scroll performance
-        let ticking = false;
-        window.addEventListener('scroll', () => {
-            if (!ticking) {
-                requestAnimationFrame(() => {
-                    ticking = false;
-                });
-                ticking = true;
-            }
-        });
-    }
-}
-
 // Initialize everything when DOM is loaded
 document.addEventListener('DOMContentLoaded', () => {
     // Initialize Feather icons
@@ -457,14 +306,11 @@ document.addEventListener('DOMContentLoaded', () => {
     }
 
     // Initialize all components
-    new ThemeManager();
     new NavigationManager();
-    new TypingAnimation();
     new AnimationObserver();
     new ProjectFilter();
     new ContactForm();
     new SmoothScroll();
-    new PerformanceMonitor();
 
     // Add loading complete class for CSS animations
     document.body.classList.add('loaded');
@@ -483,43 +329,15 @@ window.addEventListener('resize', () => {
     }, 250);
 });
 
-// Preload critical resources
-const preloadResources = () => {
-    const criticalImages = [
-        'https://scottefloyd.github.io/me2.png'
-    ];
-
-    criticalImages.forEach(src => {
-        const link = document.createElement('link');
-        link.rel = 'preload';
-        link.as = 'image';
-        link.href = src;
-        document.head.appendChild(link);
-    });
-};
-
-// Initialize preloading
-preloadResources();
-
 // Error handling for missing elements
 window.addEventListener('error', (e) => {
     console.warn('Script error handled:', e.message);
 });
 
-// Service Worker registration for PWA capabilities (optional)
-if ('serviceWorker' in navigator) {
-    window.addEventListener('load', () => {
-        // Uncomment if you want to add PWA capabilities
-        // navigator.serviceWorker.register('/sw.js');
-    });
-}
-
 // Export for potential module usage
 if (typeof module !== 'undefined' && module.exports) {
     module.exports = {
-        ThemeManager,
         NavigationManager,
-        TypingAnimation,
         AnimationObserver,
         ProjectFilter,
         ContactForm
