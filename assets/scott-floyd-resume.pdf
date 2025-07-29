@@ -1,0 +1,14 @@
+This is a placeholder file. In a real implementation, you would place Scott Floyd's actual resume PDF here. 
+Since binary files cannot be generated in this format, you should:
+
+1. Create Scott's resume as a PDF document
+2. Place it in the assets/ directory
+3. Ensure the download link in the HTML points to the correct path
+
+The resume should highlight:
+- QA Automation expertise with Playwright
+- AI/GenAI consulting experience  
+- UX/UI design background
+- Relevant projects and achievements
+- Technical skills and certifications
+- Contact information
