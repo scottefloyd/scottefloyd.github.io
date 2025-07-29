@@ -1,5 +1,67 @@
 // Modern Portfolio JavaScript
 
+// Theme Management
+class ThemeManager {
+    constructor() {
+        this.themeToggle = document.getElementById('themeToggle');
+        this.currentTheme = localStorage.getItem('theme') || 'light';
+        this.init();
+    }
+
+    init() {
+        this.setTheme(this.currentTheme);
+        
+        if (this.themeToggle) {
+            this.themeToggle.addEventListener('click', () => this.toggleTheme());
+        }
+    }
+
+    setTheme(theme) {
+        this.currentTheme = theme;
+        document.documentElement.setAttribute('data-theme', theme);
+        localStorage.setItem('theme', theme);
+        
+        // Update toggle icon
+        if (this.themeToggle) {
+            const icon = this.themeToggle.querySelector('i');
+            if (icon) {
+                icon.setAttribute('data-feather', theme === 'dark' ? 'sun' : 'moon');
+                if (typeof feather !== 'undefined') {
+                    feather.replace();
+                }
+            }
+        }
+    }
+
+    toggleTheme() {
+        const newTheme = this.currentTheme === 'light' ? 'dark' : 'light';
+        this.setTheme(newTheme);
+    }
+}
+
+// Cycling Text Animation
+class CyclingText {
+    constructor() {
+        this.cyclingWords = document.querySelectorAll('.cycling-word');
+        this.currentIndex = 0;
+        this.init();
+    }
+
+    init() {
+        if (this.cyclingWords.length > 0) {
+            this.startCycling();
+        }
+    }
+
+    startCycling() {
+        setInterval(() => {
+            this.cyclingWords[this.currentIndex].classList.remove('active');
+            this.currentIndex = (this.currentIndex + 1) % this.cyclingWords.length;
+            this.cyclingWords[this.currentIndex].classList.add('active');
+        }, 2000); // Change every 2 seconds
+    }
+}
+
 // Navigation Management
 class NavigationManager {
     constructor() {
@@ -306,6 +368,8 @@ document.addEventListener('DOMContentLoaded', () => {
     }
 
     // Initialize all components
+    new ThemeManager();
+    new CyclingText();
     new NavigationManager();
     new AnimationObserver();
     new ProjectFilter();
