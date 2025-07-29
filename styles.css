@@ -266,7 +266,7 @@ body {
     justify-content: center;
     flex-wrap: nowrap;
     overflow: visible;
-    gap: 0.3em;
+    gap: 0.15em;
 }
 
 .creative-text {
@@ -286,7 +286,7 @@ body {
 }
 
 .cycling-word {
-    background: linear-gradient(135deg, var(--accent-primary), var(--accent-tertiary));
+    background: linear-gradient(135deg, #4f46e5, #8b5cf6, #06b6d4);
     -webkit-background-clip: text;
     -webkit-text-fill-color: transparent;
     background-clip: text;
@@ -341,13 +341,13 @@ body {
 }
 
 .btn-primary {
-    background: var(--accent-primary);
+    background: linear-gradient(135deg, #1e1b4b, #4f46e5, #7c3aed);
     color: white;
     box-shadow: 0 4px 20px rgba(79, 70, 229, 0.3);
 }
 
 .btn-primary:hover {
-    background: #4338ca;
+    background: linear-gradient(135deg, #1e1b4b, #4338ca, #7c3aed);
     transform: translateY(-2px);
     box-shadow: 0 8px 30px rgba(79, 70, 229, 0.4);
 }
