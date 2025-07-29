@@ -3,34 +3,27 @@
 <head>
     <meta charset="UTF-8">
     <meta name="viewport" content="width=device-width, initial-scale=1.0">
-    <title>Scott Floyd - QA Automation Expert & AI Consultant</title>
-    <meta name="description" content="Scott Floyd specializes in QA automation with Playwright and AI consulting services. Transform your testing strategy and leverage GenAI for business growth.">
+    <title>Scott Floyd - QA Automation & AI Solutions</title>
+    <meta name="description" content="Creative QA team member crafting digital experiences through automation and AI. Specializing in Playwright test automation and GenAI consulting.">
     
     <!-- Fonts -->
-    <link href="https://fonts.googleapis.com/css2?family=Inter:wght@300;400;500;600;700&display=swap" rel="stylesheet">
+    <link href="https://fonts.googleapis.com/css2?family=Inter:wght@300;400;500;600;700;800&display=swap" rel="stylesheet">
     
     <!-- Icons -->
-    <link href="https://cdnjs.cloudflare.com/ajax/libs/feather-icons/4.29.0/feather.min.css" rel="stylesheet">
+    <script src="https://unpkg.com/feather-icons"></script>
     
     <!-- Styles -->
     <link rel="stylesheet" href="styles.css">
 </head>
 <body>
-    <!-- Theme Toggle -->
-    <button class="theme-toggle" aria-label="Toggle theme">
-        <i data-feather="sun" class="sun-icon"></i>
-        <i data-feather="moon" class="moon-icon"></i>
-    </button>
-
     <!-- Navigation -->
     <nav class="nav">
         <div class="nav-container">
             <a href="#home" class="nav-logo">Scott Floyd</a>
             <ul class="nav-menu">
                 <li><a href="#home" class="nav-link">Home</a></li>
-                <li><a href="#about" class="nav-link">About</a></li>
-                <li><a href="#services" class="nav-link">Services</a></li>
-                <li><a href="#projects" class="nav-link">Projects</a></li>
+                <li><a href="#story" class="nav-link">My Story</a></li>
+                <li><a href="#projects" class="nav-link">Work</a></li>
                 <li><a href="#contact" class="nav-link">Contact</a></li>
             </ul>
             <button class="nav-toggle">
@@ -43,262 +36,135 @@
 
     <!-- Hero Section -->
     <section id="home" class="hero">
-        <div class="hero-container">
+        <div class="container">
             <div class="hero-content">
-                <div class="hero-text">
-                    <h1 class="hero-title">
-                        Hi, I'm <span class="highlight">Scott Floyd</span>
-                    </h1>
-                    <div class="hero-subtitle">
-                        <span class="typing-text"></span>
-                        <span class="cursor">|</span>
-                    </div>
-                    <p class="hero-description">
-                        I help businesses build bulletproof software through strategic QA automation 
-                        and unlock growth opportunities with practical AI solutions. Let's make your 
-                        technology work smarter, not harder.
-                    </p>
-                    <div class="hero-buttons">
-                        <a href="#projects" class="btn btn-primary">View My Work</a>
-                        <a href="#contact" class="btn btn-secondary">Let's Talk</a>
-                    </div>
+                <div class="hero-badge">
+                    <span>Creative</span>
+                    <span class="badge-highlight">Human</span>
+                    <span>QA Team Member</span>
                 </div>
-                <div class="hero-image">
-                    <div class="hero-card">
-                        <img src="https://scottefloyd.github.io/me2.png" alt="Scott Floyd Professional Headshot" class="profile-image">
-                        <div class="card-content">
-                            <div class="status-indicator">
-                                <span class="status-dot"></span>
-                                Available for projects
-                            </div>
-                        </div>
-                    </div>
+                
+                <h1 class="hero-title">
+                    Crafting digital experiences through 
+                    <span class="gradient-text">design, development, and automation</span>
+                </h1>
+                
+                <p class="hero-description">
+                    From pixel-perfect UIs to robust test automation with Playwright. 
+                    I help businesses build quality software and leverage GenAI to put their best foot forward.
+                </p>
+                
+                <div class="hero-buttons">
+                    <a href="#projects" class="btn btn-primary">
+                        <span>View My Work</span>
+                        <i data-feather="arrow-right"></i>
+                    </a>
+                    <a href="#story" class="btn btn-secondary">
+                        <span>My Story</span>
+                    </a>
+                </div>
+                
+                <div class="tech-stack">
+                    <span class="tech-item">Playwright</span>
+                    <span class="tech-item">TypeScript</span>
+                    <span class="tech-item">React</span>
+                    <span class="tech-item">Figma</span>
+                    <span class="tech-item">GenAI</span>
                 </div>
             </div>
-        </div>
-        <div class="hero-scroll">
-            <span>Scroll to explore</span>
-            <i data-feather="chevron-down"></i>
+            
+            <div class="hero-visual">
+                <div class="floating-card card-1">
+                    <div class="card-icon">
+                        <i data-feather="code"></i>
+                    </div>
+                    <span>Test Automation</span>
+                </div>
+                <div class="floating-card card-2">
+                    <div class="card-icon">
+                        <i data-feather="cpu"></i>
+                    </div>
+                    <span>AI Solutions</span>
+                </div>
+                <div class="floating-card card-3">
+                    <div class="card-icon">
+                        <i data-feather="layers"></i>
+                    </div>
+                    <span>UX Design</span>
+                </div>
+            </div>
         </div>
     </section>
 
-    <!-- About Section -->
-    <section id="about" class="about">
+    <!-- Story Section -->
+    <section id="story" class="story">
         <div class="container">
-            <div class="section-header">
-                <h2 class="section-title">My Story</h2>
-                <p class="section-subtitle">
-                    From breaking software to building unbreakable solutions
-                </p>
-            </div>
-            
-            <div class="about-content">
-                <div class="about-text">
-                    <p>
-                        My journey in tech started with a simple curiosity: "What happens when this breaks?" 
-                        That question led me deep into the world of quality assurance, where I discovered 
-                        my passion for creating robust, reliable software experiences.
-                    </p>
-                    <p>
-                        Over the years, I've evolved from manual testing to sophisticated automation 
-                        strategies using tools like Playwright. But what really excites me now is how 
-                        AI is transforming not just testing, but entire business processes.
-                    </p>
-                    <p>
-                        Today, I help companies bridge the gap between quality assurance and artificial 
-                        intelligence, creating solutions that are both innovative and practical. Whether 
-                        you need bulletproof testing strategies or want to explore how AI can give you 
-                        a competitive edge, I'm here to make it happen.
-                    </p>
+            <div class="story-content">
+                <div class="story-text">
+                    <h2 class="section-title">My Story</h2>
+                    <div class="story-paragraphs">
+                        <p>
+                            My journey began with a passion for creating digital experiences that matter. 
+                            What started as curiosity about how things work on the web evolved into a deep 
+                            love for crafting both beautiful interfaces and robust functionality.
+                        </p>
+                        <p>
+                            Over the years, I've worn many hats - from designing pixel-perfect UIs to 
+                            developing complex applications, and more recently, diving deep into the world 
+                            of test automation with Playwright and creating AI-driven solutions.
+                        </p>
+                        <p>
+                            I believe in the power of technology to solve real problems and create meaningful 
+                            connections. Every project is an opportunity to push boundaries and deliver something exceptional.
+                        </p>
+                    </div>
                     
-                    <div class="stats">
-                        <div class="stat">
-                            <h3>50+</h3>
-                            <p>Projects Delivered</p>
-                        </div>
-                        <div class="stat">
-                            <h3>5+</h3>
-                            <p>Years Experience</p>
-                        </div>
-                        <div class="stat">
-                            <h3>100%</h3>
-                            <p>Client Satisfaction</p>
+                    <div class="story-highlights">
+                        <div class="highlight-item">
+                            <h3>What Drives Me</h3>
+                            <ul>
+                                <li>Creating seamless user experiences</li>
+                                <li>Building scalable, maintainable automation</li>
+                                <li>Leveraging AI for practical business solutions</li>
+                                <li>Pushing creative boundaries</li>
+                                <li>Continuous learning and growth</li>
+                            </ul>
                         </div>
                     </div>
                 </div>
                 
-                <div class="about-image">
-                    <img src="https://pixabay.com/get/g4a03a52d2e6532d1b1e3b1129caf6b4d599e34ca201716d783c4fca2f2141a8ca0e0c155e60dce84e515d8ef93c478084cdfa155c89ed518d0f8adb214523151_1280.jpg" alt="Modern tech workspace" class="workspace-image">
-                </div>
-            </div>
-        </div>
-    </section>
-
-    <!-- Services Section -->
-    <section id="services" class="services">
-        <div class="container">
-            <div class="section-header">
-                <h2 class="section-title">What I Do</h2>
-                <p class="section-subtitle">
-                    Specialized services that deliver real business value
-                </p>
-            </div>
-            
-            <div class="services-grid">
-                <div class="service-card">
-                    <div class="service-icon">
-                        <i data-feather="shield-check"></i>
-                    </div>
-                    <h3>QA Automation Strategy</h3>
-                    <p>
-                        Transform your testing approach with comprehensive automation strategies. 
-                        I'll help you implement Playwright testing frameworks that catch bugs 
-                        before they reach production, saving time and protecting your reputation.
-                    </p>
-                    <ul>
-                        <li>End-to-end test automation</li>
-                        <li>CI/CD integration</li>
-                        <li>Performance testing</li>
-                        <li>Test strategy consulting</li>
-                    </ul>
-                </div>
-                
-                <div class="service-card">
-                    <div class="service-icon">
-                        <i data-feather="brain"></i>
-                    </div>
-                    <h3>AI Integration Consulting</h3>
-                    <p>
-                        Don't just jump on the AI bandwagon—use it strategically. I help businesses 
-                        identify practical AI applications that solve real problems and deliver 
-                        measurable ROI, not just flashy demos.
-                    </p>
-                    <ul>
-                        <li>AI strategy development</li>
-                        <li>Process automation</li>
-                        <li>Custom AI solutions</li>
-                        <li>Team training & workshops</li>
-                    </ul>
-                </div>
-                
-                <div class="service-card">
-                    <div class="service-icon">
-                        <i data-feather="zap"></i>
-                    </div>
-                    <h3>Digital Transformation</h3>
-                    <p>
-                        Bridge the gap between traditional processes and modern technology. 
-                        I help organizations modernize their workflows while maintaining 
-                        quality and minimizing disruption.
-                    </p>
-                    <ul>
-                        <li>Process optimization</li>
-                        <li>Quality system design</li>
-                        <li>Technology roadmapping</li>
-                        <li>Change management</li>
-                    </ul>
-                </div>
-            </div>
-        </div>
-    </section>
-
-    <!-- Skills Section -->
-    <section class="skills">
-        <div class="container">
-            <div class="section-header">
-                <h2 class="section-title">Skills & Expertise</h2>
-                <p class="section-subtitle">
-                    The tools and technologies I use to deliver results
-                </p>
-            </div>
-            
-            <div class="skills-grid">
-                <div class="skill-category">
-                    <h3>Testing & QA</h3>
-                    <div class="skill-items">
-                        <div class="skill-item">
-                            <span class="skill-name">Playwright</span>
-                            <div class="skill-bar">
-                                <div class="skill-progress" data-width="95"></div>
+                <div class="story-visual">
+                    <div class="expertise-cards">
+                        <div class="expertise-card">
+                            <div class="card-header">
+                                <i data-feather="palette"></i>
+                                <h4>Design & UX</h4>
                             </div>
+                            <p>Creating intuitive and beautiful user experiences</p>
                         </div>
-                        <div class="skill-item">
-                            <span class="skill-name">Test Strategy</span>
-                            <div class="skill-bar">
-                                <div class="skill-progress" data-width="92"></div>
+                        
+                        <div class="expertise-card">
+                            <div class="card-header">
+                                <i data-feather="code"></i>
+                                <h4>Development</h4>
                             </div>
+                            <p>Building robust applications with modern technologies</p>
                         </div>
-                        <div class="skill-item">
-                            <span class="skill-name">CI/CD</span>
-                            <div class="skill-bar">
-                                <div class="skill-progress" data-width="88"></div>
+                        
+                        <div class="expertise-card">
+                            <div class="card-header">
+                                <i data-feather="zap"></i>
+                                <h4>AI Integration</h4>
                             </div>
+                            <p>Crafting innovative solutions with GenAI capabilities</p>
                         </div>
-                        <div class="skill-item">
-                            <span class="skill-name">API Testing</span>
-                            <div class="skill-bar">
-                                <div class="skill-progress" data-width="90"></div>
+                        
+                        <div class="expertise-card">
+                            <div class="card-header">
+                                <i data-feather="shield"></i>
+                                <h4>Test Automation</h4>
                             </div>
-                        </div>
-                    </div>
-                </div>
-                
-                <div class="skill-category">
-                    <h3>AI & Development</h3>
-                    <div class="skill-items">
-                        <div class="skill-item">
-                            <span class="skill-name">Python</span>
-                            <div class="skill-bar">
-                                <div class="skill-progress" data-width="85"></div>
-                            </div>
-                        </div>
-                        <div class="skill-item">
-                            <span class="skill-name">JavaScript</span>
-                            <div class="skill-bar">
-                                <div class="skill-progress" data-width="88"></div>
-                            </div>
-                        </div>
-                        <div class="skill-item">
-                            <span class="skill-name">AI/ML Integration</span>
-                            <div class="skill-bar">
-                                <div class="skill-progress" data-width="82"></div>
-                            </div>
-                        </div>
-                        <div class="skill-item">
-                            <span class="skill-name">Process Automation</span>
-                            <div class="skill-bar">
-                                <div class="skill-progress" data-width="90"></div>
-                            </div>
-                        </div>
-                    </div>
-                </div>
-                
-                <div class="skill-category">
-                    <h3>Design & UX</h3>
-                    <div class="skill-items">
-                        <div class="skill-item">
-                            <span class="skill-name">Figma</span>
-                            <div class="skill-bar">
-                                <div class="skill-progress" data-width="90"></div>
-                            </div>
-                        </div>
-                        <div class="skill-item">
-                            <span class="skill-name">User Research</span>
-                            <div class="skill-bar">
-                                <div class="skill-progress" data-width="85"></div>
-                            </div>
-                        </div>
-                        <div class="skill-item">
-                            <span class="skill-name">Prototyping</span>
-                            <div class="skill-bar">
-                                <div class="skill-progress" data-width="88"></div>
-                            </div>
-                        </div>
-                        <div class="skill-item">
-                            <span class="skill-name">Design Systems</span>
-                            <div class="skill-bar">
-                                <div class="skill-progress" data-width="83"></div>
-                            </div>
+                            <p>Ensuring quality with Playwright automation</p>
                         </div>
                     </div>
                 </div>
@@ -312,25 +178,30 @@
             <div class="section-header">
                 <h2 class="section-title">Featured Projects</h2>
                 <p class="section-subtitle">
-                    Real solutions that delivered measurable business impact
+                    A collection of my latest work spanning automation, AI solutions, and user experience
                 </p>
             </div>
             
             <div class="project-filters">
-                <button class="filter-btn active" data-filter="all">All Projects</button>
-                <button class="filter-btn" data-filter="qa">QA & Testing</button>
-                <button class="filter-btn" data-filter="ai">AI & GenAI</button>
-                <button class="filter-btn" data-filter="ux">UX & Design</button>
+                <button class="filter-btn active" data-filter="all">All</button>
+                <button class="filter-btn" data-filter="automation">Test Automation</button>
+                <button class="filter-btn" data-filter="ai">AI Solutions</button>
+                <button class="filter-btn" data-filter="ux">UX Design</button>
             </div>
             
             <div class="projects-grid">
-                <div class="project-card" data-category="qa">
+                <article class="project-card" data-category="automation">
                     <div class="project-image">
-                        <img src="https://pixabay.com/get/g5a3472df1da28c2ee96bb5ac44bf1262fed4a3bfe4884983c95a2f44166f9ee0ae5e7342e87673957731e21e7f674d92fc69521f824fc9c62124d1d47deb1ee6_1280.jpg" alt="Professional QA testing environment">
+                        <div class="project-placeholder automation-bg">
+                            <i data-feather="play"></i>
+                        </div>
                         <div class="project-overlay">
                             <div class="project-links">
-                                <a href="#" class="project-link" aria-label="View project">
+                                <a href="#" class="project-link">
                                     <i data-feather="external-link"></i>
+                                </a>
+                                <a href="#" class="project-link">
+                                    <i data-feather="github"></i>
                                 </a>
                             </div>
                         </div>
@@ -339,69 +210,48 @@
                         <div class="project-tags">
                             <span class="tag">Playwright</span>
                             <span class="tag">CI/CD</span>
-                            <span class="tag">API Testing</span>
+                            <span class="tag">TypeScript</span>
                         </div>
-                        <h3>E-commerce Testing Framework</h3>
-                        <p>
-                            Comprehensive test automation suite for a major e-commerce platform. 
-                            Reduced manual testing time by 80% and caught 95% of regressions 
-                            before production deployment.
-                        </p>
-                        <div class="project-results">
-                            <div class="result">
-                                <strong>80%</strong>
-                                <span>Time Saved</span>
-                            </div>
-                            <div class="result">
-                                <strong>95%</strong>
-                                <span>Bug Detection</span>
-                            </div>
-                        </div>
+                        <h3>E-commerce Test Suite</h3>
+                        <p>Comprehensive end-to-end testing framework for a major e-commerce platform, reducing bug detection time by 70%.</p>
                     </div>
-                </div>
+                </article>
                 
-                <div class="project-card" data-category="ai">
+                <article class="project-card" data-category="ai">
                     <div class="project-image">
-                        <img src="https://pixabay.com/get/g8e84c4232ad94f1d3173ef1822afed05f0a31b7e1acebbfa639405fbde419b27d322da165007572d01f2b994e3d1b2321dac0599685111583d60b0b896ad9136_1280.jpg" alt="AI automation visualization">
+                        <div class="project-placeholder ai-bg">
+                            <i data-feather="cpu"></i>
+                        </div>
                         <div class="project-overlay">
                             <div class="project-links">
-                                <a href="#" class="project-link" aria-label="View project">
+                                <a href="#" class="project-link">
                                     <i data-feather="external-link"></i>
+                                </a>
+                                <a href="#" class="project-link">
+                                    <i data-feather="github"></i>
                                 </a>
                             </div>
                         </div>
                     </div>
                     <div class="project-content">
                         <div class="project-tags">
-                            <span class="tag">AI/ML</span>
+                            <span class="tag">OpenAI</span>
                             <span class="tag">Python</span>
-                            <span class="tag">Automation</span>
+                            <span class="tag">API</span>
                         </div>
-                        <h3>AI-Powered Content Strategy</h3>
-                        <p>
-                            Developed an AI system that analyzes market trends and generates 
-                            content strategies for a digital marketing agency. Increased 
-                            client engagement rates by 150% and reduced strategy development time.
-                        </p>
-                        <div class="project-results">
-                            <div class="result">
-                                <strong>150%</strong>
-                                <span>Engagement Boost</span>
-                            </div>
-                            <div class="result">
-                                <strong>60%</strong>
-                                <span>Faster Delivery</span>
-                            </div>
-                        </div>
+                        <h3>AI Content Optimizer</h3>
+                        <p>GenAI-powered solution that helps businesses optimize their content strategy and improve conversion rates.</p>
                     </div>
-                </div>
+                </article>
                 
-                <div class="project-card" data-category="ux">
+                <article class="project-card" data-category="ux">
                     <div class="project-image">
-                        <img src="data:image/svg+xml,%3Csvg xmlns='http://www.w3.org/2000/svg' width='400' height='300' viewBox='0 0 400 300'%3E%3Crect width='400' height='300' fill='%23dbeafe'/%3E%3Ccircle cx='200' cy='150' r='60' fill='%232563eb' opacity='0.8'/%3E%3Ctext x='200' y='160' text-anchor='middle' fill='%23ffffff' font-family='Arial, sans-serif' font-size='16' font-weight='bold'%3ERent-All%3C/text%3E%3C/svg%3E" alt="Rent-All mobile app design">
+                        <div class="project-placeholder ux-bg">
+                            <i data-feather="figma"></i>
+                        </div>
                         <div class="project-overlay">
                             <div class="project-links">
-                                <a href="https://scottefloyd.github.io/rent-all-case-study.html" class="project-link" aria-label="View project">
+                                <a href="#" class="project-link">
                                     <i data-feather="external-link"></i>
                                 </a>
                             </div>
@@ -409,136 +259,169 @@
                     </div>
                     <div class="project-content">
                         <div class="project-tags">
-                            <span class="tag">UX Design</span>
-                            <span class="tag">Mobile App</span>
+                            <span class="tag">Figma</span>
                             <span class="tag">User Research</span>
+                            <span class="tag">Prototyping</span>
                         </div>
-                        <h3>Rent-All Mobile App</h3>
-                        <p>
-                            Complete UX design process for a peer-to-peer rental platform. 
-                            From user research to high-fidelity prototypes, creating an 
-                            intuitive experience for sharing household items.
-                        </p>
-                        <div class="project-results">
-                            <div class="result">
-                                <strong>4.8/5</strong>
-                                <span>User Rating</span>
-                            </div>
-                            <div class="result">
-                                <strong>85%</strong>
-                                <span>Task Success</span>
-                            </div>
-                        </div>
+                        <h3>SaaS Dashboard Redesign</h3>
+                        <p>Complete UI/UX overhaul for a project management platform, improving user satisfaction by 45%.</p>
                     </div>
-                </div>
+                </article>
                 
-                <div class="project-card" data-category="qa">
+                <article class="project-card" data-category="automation">
                     <div class="project-image">
-                        <img src="https://pixabay.com/get/g25e19dc84b5ae7266acb311974b445e78ba7758057ca10c87e6b25fa68abad8e999e0b1ab3daf12147185845e4da4f6806b55707a2e66064fdef46a1bb5f38f3_1280.jpg" alt="Automated testing dashboard">
+                        <div class="project-placeholder automation-bg">
+                            <i data-feather="settings"></i>
+                        </div>
                         <div class="project-overlay">
                             <div class="project-links">
-                                <a href="#" class="project-link" aria-label="View project">
+                                <a href="#" class="project-link">
                                     <i data-feather="external-link"></i>
+                                </a>
+                                <a href="#" class="project-link">
+                                    <i data-feather="github"></i>
                                 </a>
                             </div>
                         </div>
                     </div>
                     <div class="project-content">
                         <div class="project-tags">
-                            <span class="tag">Performance Testing</span>
-                            <span class="tag">Analytics</span>
+                            <span class="tag">API Testing</span>
+                            <span class="tag">Performance</span>
                             <span class="tag">Monitoring</span>
                         </div>
-                        <h3>Performance Testing Suite</h3>
-                        <p>
-                            Built a comprehensive performance testing framework for a fintech 
-                            startup. Identified critical bottlenecks and optimized response 
-                            times by 70% before product launch.
-                        </p>
-                        <div class="project-results">
-                            <div class="result">
-                                <strong>70%</strong>
-                                <span>Speed Improvement</span>
+                        <h3>API Monitoring Suite</h3>
+                        <p>Automated monitoring and testing solution for critical business APIs with real-time alerting.</p>
+                    </div>
+                </article>
+            </div>
+        </div>
+    </section>
+
+    <!-- Skills Section -->
+    <section class="skills">
+        <div class="container">
+            <div class="section-header">
+                <h2 class="section-title">Skills & Expertise</h2>
+                <p class="section-subtitle">
+                    A diverse skill set spanning design, development, and automation
+                </p>
+            </div>
+            
+            <div class="skills-categories">
+                <div class="skill-category">
+                    <h3>Testing & Automation</h3>
+                    <div class="skill-bars">
+                        <div class="skill-bar">
+                            <div class="skill-info">
+                                <span>Playwright</span>
+                                <span>95%</span>
                             </div>
-                            <div class="result">
-                                <strong>99.9%</strong>
-                                <span>Uptime</span>
+                            <div class="progress-bar">
+                                <div class="progress" data-width="95"></div>
+                            </div>
+                        </div>
+                        <div class="skill-bar">
+                            <div class="skill-info">
+                                <span>Test Strategy</span>
+                                <span>92%</span>
+                            </div>
+                            <div class="progress-bar">
+                                <div class="progress" data-width="92"></div>
+                            </div>
+                        </div>
+                        <div class="skill-bar">
+                            <div class="skill-info">
+                                <span>CI/CD</span>
+                                <span>88%</span>
+                            </div>
+                            <div class="progress-bar">
+                                <div class="progress" data-width="88"></div>
                             </div>
                         </div>
                     </div>
                 </div>
                 
-                <div class="project-card" data-category="ai">
-                    <div class="project-image">
-                        <img src="https://pixabay.com/get/gb93f37d8a50a646a8f9706b7992de2a5cf12204bb3829c9d12b2f73477bca2e5da6a8aa0b0d2b992662aeda7d6a85fb6796c85723ad427a23b5ef54d25833406_1280.jpg" alt="AI business automation">
-                        <div class="project-overlay">
-                            <div class="project-links">
-                                <a href="#" class="project-link" aria-label="View project">
-                                    <i data-feather="external-link"></i>
-                                </a>
+                <div class="skill-category">
+                    <h3>Development</h3>
+                    <div class="skill-bars">
+                        <div class="skill-bar">
+                            <div class="skill-info">
+                                <span>TypeScript</span>
+                                <span>90%</span>
+                            </div>
+                            <div class="progress-bar">
+                                <div class="progress" data-width="90"></div>
                             </div>
                         </div>
-                    </div>
-                    <div class="project-content">
-                        <div class="project-tags">
-                            <span class="tag">Process Automation</span>
-                            <span class="tag">NLP</span>
-                            <span class="tag">Cost Reduction</span>
-                        </div>
-                        <h3>Smart Document Processing</h3>
-                        <p>
-                            AI-powered document processing system for a legal firm. 
-                            Automated contract analysis and reduced review time from 
-                            hours to minutes while maintaining accuracy.
-                        </p>
-                        <div class="project-results">
-                            <div class="result">
-                                <strong>90%</strong>
-                                <span>Time Saved</span>
+                        <div class="skill-bar">
+                            <div class="skill-info">
+                                <span>React/Next.js</span>
+                                <span>88%</span>
                             </div>
-                            <div class="result">
-                                <strong>$50K</strong>
-                                <span>Annual Savings</span>
+                            <div class="progress-bar">
+                                <div class="progress" data-width="88"></div>
+                            </div>
+                        </div>
+                        <div class="skill-bar">
+                            <div class="skill-info">
+                                <span>Python</span>
+                                <span>85%</span>
+                            </div>
+                            <div class="progress-bar">
+                                <div class="progress" data-width="85"></div>
                             </div>
                         </div>
                     </div>
                 </div>
                 
-                <div class="project-card" data-category="ux">
-                    <div class="project-image">
-                        <img src="data:image/svg+xml,%3Csvg xmlns='http://www.w3.org/2000/svg' width='400' height='300' viewBox='0 0 400 300'%3E%3Crect width='400' height='300' fill='%23dbeafe'/%3E%3Ccircle cx='120' cy='200' r='40' fill='none' stroke='%232563eb' stroke-width='4'/%3E%3Ccircle cx='280' cy='200' r='40' fill='none' stroke='%232563eb' stroke-width='4'/%3E%3Cpath d='M120 200 L200 120 L280 200' fill='none' stroke='%232563eb' stroke-width='4'/%3E%3Ctext x='200' y='80' text-anchor='middle' fill='%232563eb' font-family='Arial, sans-serif' font-size='16' font-weight='bold'%3ECyclist%3C/text%3E%3C/svg%3E" alt="Cyclist community website">
-                        <div class="project-overlay">
-                            <div class="project-links">
-                                <a href="https://scottefloyd.github.io/cyclist-case-study.html" class="project-link" aria-label="View project">
-                                    <i data-feather="external-link"></i>
-                                </a>
+                <div class="skill-category">
+                    <h3>Design & Tools</h3>
+                    <div class="skill-bars">
+                        <div class="skill-bar">
+                            <div class="skill-info">
+                                <span>Figma</span>
+                                <span>95%</span>
+                            </div>
+                            <div class="progress-bar">
+                                <div class="progress" data-width="95"></div>
                             </div>
                         </div>
-                    </div>
-                    <div class="project-content">
-                        <div class="project-tags">
-                            <span class="tag">Community Platform</span>
-                            <span class="tag">Web Design</span>
-                            <span class="tag">User Journey</span>
-                        </div>
-                        <h3>Cyclist Community Platform</h3>
-                        <p>
-                            Designed a comprehensive community platform for cycling enthusiasts. 
-                            Created user journeys that connect riders, promote events, and 
-                            build a stronger cycling community.
-                        </p>
-                        <div class="project-results">
-                            <div class="result">
-                                <strong>300%</strong>
-                                <span>User Growth</span>
+                        <div class="skill-bar">
+                            <div class="skill-info">
+                                <span>User Research</span>
+                                <span>85%</span>
                             </div>
-                            <div class="result">
-                                <strong>92%</strong>
-                                <span>User Retention</span>
+                            <div class="progress-bar">
+                                <div class="progress" data-width="85"></div>
+                            </div>
+                        </div>
+                        <div class="skill-bar">
+                            <div class="skill-info">
+                                <span>Prototyping</span>
+                                <span>88%</span>
+                            </div>
+                            <div class="progress-bar">
+                                <div class="progress" data-width="88"></div>
                             </div>
                         </div>
                     </div>
                 </div>
+            </div>
+            
+            <div class="tools-grid">
+                <div class="tool-item">VS Code</div>
+                <div class="tool-item">Figma</div>
+                <div class="tool-item">Chrome DevTools</div>
+                <div class="tool-item">Playwright</div>
+                <div class="tool-item">Jest</div>
+                <div class="tool-item">Postman</div>
+                <div class="tool-item">Docker</div>
+                <div class="tool-item">GitHub Actions</div>
+                <div class="tool-item">Vercel</div>
+                <div class="tool-item">Supabase</div>
+                <div class="tool-item">Framer Motion</div>
+                <div class="tool-item">Tailwind</div>
             </div>
         </div>
     </section>
@@ -546,96 +429,104 @@
     <!-- Contact Section -->
     <section id="contact" class="contact">
         <div class="container">
-            <div class="section-header">
-                <h2 class="section-title">Let's Build Something Amazing</h2>
-                <p class="section-subtitle">
-                    Ready to transform your testing strategy or explore AI opportunities? 
-                    Let's discuss how we can work together.
-                </p>
-            </div>
-            
             <div class="contact-content">
                 <div class="contact-info">
-                    <div class="contact-item">
-                        <div class="contact-icon">
-                            <i data-feather="mail"></i>
+                    <h2 class="section-title">Let's Create Something Amazing</h2>
+                    <p class="contact-description">
+                        Ready to bring your ideas to life? Let's discuss your next project 
+                        and see how we can work together.
+                    </p>
+                    
+                    <div class="contact-methods">
+                        <div class="contact-method">
+                            <div class="method-icon">
+                                <i data-feather="mail"></i>
+                            </div>
+                            <div class="method-info">
+                                <h4>Email</h4>
+                                <p>Drop me a line anytime</p>
+                                <a href="mailto:hello@scottfloyd.com">hello@scottfloyd.com</a>
+                            </div>
                         </div>
-                        <div class="contact-details">
-                            <h4>Email</h4>
-                            <p>hello@scottfloyd.design</p>
+                        
+                        <div class="contact-method">
+                            <div class="method-icon">
+                                <i data-feather="message-circle"></i>
+                            </div>
+                            <div class="method-info">
+                                <h4>Let's Chat</h4>
+                                <p>Quick questions or discussions</p>
+                                <a href="#contact-form">Send a message</a>
+                            </div>
+                        </div>
+                        
+                        <div class="contact-method">
+                            <div class="method-icon">
+                                <i data-feather="calendar"></i>
+                            </div>
+                            <div class="method-info">
+                                <h4>Schedule a Call</h4>
+                                <p>Book a 30-minute conversation</p>
+                                <a href="#">Book a slot</a>
+                            </div>
                         </div>
                     </div>
                     
-                    <div class="contact-item">
-                        <div class="contact-icon">
-                            <i data-feather="linkedin"></i>
-                        </div>
-                        <div class="contact-details">
-                            <h4>LinkedIn</h4>
-                            <a href="https://www.linkedin.com/in/scottefloyd/" target="_blank">Connect with me</a>
-                        </div>
-                    </div>
-                    
-                    <div class="contact-item">
-                        <div class="contact-icon">
-                            <i data-feather="github"></i>
-                        </div>
-                        <div class="contact-details">
-                            <h4>GitHub</h4>
-                            <a href="https://github.com/scottefloyd" target="_blank">View my code</a>
-                        </div>
-                    </div>
-                    
-                    <div class="contact-item">
-                        <div class="contact-icon">
-                            <i data-feather="download"></i>
-                        </div>
-                        <div class="contact-details">
-                            <h4>Resume</h4>
-                            <a href="assets/scott-floyd-resume.pdf" download>Download PDF</a>
-                        </div>
+                    <div class="contact-guarantee">
+                        <h4>Quick Response Guarantee</h4>
+                        <ul>
+                            <li>24-hour response time</li>
+                            <li>Free initial consultation</li>
+                            <li>Detailed project proposals</li>
+                        </ul>
                     </div>
                 </div>
                 
-                <form class="contact-form" id="contactForm">
-                    <div class="form-group">
-                        <label for="firstName">First Name</label>
-                        <input type="text" id="firstName" name="firstName" required>
-                    </div>
-                    
-                    <div class="form-group">
-                        <label for="lastName">Last Name</label>
-                        <input type="text" id="lastName" name="lastName" required>
-                    </div>
-                    
-                    <div class="form-group full-width">
-                        <label for="email">Email</label>
-                        <input type="email" id="email" name="email" required>
-                    </div>
-                    
-                    <div class="form-group full-width">
-                        <label for="projectType">Project Type</label>
-                        <select id="projectType" name="projectType" required>
-                            <option value="">Select a project type</option>
-                            <option value="qa-automation">QA Automation</option>
-                            <option value="ai-consulting">AI Consulting</option>
-                            <option value="ux-design">UX Design</option>
-                            <option value="digital-transformation">Digital Transformation</option>
-                            <option value="other">Other</option>
-                        </select>
-                    </div>
-                    
-                    <div class="form-group full-width">
-                        <label for="message">Project Details</label>
-                        <textarea id="message" name="message" rows="5" placeholder="Tell me about your project, challenges, and goals..." required></textarea>
-                    </div>
-                    
-                    <button type="submit" class="btn btn-primary full-width">
-                        <span class="btn-text">Send Message</span>
-                        <span class="btn-loading">Sending...</span>
-                        <i data-feather="send"></i>
-                    </button>
-                </form>
+                <div class="contact-form-container" id="contact-form">
+                    <form class="contact-form" id="contactForm">
+                        <h3>Send a Message</h3>
+                        <p>Tell me about your project and I'll get back to you within 24 hours.</p>
+                        
+                        <div class="form-row">
+                            <div class="form-group">
+                                <label for="firstName">First Name</label>
+                                <input type="text" id="firstName" name="firstName" required>
+                            </div>
+                            <div class="form-group">
+                                <label for="lastName">Last Name</label>
+                                <input type="text" id="lastName" name="lastName" required>
+                            </div>
+                        </div>
+                        
+                        <div class="form-group">
+                            <label for="email">Email</label>
+                            <input type="email" id="email" name="email" required>
+                        </div>
+                        
+                        <div class="form-group">
+                            <label for="projectType">Project Type</label>
+                            <select id="projectType" name="projectType" required>
+                                <option value="">Select a project type</option>
+                                <option value="qa-automation">QA & Test Automation</option>
+                                <option value="ai-consulting">AI Consulting</option>
+                                <option value="ux-design">UX/UI Design</option>
+                                <option value="full-project">Complete Project</option>
+                                <option value="other">Other</option>
+                            </select>
+                        </div>
+                        
+                        <div class="form-group">
+                            <label for="message">Message</label>
+                            <textarea id="message" name="message" placeholder="Tell me about your project, timeline, and goals..." required></textarea>
+                        </div>
+                        
+                        <button type="submit" class="btn btn-primary full-width">
+                            <span class="btn-text">Send Message</span>
+                            <span class="btn-loading">Sending...</span>
+                            <i data-feather="send"></i>
+                        </button>
+                    </form>
+                </div>
             </div>
         </div>
     </section>
@@ -649,25 +540,24 @@
                     <p>QA Automation Expert & AI Consultant</p>
                 </div>
                 <div class="footer-links">
-                    <a href="https://www.linkedin.com/in/scottefloyd/" target="_blank" aria-label="LinkedIn">
+                    <a href="https://linkedin.com/in/scottefloyd" target="_blank" aria-label="LinkedIn">
                         <i data-feather="linkedin"></i>
                     </a>
                     <a href="https://github.com/scottefloyd" target="_blank" aria-label="GitHub">
                         <i data-feather="github"></i>
                     </a>
-                    <a href="mailto:hello@scottfloyd.design" aria-label="Email">
+                    <a href="mailto:hello@scottfloyd.com" aria-label="Email">
                         <i data-feather="mail"></i>
                     </a>
                 </div>
             </div>
             <div class="footer-bottom">
-                <p>&copy; 2025 Scott Floyd. Built with passion for quality and innovation.</p>
+                <p>&copy; 2025 Scott Floyd. All rights reserved.</p>
             </div>
         </div>
     </footer>
 
     <!-- Scripts -->
-    <script src="https://unpkg.com/feather-icons"></script>
     <script src="script.js"></script>
 </body>
 </html>
