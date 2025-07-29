@@ -256,24 +256,24 @@ body {
 
 .hero-title {
     font-size: clamp(3rem, 6vw, 5rem);
-    font-weight: 800;
+    font-weight: 600;
     line-height: 1.1;
     margin-bottom: var(--space-6);
     letter-spacing: -0.02em;
-    display: flex;
-    flex-wrap: wrap;
-    gap: 0.3em;
-    justify-content: center;
+    text-align: center;
+    white-space: nowrap;
 }
 
 .creative-text {
     color: var(--text-primary);
+    margin-right: 0.3em;
 }
 
 .cycling-text {
     position: relative;
-    min-width: fit-content;
     display: inline-block;
+    min-width: 400px;
+    text-align: left;
 }
 
 .cycling-word {
@@ -287,11 +287,11 @@ body {
     top: 0;
     white-space: nowrap;
     transition: opacity 0.5s ease-in-out;
+    width: 100%;
 }
 
 .cycling-word.active {
     opacity: 1;
-    position: relative;
 }
 
 .gradient-text {
@@ -1030,9 +1030,27 @@ body {
     }
 }
 
+@media (max-width: 768px) {
+    .hero-title {
+        white-space: normal;
+        text-align: center;
+    }
+    
+    .cycling-text {
+        min-width: auto;
+        text-align: center;
+    }
+}
+
 @media (max-width: 480px) {
     .hero-title {
         font-size: 2rem;
+        white-space: normal;
+    }
+    
+    .cycling-text {
+        min-width: auto;
+        text-align: center;
     }
     
     .section-title {
