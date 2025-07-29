@@ -266,7 +266,7 @@ body {
     justify-content: center;
     flex-wrap: nowrap;
     overflow: visible;
-    gap: 0.15em;
+    gap: 0.075em;
 }
 
 .creative-text {
