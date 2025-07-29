@@ -313,7 +313,8 @@ body {
 .hero-description {
     font-size: var(--font-size-lg);
     color: var(--text-secondary);
-    margin-bottom: var(--space-8);
+    margin-bottom: var(--space-6);
+    margin-top: var(--space-4);
     max-width: 600px;
     margin-left: auto;
     margin-right: auto;
@@ -323,7 +324,7 @@ body {
     display: flex;
     gap: var(--space-4);
     justify-content: center;
-    margin-bottom: var(--space-12);
+    margin-bottom: var(--space-8);
 }
 
 .btn {
