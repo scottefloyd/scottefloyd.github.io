@@ -261,19 +261,25 @@ body {
     margin-bottom: var(--space-6);
     letter-spacing: -0.02em;
     text-align: center;
-    white-space: nowrap;
+    display: flex;
+    align-items: baseline;
+    justify-content: center;
+    flex-wrap: nowrap;
+    overflow: visible;
 }
 
 .creative-text {
     color: var(--text-primary);
-    margin-right: 0.3em;
+    margin-right: 0.4em;
+    flex-shrink: 0;
 }
 
 .cycling-text {
     position: relative;
     display: inline-block;
-    min-width: 400px;
-    text-align: left;
+    min-width: 500px;
+    height: 1.2em;
+    overflow: visible;
 }
 
 .cycling-word {
@@ -287,7 +293,7 @@ body {
     top: 0;
     white-space: nowrap;
     transition: opacity 0.5s ease-in-out;
-    width: 100%;
+    width: max-content;
 }
 
 .cycling-word.active {
@@ -1032,25 +1038,28 @@ body {
 
 @media (max-width: 768px) {
     .hero-title {
-        white-space: normal;
+        flex-direction: column;
         text-align: center;
+        gap: 0.2em;
+    }
+    
+    .creative-text {
+        margin-right: 0;
     }
     
     .cycling-text {
-        min-width: auto;
-        text-align: center;
+        min-width: 300px;
     }
 }
 
 @media (max-width: 480px) {
     .hero-title {
         font-size: 2rem;
-        white-space: normal;
+        flex-direction: column;
     }
     
     .cycling-text {
-        min-width: auto;
-        text-align: center;
+        min-width: 250px;
     }
     
     .section-title {
