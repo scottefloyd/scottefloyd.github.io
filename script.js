@@ -383,6 +383,42 @@ class SmoothScroll {
     }
 }
 
+// Scroll to Top Button
+class ScrollToTop {
+    constructor() {
+        this.button = document.getElementById('scrollToTop');
+        this.init();
+    }
+
+    init() {
+        if (!this.button) return;
+
+        // Show/hide button based on scroll position
+        window.addEventListener('scroll', () => this.toggleVisibility());
+        
+        // Handle click to scroll to top
+        this.button.addEventListener('click', () => this.scrollToTop());
+    }
+
+    toggleVisibility() {
+        const scrolled = window.pageYOffset;
+        const threshold = 300; // Show after scrolling 300px
+
+        if (scrolled > threshold) {
+            this.button.classList.add('visible');
+        } else {
+            this.button.classList.remove('visible');
+        }
+    }
+
+    scrollToTop() {
+        window.scrollTo({
+            top: 0,
+            behavior: 'smooth'
+        });
+    }
+}
+
 // Initialize everything when DOM is loaded
 document.addEventListener('DOMContentLoaded', () => {
     // Initialize Feather icons
@@ -398,6 +434,7 @@ document.addEventListener('DOMContentLoaded', () => {
     new ProjectFilter();
     new ContactForm();
     new SmoothScroll();
+    new ScrollToTop();
 
     // Add loading complete class for CSS animations
     document.body.classList.add('loaded');
