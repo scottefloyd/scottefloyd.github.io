@@ -110,10 +110,10 @@ body {
 }
 
 .nav-logo {
-    font-family: 'Montserrat', sans-serif;
-    font-size: 1.4rem;
-    font-weight: 700;
-    letter-spacing: -0.02em;
+    font-family: 'Rubik Scribble', cursive;
+    font-size: 1.6rem;
+    font-weight: 400;
+    letter-spacing: 0.02em;
     color: var(--text-primary);
     text-decoration: none;
     transition: var(--transition);
@@ -172,6 +172,13 @@ body {
     font-size: 1.4rem;
     font-weight: 600;
     letter-spacing: 0.01em;
+}
+
+.nav-logo.rubik-scribble {
+    font-family: 'Rubik Scribble', cursive;
+    font-size: 1.6rem;
+    font-weight: 400;
+    letter-spacing: 0.02em;
 }
 
 .nav-logo:hover {
