@@ -169,6 +169,7 @@ The application follows a simple client-side architecture with no backend depend
 - **Google Analytics integration**: Added comprehensive GA4 tracking with environment variable injection; tracks page views, contact form submissions, project clicks, navigation interactions, skills toggles, and theme changes; includes proper error handling and privacy considerations
 - **Contact form setup**: Integrated Formspree for functional contact form submissions; includes loading states, success/error messages, form validation, and analytics tracking; connected to live Formspree endpoint (xovwrkqg)
 - **GitHub deployment preparation**: Created README.md, .gitignore, and deployment documentation; prepared repository structure for GitHub Pages hosting with proper documentation and setup guides
+- **Social media preview setup**: Added Open Graph and Twitter Card meta tags for professional link previews; integrated authentic portfolio screenshot as preview image for social sharing across platforms
 - **Removed tech stack from hero section**: Eliminated the tech stack list (Cypress, TypeScript, Agile, Playwright, GenAI) for cleaner hero design
 - **Refined expertise cards**: Updated descriptions to be more accurate and professional:
   - Test Automation: "Ensuring quality with top automation frameworks"
