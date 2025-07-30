@@ -419,6 +419,38 @@ class ScrollToTop {
     }
 }
 
+// Retro TV Channel Switcher
+class RetroTVChannels {
+    constructor() {
+        this.channels = document.querySelectorAll('.channel-item');
+        this.currentChannel = 0;
+        this.init();
+    }
+
+    init() {
+        if (this.channels.length > 0) {
+            this.startChannelCycling();
+        }
+    }
+
+    startChannelCycling() {
+        setInterval(() => {
+            this.switchChannel();
+        }, 4000); // Switch every 4 seconds
+    }
+
+    switchChannel() {
+        // Hide current channel
+        this.channels[this.currentChannel].classList.remove('active');
+        
+        // Move to next channel
+        this.currentChannel = (this.currentChannel + 1) % this.channels.length;
+        
+        // Show new channel
+        this.channels[this.currentChannel].classList.add('active');
+    }
+}
+
 // Initialize everything when DOM is loaded
 document.addEventListener('DOMContentLoaded', () => {
     // Initialize Feather icons
@@ -435,6 +467,7 @@ document.addEventListener('DOMContentLoaded', () => {
     new ContactForm();
     new SmoothScroll();
     new ScrollToTop();
+    new RetroTVChannels();
 
     // Add loading complete class for CSS animations
     document.body.classList.add('loaded');

@@ -102,6 +102,9 @@ The application follows a simple client-side architecture with no backend depend
 - **SPOTR app showcase**: Detailed timeline showing UX Research → Wireframes → Prototyping → Gen-AI Development → Test Automation phases
 - **Integrated Figma links**: Added direct links to SPOTR wireframes and research board for authentic project documentation
 - **Enhanced project status indicators**: Visual timeline with completed, in-progress, and upcoming phases with appropriate styling
+- **Rewrote "My Story" section**: Expanded narrative around childhood inspiration from Popular Science magazines, James Bond, Inspector Gadget, and MacGyver, connecting ingenuity mindset to current work
+- **Added retro TV reference graphic**: Created animated TV displaying cycling channels (Popular Science, 007, MacGyver) with authentic retro styling including wood grain finish and control knobs
+- **Enhanced storytelling with personal connection**: Linked childhood wonder about future technology to current reality of AI and automation work
 - **Updated hero description**: Changed to results-focused copy: "From catching bugs before they reach users to building AI solutions that streamline workflows - I help businesses deliver quality software with confidence."
 - **Replaced skills section with narrative format**: Removed percentage-based skill bars and replaced with story-driven descriptions showing real work applications at companies like Illumina and BASF
 - **Added creative font styling**: Applied Dancing Script font to name in navigation header for elegant modern cursive calligraphy aesthetic
