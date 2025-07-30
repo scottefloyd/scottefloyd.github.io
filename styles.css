@@ -472,6 +472,10 @@ body {
     border-radius: 16px;
     padding: var(--space-6);
     transition: var(--transition);
+    text-align: center;
+    display: flex;
+    flex-direction: column;
+    align-items: center;
 }
 
 .expertise-card:hover {
@@ -480,23 +484,25 @@ body {
     box-shadow: var(--shadow);
 }
 
-.card-header {
-    display: flex;
-    align-items: center;
-    gap: var(--space-3);
+.card-icon {
     margin-bottom: var(--space-4);
 }
 
-.card-header i {
-    width: 24px;
-    height: 24px;
+.card-icon i {
+    width: calc(24px * 1.3);
+    height: calc(24px * 1.3);
     color: var(--accent-primary);
 }
 
-.card-header h4 {
+.expertise-card h4 {
     font-family: ui-sans-serif, system-ui, sans-serif, "Apple Color Emoji", "Segoe UI Emoji", "Segoe UI Symbol", "Noto Color Emoji";
     font-size: var(--font-size-lg);
     font-weight: 400;
+    margin-bottom: var(--space-3);
+}
+
+.expertise-card p {
+    margin: 0;
 }
 
 .expertise-card p {
