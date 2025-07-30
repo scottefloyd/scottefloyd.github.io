@@ -341,15 +341,32 @@
                 </p>
             </div>
             
-            <div class="project-filters">
-                <button class="filter-btn active" data-filter="all">All</button>
-                <button class="filter-btn" data-filter="ux-research">UX Research</button>
-                <button class="filter-btn" data-filter="ux-design">UX Design</button>
-                <button class="filter-btn" data-filter="prototyping">Prototyping</button>
-                <button class="filter-btn" data-filter="user-testing">User Testing</button>
-                <button class="filter-btn" data-filter="task-analysis">Task Analysis</button>
-                <button class="filter-btn" data-filter="usability">Usability</button>
-                <button class="filter-btn" data-filter="front-end-dev">Front-End Dev</button>
+            <div class="project-categories">
+                <div class="category-tabs">
+                    <button class="category-btn" data-category="ux-design">UX Design</button>
+                    <button class="category-btn" data-category="ux-research">UX Research</button>
+                    <button class="category-btn" data-category="development">Development</button>
+                    <button class="category-btn" data-category="usability">Usability</button>
+                </div>
+                
+                <div class="subcategory-tabs" id="ux-design-tabs">
+                    <button class="filter-btn active" data-filter="ux-design">UX Design</button>
+                    <button class="filter-btn" data-filter="prototyping">Prototyping</button>
+                </div>
+                
+                <div class="subcategory-tabs" id="ux-research-tabs" style="display: none;">
+                    <button class="filter-btn" data-filter="ux-research">UX Research</button>
+                    <button class="filter-btn" data-filter="user-testing">User Testing</button>
+                </div>
+                
+                <div class="subcategory-tabs" id="development-tabs" style="display: none;">
+                    <button class="filter-btn" data-filter="front-end-dev">Front-End Dev</button>
+                </div>
+                
+                <div class="subcategory-tabs" id="usability-tabs" style="display: none;">
+                    <button class="filter-btn" data-filter="usability">Usability</button>
+                    <button class="filter-btn" data-filter="task-analysis">Task Analysis</button>
+                </div>
             </div>
             
             <div class="projects-grid">

@@ -205,23 +205,71 @@ class AnimationObserver {
 // Project Filtering
 class ProjectFilter {
     constructor() {
+        this.categoryButtons = document.querySelectorAll('.category-btn');
         this.filterButtons = document.querySelectorAll('.filter-btn');
         this.projectCards = document.querySelectorAll('.project-card');
+        this.subcategoryTabs = document.querySelectorAll('.subcategory-tabs');
         this.init();
     }
 
     init() {
+        // Set default active category and filter
+        this.setActiveCategory('ux-design');
+        this.filterProjects({ target: { getAttribute: () => 'ux-design' } });
+        
+        this.categoryButtons.forEach(button => {
+            button.addEventListener('click', (e) => this.switchCategory(e));
+        });
+        
         this.filterButtons.forEach(button => {
             button.addEventListener('click', (e) => this.filterProjects(e));
         });
     }
 
+    switchCategory(e) {
+        const category = e.target.getAttribute('data-category');
+        this.setActiveCategory(category);
+        
+        // Auto-select first filter in category
+        const activeTabContainer = document.getElementById(`${category}-tabs`);
+        if (activeTabContainer) {
+            const firstFilter = activeTabContainer.querySelector('.filter-btn');
+            if (firstFilter) {
+                this.filterProjects({ target: firstFilter });
+            }
+        }
+    }
+
+    setActiveCategory(category) {
+        // Update active category button
+        this.categoryButtons.forEach(btn => btn.classList.remove('active'));
+        const categoryBtn = document.querySelector(`[data-category="${category}"]`);
+        if (categoryBtn) {
+            categoryBtn.classList.add('active');
+        }
+        
+        // Show/hide subcategory tabs
+        this.subcategoryTabs.forEach(tab => {
+            tab.style.display = 'none';
+        });
+        
+        const activeTab = document.getElementById(`${category}-tabs`);
+        if (activeTab) {
+            activeTab.style.display = 'flex';
+        }
+    }
+
     filterProjects(e) {
         const filter = e.target.getAttribute('data-filter');
         
-        // Update active button
-        this.filterButtons.forEach(btn => btn.classList.remove('active'));
-        e.target.classList.add('active');
+        // Update active button within the visible subcategory tabs only
+        const visibleTab = document.querySelector('.subcategory-tabs[style*="flex"]');
+        if (visibleTab) {
+            visibleTab.querySelectorAll('.filter-btn').forEach(btn => btn.classList.remove('active'));
+        }
+        if (e.target.classList) {
+            e.target.classList.add('active');
+        }
         
         // Filter projects
         this.projectCards.forEach(card => {
