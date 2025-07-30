@@ -508,7 +508,7 @@ body {
 
 .story-content {
     display: grid;
-    grid-template-columns: 300px 1fr;
+    grid-template-columns: 2fr 1fr;
     gap: var(--space-16);
     align-items: start;
     margin-bottom: var(--space-16);
