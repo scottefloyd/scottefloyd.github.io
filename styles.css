@@ -774,7 +774,7 @@ body {
 
 .project-overview {
     display: grid;
-    grid-template-columns: 1fr 1fr;
+    grid-template-columns: 1fr 400px;
     gap: var(--space-16);
     align-items: start;
     margin-bottom: var(--space-16);
@@ -784,10 +784,33 @@ body {
     padding-right: var(--space-8);
 }
 
-.project-status-column {
+.project-image-column {
     display: flex;
-    flex-direction: column;
-    gap: var(--space-6);
+    justify-content: center;
+    align-items: flex-start;
+}
+
+.app-preview {
+    width: 100%;
+    max-width: 300px;
+    text-align: center;
+}
+
+.spotr-preview-image {
+    width: 100%;
+    height: auto;
+    border-radius: 16px;
+    box-shadow: 0 8px 32px rgba(0, 0, 0, 0.12);
+    border: 1px solid var(--border-color);
+}
+
+.project-status-section {
+    margin-bottom: var(--space-16);
+    padding: var(--space-8);
+    background: var(--bg-card);
+    border-radius: 16px;
+    border: 1px solid var(--border-color);
+    text-align: center;
 }
 
 .project-title {
@@ -967,8 +990,13 @@ body {
     border: 1px solid var(--border-color);
 }
 
-.project-highlights-section {
-    margin-top: var(--space-16);
+.project-description-column .project-highlights-section {
+    margin-top: var(--space-8);
+}
+
+.project-description-column .project-highlights-section h3 {
+    text-align: left;
+    margin-bottom: var(--space-6);
 }
 
 .project-highlights-section h3 {
@@ -1067,12 +1095,20 @@ body {
     
     .project-description-column {
         padding-right: 0;
-        order: 1;
+        order: 2;
     }
     
-    .project-status-column {
-        order: 2;
-        align-items: center;
+    .project-image-column {
+        order: 1;
+        justify-content: center;
+    }
+    
+    .app-preview {
+        max-width: 250px;
+    }
+    
+    .project-status-section {
+        order: 3;
     }
     
     .project-status {

@@ -105,6 +105,8 @@ The application follows a simple client-side architecture with no backend depend
 - **Enhanced completed phase indicators**: Added distinctive "✓ COMPLETE" badges to first three timeline phases for clear visual separation
 - **Reorganized Current Work layout**: Moved timeline cards into right column under status indicator; changed "IN DEVELOPMENT" to "IN PROGRESS"
 - **Enhanced Key Features & Tech Stack**: Added engaging descriptions with icons, stronger titles, and detailed explanations for better visual appeal
+- **Restructured Current Work layout**: Added SPOTR app preview image to right column; moved Key Features/Tech Stack to left column below description; moved timeline and status to full-width section below both columns
+- **Added authentic SPOTR app preview**: Integrated actual app screenshot showing the mobile interface with river spotting features
 - **Integrated Figma links**: Added direct links to SPOTR wireframes and research board for authentic project documentation
 - **Enhanced project status indicators**: Visual timeline with completed, in-progress, and upcoming phases with appropriate styling
 - **Rewrote "My Story" section**: Expanded narrative around childhood inspiration from Popular Science magazines, James Bond, Inspector Gadget, and MacGyver, connecting ingenuity mindset to current work
