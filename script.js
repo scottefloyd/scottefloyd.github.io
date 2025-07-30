@@ -219,12 +219,28 @@ class ProjectFilter {
         // Filter projects
         this.projectCards.forEach(card => {
             const category = card.getAttribute('data-category');
+            const tags = card.getAttribute('data-tags');
+            const tagList = tags ? tags.split(',') : [];
             
-            if (filter === 'all' || category === filter) {
+            let shouldShow = false;
+            
+            if (filter === 'all') {
+                shouldShow = true;
+            } else if (category === filter) {
+                shouldShow = true;
+            } else if (tagList.includes(filter)) {
+                shouldShow = true;
+            }
+            
+            if (shouldShow) {
                 card.classList.remove('hidden');
                 card.style.display = 'block';
+                card.style.opacity = '1';
+                card.style.transform = 'scale(1)';
             } else {
                 card.classList.add('hidden');
+                card.style.opacity = '0';
+                card.style.transform = 'scale(0.8)';
                 setTimeout(() => {
                     if (card.classList.contains('hidden')) {
                         card.style.display = 'none';
