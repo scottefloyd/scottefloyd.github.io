@@ -774,14 +774,14 @@ body {
 
 .project-overview {
     display: grid;
-    grid-template-columns: 1fr 400px;
-    gap: var(--space-16);
+    grid-template-columns: 1fr 300px;
+    gap: var(--space-12);
     align-items: start;
     margin-bottom: var(--space-8);
 }
 
 .project-description-column {
-    padding-right: var(--space-8);
+    min-width: 0; /* Prevents grid item from overflowing */
 }
 
 .project-image-column {
@@ -794,7 +794,7 @@ body {
 
 .app-preview {
     width: 100%;
-    max-width: 300px;
+    max-width: 280px;
     text-align: center;
 }
 
@@ -1075,7 +1075,7 @@ body {
 }
 
 .project-description-column .project-highlights-section {
-    margin-top: var(--space-8);
+    margin-top: var(--space-6);
 }
 
 .project-description-column .project-highlights-section h3 {
