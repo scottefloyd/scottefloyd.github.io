@@ -257,7 +257,7 @@ body {
 .hero-title {
     font-family: ui-sans-serif, system-ui, sans-serif, "Apple Color Emoji", "Segoe UI Emoji", "Segoe UI Symbol", "Noto Color Emoji";
     font-size: clamp(3rem, 6vw, 5rem);
-    font-weight: 500;
+    font-weight: 400;
     line-height: 1.1;
     margin-bottom: 0.25rem;
     letter-spacing: -0.02em;
@@ -403,7 +403,7 @@ body {
 .section-title {
     font-family: ui-sans-serif, system-ui, sans-serif, "Apple Color Emoji", "Segoe UI Emoji", "Segoe UI Symbol", "Noto Color Emoji";
     font-size: var(--font-size-4xl);
-    font-weight: 800;
+    font-weight: 400;
     margin-bottom: var(--space-8);
     letter-spacing: -0.02em;
 }
@@ -422,7 +422,7 @@ body {
 .highlight-item h3 {
     font-family: ui-sans-serif, system-ui, sans-serif, "Apple Color Emoji", "Segoe UI Emoji", "Segoe UI Symbol", "Noto Color Emoji";
     font-size: var(--font-size-xl);
-    font-weight: 700;
+    font-weight: 400;
     margin-bottom: var(--space-4);
     color: var(--accent-primary);
 }
@@ -483,7 +483,7 @@ body {
 .card-header h4 {
     font-family: ui-sans-serif, system-ui, sans-serif, "Apple Color Emoji", "Segoe UI Emoji", "Segoe UI Symbol", "Noto Color Emoji";
     font-size: var(--font-size-lg);
-    font-weight: 600;
+    font-weight: 400;
 }
 
 .expertise-card p {
@@ -656,7 +656,7 @@ body {
 .project-content h3 {
     font-family: ui-sans-serif, system-ui, sans-serif, "Apple Color Emoji", "Segoe UI Emoji", "Segoe UI Symbol", "Noto Color Emoji";
     font-size: var(--font-size-xl);
-    font-weight: 700;
+    font-weight: 400;
     margin-bottom: var(--space-3);
 }
 
@@ -681,7 +681,7 @@ body {
 .skill-category h3 {
     font-family: ui-sans-serif, system-ui, sans-serif, "Apple Color Emoji", "Segoe UI Emoji", "Segoe UI Symbol", "Noto Color Emoji";
     font-size: var(--font-size-xl);
-    font-weight: 700;
+    font-weight: 400;
     margin-bottom: var(--space-6);
     color: var(--accent-primary);
 }
@@ -861,7 +861,7 @@ body {
 .contact-form h3 {
     font-family: ui-sans-serif, system-ui, sans-serif, "Apple Color Emoji", "Segoe UI Emoji", "Segoe UI Symbol", "Noto Color Emoji";
     font-size: var(--font-size-2xl);
-    font-weight: 700;
+    font-weight: 400;
     margin-bottom: var(--space-3);
 }
 
@@ -947,7 +947,7 @@ body {
 .footer-info h3 {
     font-family: ui-sans-serif, system-ui, sans-serif, "Apple Color Emoji", "Segoe UI Emoji", "Segoe UI Symbol", "Noto Color Emoji";
     font-size: var(--font-size-xl);
-    font-weight: 700;
+    font-weight: 400;
     margin-bottom: var(--space-2);
 }
 
