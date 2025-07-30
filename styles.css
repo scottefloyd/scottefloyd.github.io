@@ -819,6 +819,10 @@ body {
 
 .project-status-section .project-status {
     margin-bottom: var(--space-8);
+    display: flex;
+    align-items: center;
+    gap: var(--space-4);
+    justify-content: center;
 }
 
 .project-title {
@@ -861,6 +865,7 @@ body {
     color: var(--text-secondary);
     font-size: var(--font-size-sm);
     font-weight: 500;
+    line-height: 1;
 }
 
 .development-timeline {
