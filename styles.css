@@ -395,9 +395,10 @@ body {
 
 .story-content {
     display: grid;
-    grid-template-columns: 1fr 1fr;
+    grid-template-columns: 2fr 1fr;
     gap: var(--space-16);
     align-items: start;
+    margin-bottom: var(--space-16);
 }
 
 .section-title {
@@ -408,6 +409,11 @@ body {
     letter-spacing: -0.02em;
 }
 
+.section-title.centered {
+    text-align: center;
+    margin-bottom: var(--space-12);
+}
+
 .story-paragraphs p {
     font-size: var(--font-size-lg);
     color: var(--text-secondary);
@@ -415,32 +421,44 @@ body {
     line-height: 1.7;
 }
 
-.story-highlights {
-    margin-top: var(--space-8);
+.drives-me-box {
+    background: linear-gradient(135deg, rgba(79, 70, 229, 0.05) 0%, rgba(124, 58, 237, 0.05) 100%);
+    border: 1px solid var(--border-color);
+    border-radius: 20px;
+    padding: var(--space-8);
+    position: sticky;
+    top: var(--space-8);
 }
 
-.highlight-item h3 {
+[data-theme="dark"] .drives-me-box {
+    background: linear-gradient(135deg, rgba(79, 70, 229, 0.1) 0%, rgba(124, 58, 237, 0.1) 100%);
+    border-color: rgba(79, 70, 229, 0.2);
+}
+
+.drives-me-box h3 {
     font-family: ui-sans-serif, system-ui, sans-serif, "Apple Color Emoji", "Segoe UI Emoji", "Segoe UI Symbol", "Noto Color Emoji";
     font-size: var(--font-size-xl);
     font-weight: 400;
-    margin-bottom: var(--space-4);
-    color: var(--accent-primary);
+    margin-bottom: var(--space-6);
+    color: var(--text-primary);
 }
 
-.highlight-item ul {
+.drives-me-box ul {
     list-style: none;
     padding: 0;
+    margin: 0;
 }
 
-.highlight-item li {
+.drives-me-box li {
     color: var(--text-secondary);
-    padding: var(--space-2) 0;
+    padding: var(--space-3) 0;
     position: relative;
     padding-left: var(--space-6);
+    font-size: var(--font-size-base);
 }
 
-.highlight-item li::before {
-    content: '→';
+.drives-me-box li::before {
+    content: '•';
     position: absolute;
     left: 0;
     color: var(--accent-primary);
@@ -449,7 +467,7 @@ body {
 
 .expertise-cards {
     display: grid;
-    grid-template-columns: 1fr 1fr;
+    grid-template-columns: repeat(4, 1fr);
     gap: var(--space-6);
 }
 
@@ -1021,7 +1039,7 @@ body {
     }
     
     .expertise-cards {
-        grid-template-columns: 1fr;
+        grid-template-columns: repeat(2, 1fr);
     }
     
     .contact-content {
@@ -1085,6 +1103,10 @@ body {
     
     .tech-stack {
         justify-content: center;
+    }
+    
+    .expertise-cards {
+        grid-template-columns: 1fr;
     }
 }
 
