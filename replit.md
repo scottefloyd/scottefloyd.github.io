@@ -95,6 +95,18 @@ The application follows a simple client-side architecture with no backend depend
 ## Recent Changes
 
 ### Latest Updates (July 30, 2025)
+- **Navigation system improvements**:
+  - Fixed JavaScript navigation to properly handle cross-page links from case study pages back to main portfolio
+  - Modified handleNavClick to detect .html links and allow browser default navigation
+  - Maintains smooth scrolling for same-page anchor links while enabling proper page-to-page navigation
+- **Contact section redesign**:
+  - Simplified contact section to streamlined layout with just heading, description, and contact form
+  - Removed complex elements: contact methods cards, guarantee section, and two-column layout
+  - Centered section header with clean, focused contact form in contained layout
+  - Updated CSS to properly style the simplified contact area with proper spacing and alignment
+- **Social media links update**:
+  - Updated LinkedIn URL to correct format: https://www.linkedin.com/in/scottefloyd/
+  - Maintained GitHub link: https://github.com/scottefloyd
 - **Enhanced project portfolio with authentic content**:
   - Downloaded authentic images from Scott's repository: photobook.jpeg, a2.png, kiter.jpg, boogie-preview.jpg
   - Replaced all placeholder graphics with real project images
