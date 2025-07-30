@@ -95,6 +95,8 @@ The application follows a simple client-side architecture with no backend depend
 ## Recent Changes
 
 ### Latest Updates (July 30, 2025)
+- **Updated hero description**: Changed to results-focused copy: "From catching bugs before they reach users to building AI solutions that streamline workflows - I help businesses deliver quality software with confidence."
+- **Replaced skills section with narrative format**: Removed percentage-based skill bars and replaced with story-driven descriptions showing real work applications at companies like Illumina and BASF
 - **Navigation system improvements**:
   - Fixed JavaScript navigation to properly handle cross-page links from case study pages back to main portfolio
   - Modified handleNavClick to detect .html links and allow browser default navigation
