@@ -121,7 +121,7 @@ The application follows a simple client-side architecture with no backend depend
   - Implemented tag-based filtering system supporting all project tags (UX Research, Figma, Prototyping, etc.)
   - Added subtle PDF badges positioned at bottom of project content with light styling
   - Enhanced filtering JavaScript to match both categories and individual tags
-- **Updated cycling text**: Changed to "Human, Quality Engineer, Problem Solver, Bug Hunter, Gen-AI Tinkerer, Collaborator, Idea Guy" with "I'm a Creative" prefix
+- **Updated cycling text**: Changed to "Human, Quality Engineer, Problem Solver, Bug Hunter, Gen-AI Tinkerer, Collaborator, Idea Guy" with "Hire a Creative" prefix
 - **Removed tech stack from hero section**: Eliminated the tech stack list (Cypress, TypeScript, Agile, Playwright, GenAI) for cleaner hero design
 - **Refined expertise cards**: Updated descriptions to be more accurate and professional:
   - Test Automation: "Ensuring quality with top automation frameworks"
