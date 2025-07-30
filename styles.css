@@ -110,10 +110,9 @@ body {
 }
 
 .nav-logo {
-    font-family: 'Rubik Scribble', cursive;
-    font-size: 1.6rem;
-    font-weight: 400;
-    letter-spacing: 0.02em;
+    font-family: 'Dancing Script', cursive;
+    font-size: 1.8rem;
+    font-weight: 600;
     color: var(--text-primary);
     text-decoration: none;
     transition: var(--transition);
