@@ -103,6 +103,8 @@ The application follows a simple client-side architecture with no backend depend
 - **Updated project timeline status**: UX research, wireframes, and hi-fi prototypes marked as completed with visual "COMPLETE" badges; Gen-AI development currently in progress; test automation in planning stage
 - **Redesigned Current Work layout**: Created two-column layout with project description on left and status/timeline on right; changed section description to be more generic about product development lifecycle
 - **Enhanced completed phase indicators**: Added distinctive "✓ COMPLETE" badges to first three timeline phases for clear visual separation
+- **Reorganized Current Work layout**: Moved timeline cards into right column under status indicator; changed "IN DEVELOPMENT" to "IN PROGRESS"
+- **Enhanced Key Features & Tech Stack**: Added engaging descriptions with icons, stronger titles, and detailed explanations for better visual appeal
 - **Integrated Figma links**: Added direct links to SPOTR wireframes and research board for authentic project documentation
 - **Enhanced project status indicators**: Visual timeline with completed, in-progress, and upcoming phases with appropriate styling
 - **Rewrote "My Story" section**: Expanded narrative around childhood inspiration from Popular Science magazines, James Bond, Inspector Gadget, and MacGyver, connecting ingenuity mindset to current work
