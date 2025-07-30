@@ -23,7 +23,7 @@
             <ul class="nav-menu">
                 <li><a href="#home" class="nav-link">Home</a></li>
                 <li><a href="#story" class="nav-link">My Story</a></li>
-                <li><a href="#current-work" class="nav-link">Current Work</a></li>
+                <li><a href="#projects-on-deck" class="nav-link">Projects On Deck</a></li>
                 <li><a href="#projects" class="nav-link">Past Projects</a></li>
                 <li><a href="resume.html" class="nav-link">Resume</a></li>
                 <li><a href="#contact" class="nav-link">Contact</a></li>
@@ -63,7 +63,7 @@
                 </p>
                 
                 <div class="hero-buttons">
-                    <a href="#current-work" class="btn btn-primary">
+                    <a href="#projects-on-deck" class="btn btn-primary">
                         <span>View My Work</span>
                         <i data-feather="arrow-right"></i>
                     </a>
@@ -169,162 +169,54 @@
         </div>
     </section>
 
-    <!-- Current Work Section -->
-    <section id="current-work" class="current-work">
+    <!-- Projects On Deck Section -->
+    <section id="projects-on-deck" class="projects-on-deck">
         <div class="container">
             <div class="section-header">
-                <h2 class="section-title">Current Work</h2>
+                <h2 class="section-title">Projects On Deck</h2>
                 <p class="section-subtitle">
-                    A comprehensive look at my current project under development, showcasing the full product development lifecycle from research to deployment
+                    Upcoming projects in the planning pipeline, ready to launch into development
                 </p>
             </div>
             
-            <div class="current-project">
-                <div class="project-overview">
-                    <div class="project-description-column">
-                        <h3 class="project-title">SPOTR App</h3>
-                        <p class="project-description">Connect with local drivers for river shuttling services in Michigan. Get dropped off upstream and picked up downstream - it's that simple.</p>
-                        
-                        <div class="project-highlights-section">
-                            <h3>Tech Stack</h3>
-                            <div class="expandable-tech-stack">
-                                <div class="card-header">
-                                    <div class="card-icon">
-                                        <i data-feather="code"></i>
-                                    </div>
-                                    <h4>Technical Implementation</h4>
-                                    <button class="expand-btn" id="expandTechStack">
-                                        <i data-feather="plus"></i>
-                                    </button>
-                                </div>
-                                <div class="tech-content" id="techContent">
-                                    <div class="tech-section">
-                                        <h5>Frontend</h5>
-                                        <ul>
-                                            <li><strong>Framework:</strong> React 18 with TypeScript</li>
-                                            <li><strong>Build Tool:</strong> Vite for development and production builds</li>
-                                            <li><strong>UI Library:</strong> shadcn/ui components (built on Radix UI primitives)</li>
-                                            <li><strong>Styling:</strong> Tailwind CSS with custom theming</li>
-                                            <li><strong>Routing:</strong> Wouter for lightweight client-side routing</li>
-                                            <li><strong>State Management:</strong> TanStack Query (React Query) for server state</li>
-                                            <li><strong>Maps:</strong> MapLibre GL JS for interactive mapping</li>
-                                            <li><strong>Icons:</strong> Lucide React and React Icons</li>
-                                        </ul>
-                                    </div>
-                                    
-                                    <div class="tech-section">
-                                        <h5>Backend</h5>
-                                        <ul>
-                                            <li><strong>Runtime:</strong> Node.js with Express.js</li>
-                                            <li><strong>Language:</strong> TypeScript with ES modules</li>
-                                            <li><strong>Database:</strong> PostgreSQL (Neon serverless)</li>
-                                            <li><strong>Session Management:</strong> Express sessions with PostgreSQL storage</li>
-                                            <li><strong>Payment Processing:</strong> Stripe integration</li>
-                                        </ul>
-                                    </div>
-                                    
-                                    <div class="tech-section">
-                                        <h5>Development Tools</h5>
-                                        <ul>
-                                            <li><strong>Package Manager:</strong> npm</li>
-                                            <li><strong>Type Checking:</strong> TypeScript with strict configuration</li>
-                                            <li><strong>Database Migrations:</strong> Drizzle Kit</li>
-                                            <li><strong>Environment:</strong> Development with hot reloading via Vite</li>
-                                        </ul>
-                                    </div>
-                                    
-                                    <div class="tech-section">
-                                        <h5>Key Libraries</h5>
-                                        <ul>
-                                            <li><strong>Validation:</strong> Zod schemas for runtime type checking</li>
-                                            <li><strong>Date Handling:</strong> date-fns</li>
-                                            <li><strong>Geospatial:</strong> Haversine formula for distance calculations</li>
-                                            <li><strong>File Handling:</strong> Sharp for image processing</li>
-                                            <li><strong>WebSockets:</strong> ws library for real-time features</li>
-                                        </ul>
-                                    </div>
-                                </div>
-                            </div>
+            <div class="deck-projects-grid">
+                <div class="deck-project-card">
+                    <div class="project-icon">
+                        <i data-feather="monitor"></i>
+                    </div>
+                    <div class="project-content">
+                        <h3 class="project-title">Eagle Video Solutions</h3>
+                        <p class="project-type">Website</p>
+                        <p class="project-description">Professional video production company website featuring portfolio showcase, service offerings, and client testimonials with modern responsive design.</p>
+                        <div class="project-tech-tags">
+                            <span class="tech-tag">React</span>
+                            <span class="tech-tag">TypeScript</span>
+                            <span class="tech-tag">Tailwind</span>
+                            <span class="tech-tag">Vite</span>
                         </div>
                     </div>
-                    <div class="project-image-column">
-                        <div class="app-preview">
-                            <img src="images/spotr-app-preview.png" alt="SPOTR App Preview" class="spotr-preview-image">
-                        </div>
+                    <div class="project-status-card">
+                        <span class="status-badge planning">PLANNING STAGE</span>
                     </div>
                 </div>
                 
-                <div class="project-status-section">
-                    <div class="project-status">
-                        <span class="status-badge in-progress">IN PROGRESS</span>
-                        <span class="phase-indicator">Research → Design → Prototype → Development → Testing</span>
+                <div class="deck-project-card">
+                    <div class="project-icon">
+                        <i data-feather="smartphone"></i>
                     </div>
-                    
-                    <div class="development-timeline">
-                    <div class="timeline-phase completed">
-                        <div class="phase-icon">
-                            <i data-feather="search"></i>
-                        </div>
-                        <div class="phase-content">
-                            <h4>UX Research & Planning</h4>
-                            <p>User personas, competitive analysis, and feature planning using FigJam boards</p>
-                            <div class="phase-links">
-                                <a href="https://www.figma.com/board/X7TUfeV4ryFyeahpv8HSkX/River-Spotting-App" target="_blank" class="phase-link">
-                                    <i data-feather="external-link"></i>
-                                    View Research Board
-                                </a>
-                            </div>
+                    <div class="project-content">
+                        <h3 class="project-title">Meal Prep Service</h3>
+                        <p class="project-type">Mobile App</p>
+                        <p class="project-description">Subscription-based meal planning and delivery app with custom dietary preferences, nutritionist consultations, and automated meal scheduling.</p>
+                        <div class="project-tech-tags">
+                            <span class="tech-tag">React Native</span>
+                            <span class="tech-tag">Node.js</span>
+                            <span class="tech-tag">PostgreSQL</span>
+                            <span class="tech-tag">Stripe</span>
                         </div>
                     </div>
-                    
-                    <div class="timeline-phase completed">
-                        <div class="phase-icon">
-                            <i data-feather="layout"></i>
-                        </div>
-                        <div class="phase-content">
-                            <h4>Wireframes & User Flow</h4>
-                            <p>Low-fidelity wireframes mapping core user journeys and app architecture</p>
-                            <div class="phase-links">
-                                <a href="https://www.figma.com/design/tJRQdPA3Vy4M7M6sYm1rhn/SPOTR-Wireframes" target="_blank" class="phase-link">
-                                    <i data-feather="external-link"></i>
-                                    View Wireframes
-                                </a>
-                            </div>
-                        </div>
-                    </div>
-                    
-                    <div class="timeline-phase completed">
-                        <div class="phase-icon">
-                            <i data-feather="smartphone"></i>
-                        </div>
-                        <div class="phase-content">
-                            <h4>High-Fidelity Prototype</h4>
-                            <p>Interactive prototype with refined UI design and micro-interactions</p>
-                            <div class="phase-status">Visual interface and component library completed</div>
-                        </div>
-                    </div>
-                    
-                    <div class="timeline-phase in-progress">
-                        <div class="phase-icon">
-                            <i data-feather="code"></i>
-                        </div>
-                        <div class="phase-content">
-                            <h4>Gen-AI Development</h4>
-                            <p>Leveraging AI tools for rapid development and feature implementation</p>
-                            <div class="phase-status">Currently building React Native application</div>
-                        </div>
-                    </div>
-                    
-                    <div class="timeline-phase planning">
-                        <div class="phase-icon">
-                            <i data-feather="check-circle"></i>
-                        </div>
-                        <div class="phase-content">
-                            <h4>Test Automation</h4>
-                            <p>Comprehensive testing strategy using Playwright and mobile testing frameworks</p>
-                            <div class="phase-status">Planning QA automation and test case development</div>
-                        </div>
-                        </div>
+                    <div class="project-status-card">
+                        <span class="status-badge planning">PLANNING STAGE</span>
                     </div>
                 </div>
             </div>
