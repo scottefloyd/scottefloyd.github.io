@@ -393,11 +393,15 @@ body {
     background: var(--bg-secondary);
 }
 
-.story-content {
-    display: grid;
-    grid-template-columns: 2fr 1fr;
-    gap: var(--space-16);
-    align-items: start;
+.story-paragraphs {
+    max-width: 800px;
+    margin: 0 auto var(--space-16) auto;
+    text-align: center;
+}
+
+.story-bottom-section {
+    display: flex;
+    justify-content: flex-end;
     margin-bottom: var(--space-16);
 }
 
@@ -426,8 +430,7 @@ body {
     border: 1px solid var(--border-color);
     border-radius: 20px;
     padding: var(--space-8);
-    position: sticky;
-    top: var(--space-8);
+    max-width: 400px;
 }
 
 [data-theme="dark"] .drives-me-box {
@@ -1033,7 +1036,7 @@ body {
         align-items: center;
     }
     
-    .story-content {
+    .story-bottom-section {
         grid-template-columns: 1fr;
         gap: var(--space-8);
     }
