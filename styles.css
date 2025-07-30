@@ -580,6 +580,21 @@ body {
     overflow: hidden;
 }
 
+.pdf-badge {
+    position: absolute;
+    bottom: 12px;
+    right: 12px;
+    background: #ef4444;
+    color: white;
+    padding: 4px 8px;
+    border-radius: 4px;
+    font-size: var(--font-size-xs);
+    font-weight: 600;
+    text-transform: uppercase;
+    letter-spacing: 0.5px;
+    box-shadow: 0 2px 4px rgba(0, 0, 0, 0.1);
+}
+
 .project-placeholder {
     width: 100%;
     height: 100%;
