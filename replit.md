@@ -95,6 +95,13 @@ The application follows a simple client-side architecture with no backend depend
 ## Recent Changes
 
 ### Latest Updates (July 30, 2025)
+- **Added new "Current Work" section**: Created comprehensive section showcasing SPOTR app development with timeline phases, project status, and development progression
+- **Restructured navigation**: Added "Current Work" and "Past Projects" navigation items to properly organize content
+- **Updated hero CTA**: Changed primary button to link to Current Work section instead of projects
+- **Renamed projects section**: Changed "Featured Projects" to "Past Projects" with updated tagline: "A collection of my past work spanning bootcamp, work, and personal projects"
+- **SPOTR app showcase**: Detailed timeline showing UX Research → Wireframes → Prototyping → Gen-AI Development → Test Automation phases
+- **Integrated Figma links**: Added direct links to SPOTR wireframes and research board for authentic project documentation
+- **Enhanced project status indicators**: Visual timeline with completed, in-progress, and upcoming phases with appropriate styling
 - **Updated hero description**: Changed to results-focused copy: "From catching bugs before they reach users to building AI solutions that streamline workflows - I help businesses deliver quality software with confidence."
 - **Replaced skills section with narrative format**: Removed percentage-based skill bars and replaced with story-driven descriptions showing real work applications at companies like Illumina and BASF
 - **Added creative font styling**: Applied Dancing Script font to name in navigation header for elegant modern cursive calligraphy aesthetic
