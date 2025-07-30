@@ -110,11 +110,32 @@ body {
 }
 
 .nav-logo {
-    font-size: var(--font-size-xl);
-    font-weight: 700;
+    font-family: 'Dancing Script', cursive;
+    font-size: 1.8rem;
+    font-weight: 600;
     color: var(--text-primary);
     text-decoration: none;
     transition: var(--transition);
+}
+
+/* Alternative font options for .nav-logo */
+.nav-logo.allura {
+    font-family: 'Allura', cursive;
+    font-size: 2rem;
+    font-weight: 400;
+}
+
+.nav-logo.great-vibes {
+    font-family: 'Great Vibes', cursive;
+    font-size: 1.8rem;
+    font-weight: 400;
+}
+
+.nav-logo.playfair {
+    font-family: 'Playfair Display', serif;
+    font-size: 1.5rem;
+    font-weight: 600;
+    font-style: italic;
 }
 
 .nav-logo:hover {
