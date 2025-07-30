@@ -767,6 +767,105 @@ body {
     background: oklab(0.944144 0.00154236 -0.00510991 / 0.15);
 }
 
+/* Projects On Deck Section */
+.projects-on-deck {
+    padding: var(--space-16) 0 0 0;
+}
+
+.deck-projects-grid {
+    display: grid;
+    grid-template-columns: 1fr 1fr;
+    gap: var(--space-8);
+    max-width: 1000px;
+    margin: 0 auto;
+}
+
+.deck-project-card {
+    background: var(--bg-card);
+    border-radius: 20px;
+    padding: var(--space-8);
+    border: 1px solid var(--border-color);
+    transition: var(--transition);
+    position: relative;
+    overflow: hidden;
+}
+
+.deck-project-card::before {
+    content: '';
+    position: absolute;
+    top: 0;
+    left: 0;
+    right: 0;
+    height: 4px;
+    background: linear-gradient(135deg, #f59e0b, #fbbf24);
+}
+
+.deck-project-card:hover {
+    transform: translateY(-4px);
+    box-shadow: 0 12px 40px rgba(0, 0, 0, 0.15);
+    border-color: #f59e0b;
+}
+
+.deck-project-header {
+    display: flex;
+    justify-content: space-between;
+    align-items: flex-start;
+    margin-bottom: var(--space-6);
+}
+
+.deck-project-icon {
+    width: 56px;
+    height: 56px;
+    background: linear-gradient(135deg, #f59e0b, #fbbf24);
+    border-radius: 16px;
+    display: flex;
+    align-items: center;
+    justify-content: center;
+    color: white;
+    box-shadow: 0 4px 16px rgba(245, 158, 11, 0.3);
+}
+
+.deck-project-icon svg {
+    width: 28px;
+    height: 28px;
+    stroke-width: 2;
+}
+
+.deck-project-status .status-badge.planning {
+    background: #f59e0b;
+    color: white;
+    padding: var(--space-2) var(--space-4);
+    border-radius: 20px;
+    font-size: var(--font-size-xs);
+    font-weight: 700;
+    text-transform: uppercase;
+    letter-spacing: 0.8px;
+    box-shadow: 0 2px 8px rgba(245, 158, 11, 0.3);
+}
+
+.deck-project-title {
+    font-family: ui-sans-serif, system-ui, sans-serif;
+    font-size: var(--font-size-2xl);
+    font-weight: 600;
+    margin-bottom: var(--space-2);
+    color: var(--text-primary);
+}
+
+.deck-project-type {
+    font-size: var(--font-size-sm);
+    font-weight: 700;
+    color: #f59e0b;
+    text-transform: uppercase;
+    letter-spacing: 1px;
+    margin-bottom: var(--space-4);
+}
+
+.deck-project-description {
+    color: var(--text-secondary);
+    line-height: 1.6;
+    font-size: var(--font-size-base);
+}
+
 .current-project {
     max-width: 1000px;
     margin: 0 auto;
@@ -2197,6 +2296,15 @@ body {
     
     .projects-grid {
         grid-template-columns: 1fr;
+    }
+    
+    .deck-projects-grid {
+        grid-template-columns: 1fr;
+        gap: var(--space-6);
+    }
+    
+    .deck-project-card {
+        margin: 0 var(--space-2);
     }
     
     .tech-stack {
