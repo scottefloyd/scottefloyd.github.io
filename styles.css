@@ -424,7 +424,6 @@ body {
 
 .drives-me-box {
     background: linear-gradient(to right, oklab(0.107362 0.00829332 -0.0438692 / 0.1) 0%, oklab(0.939599 -0.000509322 -0.00574869 / 0.2) 100%);
-    border: 1px solid var(--border-color);
     border-radius: 20px;
     padding: var(--space-8);
     max-width: 400px;
