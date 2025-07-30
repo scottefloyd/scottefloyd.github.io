@@ -4,6 +4,7 @@
     <meta charset="UTF-8">
     <meta name="viewport" content="width=device-width, initial-scale=1.0">
     <title>Resume - Scott Floyd</title>
+    <meta name="robots" content="noindex, nofollow">
     <link rel="stylesheet" href="styles.css">
     <link href="https://fonts.googleapis.com/css2?family=Inter:wght@300;400;500;600;700&display=swap" rel="stylesheet">
     <script src="https://unpkg.com/feather-icons"></script>
@@ -53,7 +54,7 @@
                         <i data-feather="download"></i>
                         <span>Download PDF</span>
                     </a>
-                    <a href="mailto:scottefloyd@gmail.com" class="btn btn-secondary">
+                    <a href="#" class="btn btn-secondary obfuscated-email-link" data-user="scottefloyd" data-domain="gmail.com">
                         <i data-feather="mail"></i>
                         <span>Get in Touch</span>
                     </a>
@@ -73,11 +74,11 @@
                         <h3 class="section-title">Contact</h3>
                         <div class="contact-item">
                             <i data-feather="mail"></i>
-                            <span>scottefloyd@gmail.com</span>
+                            <span class="obfuscated-email" data-user="scottefloyd" data-domain="gmail.com"></span>
                         </div>
                         <div class="contact-item">
                             <i data-feather="phone"></i>
-                            <span>(734) 883-5606</span>
+                            <span class="obfuscated-phone" data-phone="7348835606"></span>
                         </div>
                         <div class="contact-item">
                             <i data-feather="globe"></i>
@@ -272,5 +273,38 @@
 
     <!-- Scripts -->
     <script src="script.js"></script>
+    <script>
+        // Contact obfuscation script
+        document.addEventListener('DOMContentLoaded', function() {
+            // Handle email obfuscation
+            const emailElements = document.querySelectorAll('.obfuscated-email');
+            emailElements.forEach(element => {
+                const user = element.getAttribute('data-user');
+                const domain = element.getAttribute('data-domain');
+                if (user && domain) {
+                    element.textContent = user + '@' + domain;
+                }
+            });
+            
+            // Handle email link obfuscation
+            const emailLinks = document.querySelectorAll('.obfuscated-email-link');
+            emailLinks.forEach(link => {
+                const user = link.getAttribute('data-user');
+                const domain = link.getAttribute('data-domain');
+                if (user && domain) {
+                    link.href = 'mailto:' + user + '@' + domain;
+                }
+            });
+            
+            // Handle phone obfuscation
+            const phoneElements = document.querySelectorAll('.obfuscated-phone');
+            phoneElements.forEach(element => {
+                const phone = element.getAttribute('data-phone');
+                if (phone && phone.length === 10) {
+                    element.textContent = `(${phone.slice(0,3)}) ${phone.slice(3,6)}-${phone.slice(6)}`;
+                }
+            });
+        });
+    </script>
 </body>
 </html>
