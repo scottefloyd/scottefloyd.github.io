@@ -777,7 +777,7 @@ body {
     grid-template-columns: 1fr 400px;
     gap: var(--space-16);
     align-items: start;
-    margin-bottom: var(--space-16);
+    margin-bottom: var(--space-8);
 }
 
 .project-description-column {
@@ -788,6 +788,8 @@ body {
     display: flex;
     justify-content: center;
     align-items: flex-start;
+    position: sticky;
+    top: var(--space-8);
 }
 
 .app-preview {
@@ -805,12 +807,17 @@ body {
 }
 
 .project-status-section {
+    margin-top: var(--space-12);
     margin-bottom: var(--space-16);
     padding: var(--space-8);
     background: var(--bg-card);
     border-radius: 16px;
     border: 1px solid var(--border-color);
     text-align: center;
+}
+
+.project-status-section .project-status {
+    margin-bottom: var(--space-8);
 }
 
 .project-title {
@@ -1178,6 +1185,7 @@ body {
     .project-image-column {
         order: 1;
         justify-content: center;
+        position: static;
     }
     
     .app-preview {
@@ -1186,6 +1194,7 @@ body {
     
     .project-status-section {
         order: 3;
+        margin-top: var(--space-8);
     }
     
     .project-status {
