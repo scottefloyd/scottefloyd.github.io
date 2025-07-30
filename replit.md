@@ -95,6 +95,16 @@ The application follows a simple client-side architecture with no backend depend
 ## Recent Changes
 
 ### Latest Updates (July 30, 2025)
+- **Enhanced project portfolio with authentic content**:
+  - Downloaded authentic images from Scott's repository: photobook.jpeg, a2.png, kiter.jpg, boogie-preview.jpg
+  - Replaced all placeholder graphics with real project images
+  - Successfully downloaded all PDF files: task analysis, usability reports, survey results
+  - Fixed all PDF links to point to correctly downloaded assets in /assets folder
+- **Improved project card interactions**:
+  - Added distinct hover icons: eye icon for case studies, file-text icon for PDFs
+  - Implemented tag-based filtering system supporting all project tags (UX Research, Figma, Prototyping, etc.)
+  - Added subtle PDF badges positioned at bottom of project content with light styling
+  - Enhanced filtering JavaScript to match both categories and individual tags
 - **Updated cycling text**: Changed to "Human, Quality Engineer, Problem Solver, Bug Hunter, Gen-AI Tinkerer, Collaborator, Idea Guy" with "I'm a Creative" prefix
 - **Updated tech stack**: Changed to "Cypress, TypeScript, Agile, Playwright, GenAI" in hero section
 - **Refined expertise cards**: Updated descriptions to be more accurate and professional:
