@@ -1,0 +1,371 @@
+<!DOCTYPE html>
+<html lang="en">
+<head>
+    <meta charset="UTF-8">
+    <meta name="viewport" content="width=device-width, initial-scale=1.0">
+    <title>Cyclist Case Study - Scott Floyd</title>
+    <meta name="description" content="UX design case study for Cyclist, a community website that helps cyclists find bike shops, trails, and service centers.">
+    
+    <!-- Fonts -->
+    <link href="https://fonts.googleapis.com/css2?family=Inter:wght@300;400;500;600;700;800&display=swap" rel="stylesheet">
+    
+    <!-- Icons -->
+    <script src="https://unpkg.com/feather-icons"></script>
+    
+    <!-- Styles -->
+    <link rel="stylesheet" href="styles.css">
+    
+    <style>
+        .case-study-header {
+            padding: 120px 0 80px 0;
+            background: var(--bg-primary);
+        }
+        
+        .case-study-title {
+            font-family: ui-sans-serif, system-ui, sans-serif;
+            font-size: 3.5rem;
+            font-weight: 400;
+            margin-bottom: var(--space-6);
+            color: var(--text-primary);
+        }
+        
+        .case-study-subtitle {
+            font-size: var(--font-size-xl);
+            color: var(--text-secondary);
+            margin-bottom: var(--space-12);
+            max-width: 600px;
+        }
+        
+        .case-study-meta {
+            display: grid;
+            grid-template-columns: repeat(auto-fit, minmax(200px, 1fr));
+            gap: var(--space-8);
+            background: var(--bg-card);
+            padding: var(--space-8);
+            border-radius: 16px;
+            margin-bottom: var(--space-16);
+        }
+        
+        .meta-item h4 {
+            font-family: ui-sans-serif, system-ui, sans-serif;
+            font-size: var(--font-size-sm);
+            font-weight: 600;
+            text-transform: uppercase;
+            color: var(--accent-primary);
+            margin-bottom: var(--space-2);
+            letter-spacing: 0.05em;
+        }
+        
+        .meta-item p {
+            color: var(--text-primary);
+            font-weight: 500;
+            margin: 0;
+        }
+        
+        .case-study-content {
+            max-width: 800px;
+            margin: 0 auto;
+            padding: 0 var(--space-6);
+        }
+        
+        .case-study-section {
+            margin-bottom: var(--space-16);
+        }
+        
+        .section-title {
+            font-family: ui-sans-serif, system-ui, sans-serif;
+            font-size: var(--font-size-3xl);
+            font-weight: 400;
+            margin-bottom: var(--space-6);
+            color: var(--text-primary);
+        }
+        
+        .case-study-image {
+            width: 100%;
+            border-radius: 12px;
+            margin: var(--space-8) 0;
+            box-shadow: var(--shadow);
+        }
+        
+        .highlight-box {
+            background: var(--bg-card);
+            padding: var(--space-8);
+            border-radius: 16px;
+            margin: var(--space-8) 0;
+            border-left: 4px solid var(--accent-primary);
+        }
+        
+        .quote-box {
+            background: var(--bg-card);
+            padding: var(--space-8);
+            border-radius: 16px;
+            margin: var(--space-8) 0;
+            border-left: 4px solid var(--accent-secondary);
+            font-style: italic;
+            font-size: var(--font-size-lg);
+        }
+        
+        .back-link {
+            display: inline-flex;
+            align-items: center;
+            gap: var(--space-2);
+            color: var(--text-secondary);
+            text-decoration: none;
+            margin-bottom: var(--space-8);
+            font-weight: 500;
+            transition: var(--transition);
+        }
+        
+        .back-link:hover {
+            color: var(--accent-primary);
+        }
+        
+        .process-grid {
+            display: grid;
+            grid-template-columns: repeat(auto-fit, minmax(200px, 1fr));
+            gap: var(--space-6);
+            margin: var(--space-8) 0;
+        }
+        
+        .process-step {
+            background: var(--bg-card);
+            padding: var(--space-6);
+            border-radius: 12px;
+            text-align: center;
+        }
+        
+        .process-step h4 {
+            color: var(--accent-primary);
+            margin-bottom: var(--space-3);
+        }
+        
+        @media (max-width: 768px) {
+            .case-study-title {
+                font-size: 2.5rem;
+            }
+            
+            .case-study-meta {
+                grid-template-columns: 1fr;
+            }
+        }
+    </style>
+</head>
+<body>
+    <!-- Navigation -->
+    <nav class="nav">
+        <div class="nav-container">
+            <a href="index.html" class="nav-logo">Scott Floyd</a>
+            <ul class="nav-menu">
+                <li><a href="index.html#home" class="nav-link">Home</a></li>
+                <li><a href="index.html#story" class="nav-link">My Story</a></li>
+                <li><a href="index.html#projects" class="nav-link">Work</a></li>
+                <li><a href="index.html#contact" class="nav-link">Contact</a></li>
+            </ul>
+            <div style="display: flex; align-items: center;">
+                <button class="theme-toggle" id="themeToggle">
+                    <i data-feather="sun"></i>
+                </button>
+                <button class="nav-toggle">
+                    <span></span>
+                    <span></span>
+                    <span></span>
+                </button>
+            </div>
+        </div>
+    </nav>
+
+    <!-- Case Study Header -->
+    <section class="case-study-header">
+        <div class="container">
+            <div class="case-study-content">
+                <a href="index.html#projects" class="back-link">
+                    <i data-feather="arrow-left"></i>
+                    Back to Portfolio
+                </a>
+                
+                <h1 class="case-study-title">Cyclist</h1>
+                <p class="case-study-subtitle">
+                    A community website that helps cyclists find bike shops, trails, and service centers.
+                </p>
+                
+                <div class="case-study-meta">
+                    <div class="meta-item">
+                        <h4>My Role</h4>
+                        <p>User Research, User Testing, UX Design</p>
+                    </div>
+                    <div class="meta-item">
+                        <h4>Tools</h4>
+                        <p>FigJam, Figma</p>
+                    </div>
+                    <div class="meta-item">
+                        <h4>Timeline</h4>
+                        <p>June - July 2021 (3 weeks)</p>
+                    </div>
+                    <div class="meta-item">
+                        <h4>Team</h4>
+                        <p>Scott Floyd, Alexis Ray, Spencer Sayer, Robin Looney</p>
+                    </div>
+                </div>
+            </div>
+        </div>
+    </section>
+
+    <!-- Case Study Content -->
+    <section class="case-study-content">
+        <div class="case-study-section">
+            <h2 class="section-title">About the Project</h2>
+            <p>As part of a community effort to reduce carbon emissions and encourage alternate means of transportation, the city announced bike servicing areas that will be made available to the public. At these facilities, bicyclists will be able to find stations and tools to repair and maintain their bikes, and experts who can help them by appointment.</p>
+        </div>
+
+        <div class="case-study-section">
+            <h2 class="section-title">The Problem</h2>
+            <p>As good for the environment as bicycling is, there are many barriers potential cyclists face to riding more often. We explored the many concerns and pain points people have when it comes to using bikes.</p>
+            
+            <div class="highlight-box">
+                <h4>Challenge</h4>
+                <p>How might we create a platform that helps cyclists easily find bike shops, trails, service centers, and connect with the cycling community?</p>
+            </div>
+        </div>
+
+        <div class="case-study-section">
+            <h2 class="section-title">Our Approach</h2>
+            <div class="process-grid">
+                <div class="process-step">
+                    <h4>1. Research</h4>
+                    <p>User interviews and surveys to understand cyclist needs and pain points</p>
+                </div>
+                <div class="process-step">
+                    <h4>2. Define</h4>
+                    <p>Created personas and user journey maps based on research findings</p>
+                </div>
+                <div class="process-step">
+                    <h4>3. Ideate</h4>
+                    <p>Brainstormed solutions and sketched initial concepts</p>
+                </div>
+                <div class="process-step">
+                    <h4>4. Prototype</h4>
+                    <p>Built wireframes and high-fidelity prototypes for testing</p>
+                </div>
+            </div>
+        </div>
+
+        <div class="case-study-section">
+            <h2 class="section-title">User Research</h2>
+            <p>We interviewed 8 cyclists to learn more about their concerns and needs. We also created a 16-question survey shared over social media to understand mobility needs and gather broader insights.</p>
+            
+            <h3>Key Takeaways:</h3>
+            <ul>
+                <li>Many cyclists use apps while biking for navigation and tracking</li>
+                <li>Most are aware of bike service centers and have used them in the past</li>
+                <li>Expanded locations and amenities would be welcomed</li>
+                <li>Safety concerns are a major barrier to more frequent cycling</li>
+                <li>E-bike riders have particular maintenance needs</li>
+            </ul>
+            
+            <div class="quote-box">
+                "I had to get a new controller on my e-bike, it would have been nice to get a quote from multiple shops, because it was expensive!"
+                <br><br>
+                <em>- Research Participant</em>
+            </div>
+        </div>
+
+        <div class="case-study-section">
+            <h2 class="section-title">User Personas</h2>
+            <p>Based on our research, we created personas representing different types of cyclists and their unique needs.</p>
+            
+            <div class="highlight-box">
+                <h4>Alex - The Commuter Cyclist</h4>
+                <p>Uses cycling as primary transportation to work. Needs reliable routes, service locations, and safety information. Values efficiency and dependability.</p>
+            </div>
+            
+            <div class="highlight-box">
+                <h4>Sarah - The Recreational Rider</h4>
+                <p>Enjoys weekend bike rides and exploring new trails. Interested in discovering new routes, connecting with other cyclists, and finding scenic paths.</p>
+            </div>
+        </div>
+
+        <div class="case-study-section">
+            <h2 class="section-title">Design Solutions</h2>
+            <p>We focused on creating a comprehensive platform that addresses the core needs identified in our research.</p>
+            
+            <h3>Key Features:</h3>
+            <ul>
+                <li><strong>Interactive Map:</strong> Find bike shops, trails, and service centers with location-based search</li>
+                <li><strong>Service Booking:</strong> Schedule appointments with bike repair experts</li>
+                <li><strong>Route Planning:</strong> Discover safe, scenic cycling routes</li>
+                <li><strong>Community Features:</strong> Connect with local cycling groups and events</li>
+                <li><strong>Reviews & Ratings:</strong> Help cyclists make informed decisions about services</li>
+            </ul>
+        </div>
+
+        <div class="case-study-section">
+            <h2 class="section-title">User Testing & Iteration</h2>
+            <p>We conducted usability testing throughout the design process to validate our solutions and identify areas for improvement.</p>
+            
+            <div class="highlight-box">
+                <h4>Testing Results</h4>
+                <ul>
+                    <li>92% task completion rate for finding nearby bike shops</li>
+                    <li>85% user satisfaction with the booking process</li>
+                    <li>Users particularly appreciated the integrated map and list views</li>
+                    <li>Safety information features were highly valued</li>
+                </ul>
+            </div>
+            
+            <h3>Key Learnings:</h3>
+            <ul>
+                <li>Location-based features are essential for cyclist apps</li>
+                <li>Users want both map and list view options for different contexts</li>
+                <li>Safety information significantly impacts user confidence</li>
+                <li>Simple, intuitive navigation is crucial for mobile use while cycling</li>
+            </ul>
+        </div>
+
+        <div class="case-study-section">
+            <h2 class="section-title">Final Design</h2>
+            <p>The final design successfully addressed the main pain points identified in our research while providing an intuitive, comprehensive platform for the cycling community.</p>
+            
+            <div class="highlight-box">
+                <h4>Impact</h4>
+                <p>The design created a centralized hub for cyclists to find services, plan routes, and connect with their community, ultimately supporting the city's goals of promoting cycling as sustainable transportation.</p>
+            </div>
+        </div>
+    </section>
+
+    <!-- Footer -->
+    <footer class="footer">
+        <div class="container">
+            <div class="footer-content">
+                <div class="footer-section">
+                    <h3>Scott Floyd</h3>
+                    <p>QA Automation Expert & AI Consultant</p>
+                </div>
+                
+                <div class="footer-section">
+                    <h4>Connect</h4>
+                    <div class="social-links">
+                        <a href="https://linkedin.com/in/scottefloyd" target="_blank">
+                            <i data-feather="linkedin"></i>
+                        </a>
+                        <a href="https://twitter.com/scottydroid" target="_blank">
+                            <i data-feather="twitter"></i>
+                        </a>
+                        <a href="mailto:scottefloyd@gmail.com">
+                            <i data-feather="mail"></i>
+                        </a>
+                    </div>
+                </div>
+            </div>
+            
+            <div class="footer-bottom">
+                <p>&copy; 2025 Scott Floyd. All rights reserved.</p>
+            </div>
+        </div>
+    </footer>
+
+    <script src="script.js"></script>
+    <script>
+        feather.replace();
+    </script>
+</body>
+</html>

@@ -91,3 +91,30 @@ The application follows a simple client-side architecture with no backend depend
 - No transpilation required - modern browser support assumed
 - Mobile-first responsive design approach
 - Progressive enhancement philosophy
+
+## Recent Changes
+
+### Latest Updates (July 30, 2025)
+- **Updated cycling text**: Changed to "Human, Quality Engineer, Problem Solver, Bug Hunter, Gen-AI Tinkerer, Collaborator, Idea Guy" with "I'm a Creative" prefix
+- **Updated tech stack**: Changed to "Cypress, TypeScript, Agile, Playwright, GenAI" in hero section
+- **Refined expertise cards**: Updated descriptions to be more accurate and professional:
+  - Test Automation: "Ensuring quality with top automation frameworks"
+  - Design & UX: "Foundational knowledge of best practices in design & UX" 
+  - Development: "Experience collaborating with dev teams on complex projects"
+  - Vibe Coding: "Jumping into the Brave New World of GenAI"
+- **Replaced placeholder projects**: Added real projects from Scott's UX portfolio repository:
+  - Rent-All Case Study (full HTML page created)
+  - Cyclist Community Website (full HTML page created)
+  - City Website Task Analysis (PDF link)
+  - Photobook Usability Report (PDF link)
+  - Boogie Battle Mobile App (PDF link)
+  - Extreme Sports App Survey (PDF link)
+- **Created dedicated case study pages**: Built comprehensive case study pages with proper navigation, styling, and detailed content
+- **Removed all borders**: Eliminated border styling from expertise cards and "What Drives Me" box for clean, modern appearance
+
+### Previous Updates
+- Completed full redesign with modern dark/light theme system and cycling text animation
+- Implemented comprehensive typography overhaul: all headings now use system font stack (ui-sans-serif, system-ui) with 400 font weight for modern, light appearance
+- Added subtle corner gradients to hero section (teal top-right, yellow bottom-left) matching Figma reference
+- Restructured "My Story" section with centered title, left-justified story text, "What Drives Me" gradient box on right, and expertise cards at bottom
+- Applied custom oklab color scheme throughout (story, skills, footer sections) and removed all borders for clean, modern appearance

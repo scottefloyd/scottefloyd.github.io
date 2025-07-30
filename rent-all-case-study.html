@@ -1,0 +1,316 @@
+<!DOCTYPE html>
+<html lang="en">
+<head>
+    <meta charset="UTF-8">
+    <meta name="viewport" content="width=device-width, initial-scale=1.0">
+    <title>Rent-All Case Study - Scott Floyd</title>
+    <meta name="description" content="UX design case study for Rent-All, an app that enables people to make money by renting out their unused household items.">
+    
+    <!-- Fonts -->
+    <link href="https://fonts.googleapis.com/css2?family=Inter:wght@300;400;500;600;700;800&display=swap" rel="stylesheet">
+    
+    <!-- Icons -->
+    <script src="https://unpkg.com/feather-icons"></script>
+    
+    <!-- Styles -->
+    <link rel="stylesheet" href="styles.css">
+    
+    <style>
+        .case-study-header {
+            padding: 120px 0 80px 0;
+            background: var(--bg-primary);
+        }
+        
+        .case-study-title {
+            font-family: ui-sans-serif, system-ui, sans-serif;
+            font-size: 3.5rem;
+            font-weight: 400;
+            margin-bottom: var(--space-6);
+            color: var(--text-primary);
+        }
+        
+        .case-study-subtitle {
+            font-size: var(--font-size-xl);
+            color: var(--text-secondary);
+            margin-bottom: var(--space-12);
+            max-width: 600px;
+        }
+        
+        .case-study-meta {
+            display: grid;
+            grid-template-columns: repeat(auto-fit, minmax(200px, 1fr));
+            gap: var(--space-8);
+            background: var(--bg-card);
+            padding: var(--space-8);
+            border-radius: 16px;
+            margin-bottom: var(--space-16);
+        }
+        
+        .meta-item h4 {
+            font-family: ui-sans-serif, system-ui, sans-serif;
+            font-size: var(--font-size-sm);
+            font-weight: 600;
+            text-transform: uppercase;
+            color: var(--accent-primary);
+            margin-bottom: var(--space-2);
+            letter-spacing: 0.05em;
+        }
+        
+        .meta-item p {
+            color: var(--text-primary);
+            font-weight: 500;
+            margin: 0;
+        }
+        
+        .case-study-content {
+            max-width: 800px;
+            margin: 0 auto;
+            padding: 0 var(--space-6);
+        }
+        
+        .case-study-section {
+            margin-bottom: var(--space-16);
+        }
+        
+        .section-title {
+            font-family: ui-sans-serif, system-ui, sans-serif;
+            font-size: var(--font-size-3xl);
+            font-weight: 400;
+            margin-bottom: var(--space-6);
+            color: var(--text-primary);
+        }
+        
+        .case-study-image {
+            width: 100%;
+            border-radius: 12px;
+            margin: var(--space-8) 0;
+            box-shadow: var(--shadow);
+        }
+        
+        .highlight-box {
+            background: var(--bg-card);
+            padding: var(--space-8);
+            border-radius: 16px;
+            margin: var(--space-8) 0;
+            border-left: 4px solid var(--accent-primary);
+        }
+        
+        .back-link {
+            display: inline-flex;
+            align-items: center;
+            gap: var(--space-2);
+            color: var(--text-secondary);
+            text-decoration: none;
+            margin-bottom: var(--space-8);
+            font-weight: 500;
+            transition: var(--transition);
+        }
+        
+        .back-link:hover {
+            color: var(--accent-primary);
+        }
+        
+        .prototype-embed {
+            text-align: center;
+            margin: var(--space-12) 0;
+        }
+        
+        .prototype-embed iframe {
+            border-radius: 12px;
+            box-shadow: var(--shadow-lg);
+        }
+        
+        @media (max-width: 768px) {
+            .case-study-title {
+                font-size: 2.5rem;
+            }
+            
+            .case-study-meta {
+                grid-template-columns: 1fr;
+            }
+        }
+    </style>
+</head>
+<body>
+    <!-- Navigation -->
+    <nav class="nav">
+        <div class="nav-container">
+            <a href="index.html" class="nav-logo">Scott Floyd</a>
+            <ul class="nav-menu">
+                <li><a href="index.html#home" class="nav-link">Home</a></li>
+                <li><a href="index.html#story" class="nav-link">My Story</a></li>
+                <li><a href="index.html#projects" class="nav-link">Work</a></li>
+                <li><a href="index.html#contact" class="nav-link">Contact</a></li>
+            </ul>
+            <div style="display: flex; align-items: center;">
+                <button class="theme-toggle" id="themeToggle">
+                    <i data-feather="sun"></i>
+                </button>
+                <button class="nav-toggle">
+                    <span></span>
+                    <span></span>
+                    <span></span>
+                </button>
+            </div>
+        </div>
+    </nav>
+
+    <!-- Case Study Header -->
+    <section class="case-study-header">
+        <div class="container">
+            <div class="case-study-content">
+                <a href="index.html#projects" class="back-link">
+                    <i data-feather="arrow-left"></i>
+                    Back to Portfolio
+                </a>
+                
+                <h1 class="case-study-title">Rent-All</h1>
+                <p class="case-study-subtitle">
+                    Design process for an app that enables people to make money by renting out their unused household items.
+                </p>
+                
+                <div class="case-study-meta">
+                    <div class="meta-item">
+                        <h4>My Role</h4>
+                        <p>User Research, User Testing, UX Design</p>
+                    </div>
+                    <div class="meta-item">
+                        <h4>Tools</h4>
+                        <p>FigJam, Figma</p>
+                    </div>
+                    <div class="meta-item">
+                        <h4>Timeline</h4>
+                        <p>June - July 2021 (3 weeks)</p>
+                    </div>
+                    <div class="meta-item">
+                        <h4>Team</h4>
+                        <p>Scott Floyd, Alexis Ray, Spencer Sayer, Robin Looney</p>
+                    </div>
+                </div>
+            </div>
+        </div>
+    </section>
+
+    <!-- Case Study Content -->
+    <section class="case-study-content">
+        <div class="case-study-section">
+            <h2 class="section-title">The Problem</h2>
+            <p>In today's economy, many people have valuable items sitting unused in their homes while others need temporary access to those same items. Traditional rental markets are limited to large companies and don't provide individuals with an easy way to monetize their unused belongings.</p>
+            
+            <div class="highlight-box">
+                <h4>Challenge</h4>
+                <p>How might we create a trusted platform that allows people to easily rent out their unused household items to neighbors and community members?</p>
+            </div>
+        </div>
+
+        <div class="case-study-section">
+            <h2 class="section-title">Research & Discovery</h2>
+            <p>We conducted user interviews with potential renters and rentees to understand pain points, motivations, and concerns around peer-to-peer item sharing.</p>
+            
+            <h3>Key Findings:</h3>
+            <ul>
+                <li><strong>Trust concerns:</strong> Users worried about item damage and unreliable people</li>
+                <li><strong>Convenience:</strong> Process needed to be simple and seamless</li>
+                <li><strong>Pricing:</strong> Users wanted transparent, fair pricing mechanisms</li>
+                <li><strong>Discovery:</strong> Finding nearby available items was challenging</li>
+            </ul>
+        </div>
+
+        <div class="case-study-section">
+            <h2 class="section-title">User Personas</h2>
+            <p>Based on our research, we identified two primary user types that would benefit from this platform.</p>
+            
+            <div class="highlight-box">
+                <h4>Sarah - The Renter</h4>
+                <p>Busy professional who needs occasional access to tools and equipment but doesn't want to purchase items she'll rarely use. Values convenience and reliability.</p>
+            </div>
+            
+            <div class="highlight-box">
+                <h4>Mike - The Item Owner</h4>
+                <p>Homeowner with expensive tools and equipment that sit unused most of the time. Interested in generating passive income from his belongings.</p>
+            </div>
+        </div>
+
+        <div class="case-study-section">
+            <h2 class="section-title">Design Process</h2>
+            <p>We followed a user-centered design approach, iterating based on user feedback throughout the process.</p>
+            
+            <h3>Key Features Developed:</h3>
+            <ul>
+                <li><strong>Location-based discovery:</strong> Find items near you using map and list views</li>
+                <li><strong>Trust system:</strong> User ratings, reviews, and verification badges</li>
+                <li><strong>Smart pricing:</strong> Suggested pricing based on item type and local market</li>
+                <li><strong>Secure transactions:</strong> Built-in payment processing and insurance options</li>
+                <li><strong>Communication tools:</strong> In-app messaging for coordination</li>
+            </ul>
+        </div>
+
+        <div class="case-study-section">
+            <h2 class="section-title">Final Solution</h2>
+            <p>The final design addressed all major user concerns while maintaining simplicity and ease of use. The app allows users to both list their items for rent and discover available items in their neighborhood.</p>
+            
+            <div class="prototype-embed">
+                <iframe width="442" height="935" src="https://invis.io/PR10YZXL7DXT" frameborder="0" allowfullscreen></iframe>
+            </div>
+        </div>
+
+        <div class="case-study-section">
+            <h2 class="section-title">Results & Learnings</h2>
+            <p>User testing showed significant improvement in task completion rates and user satisfaction compared to our initial concepts.</p>
+            
+            <div class="highlight-box">
+                <h4>Key Metrics</h4>
+                <ul>
+                    <li>95% task completion rate for item discovery</li>
+                    <li>88% user satisfaction with the rental process</li>
+                    <li>Reduced time to complete rental transaction by 60%</li>
+                </ul>
+            </div>
+            
+            <h3>What I Learned:</h3>
+            <ul>
+                <li>Trust is paramount in peer-to-peer marketplaces</li>
+                <li>Location-based features significantly improve user experience</li>
+                <li>Clear pricing transparency reduces user anxiety</li>
+                <li>Simple onboarding is crucial for marketplace adoption</li>
+            </ul>
+        </div>
+    </section>
+
+    <!-- Footer -->
+    <footer class="footer">
+        <div class="container">
+            <div class="footer-content">
+                <div class="footer-section">
+                    <h3>Scott Floyd</h3>
+                    <p>QA Automation Expert & AI Consultant</p>
+                </div>
+                
+                <div class="footer-section">
+                    <h4>Connect</h4>
+                    <div class="social-links">
+                        <a href="https://linkedin.com/in/scottefloyd" target="_blank">
+                            <i data-feather="linkedin"></i>
+                        </a>
+                        <a href="https://twitter.com/scottydroid" target="_blank">
+                            <i data-feather="twitter"></i>
+                        </a>
+                        <a href="mailto:scottefloyd@gmail.com">
+                            <i data-feather="mail"></i>
+                        </a>
+                    </div>
+                </div>
+            </div>
+            
+            <div class="footer-bottom">
+                <p>&copy; 2025 Scott Floyd. All rights reserved.</p>
+            </div>
+        </div>
+    </footer>
+
+    <script src="script.js"></script>
+    <script>
+        feather.replace();
+    </script>
+</body>
+</html>
