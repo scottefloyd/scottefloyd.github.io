@@ -1,0 +1,37 @@
+<svg width="400" height="200" viewBox="0 0 400 200" xmlns="http://www.w3.org/2000/svg">
+  <defs>
+    <linearGradient id="cityGradient" x1="0%" y1="0%" x2="100%" y2="100%">
+      <stop offset="0%" style="stop-color:#4facfe"/>
+      <stop offset="100%" style="stop-color:#00f2fe"/>
+    </linearGradient>
+  </defs>
+  <rect width="400" height="200" fill="url(#cityGradient)"/>
+  <g fill="rgba(255,255,255,0.9)">
+    <!-- Buildings -->
+    <rect x="50" y="120" width="40" height="60" rx="3"/>
+    <rect x="100" y="100" width="35" height="80" rx="3"/>
+    <rect x="150" y="110" width="30" height="70" rx="3"/>
+    <rect x="190" y="90" width="45" height="90" rx="3"/>
+    <rect x="250" y="105" width="38" height="75" rx="3"/>
+    <rect x="295" y="115" width="32" height="65" rx="3"/>
+    
+    <!-- Windows -->
+    <rect x="55" y="130" width="6" height="8" fill="rgba(79,172,254,0.8)"/>
+    <rect x="65" y="130" width="6" height="8" fill="rgba(79,172,254,0.8)"/>
+    <rect x="55" y="145" width="6" height="8" fill="rgba(79,172,254,0.8)"/>
+    <rect x="65" y="145" width="6" height="8" fill="rgba(79,172,254,0.8)"/>
+    
+    <rect x="105" y="110" width="6" height="8" fill="rgba(79,172,254,0.8)"/>
+    <rect x="115" y="110" width="6" height="8" fill="rgba(79,172,254,0.8)"/>
+    <rect x="105" y="125" width="6" height="8" fill="rgba(79,172,254,0.8)"/>
+    <rect x="115" y="125" width="6" height="8" fill="rgba(79,172,254,0.8)"/>
+  </g>
+  
+  <!-- Title -->
+  <text x="200" y="50" text-anchor="middle" font-family="system-ui, -apple-system, sans-serif" font-size="24" font-weight="600" fill="white">
+    City Website
+  </text>
+  <text x="200" y="75" text-anchor="middle" font-family="system-ui, -apple-system, sans-serif" font-size="16" fill="rgba(255,255,255,0.9)">
+    Task Analysis
+  </text>
+</svg>
