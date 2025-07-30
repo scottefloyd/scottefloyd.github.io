@@ -312,6 +312,7 @@ body {
 }
 
 .hero-description {
+    font-family: ui-sans-serif, system-ui, sans-serif, "Apple Color Emoji", "Segoe UI Emoji", "Segoe UI Symbol", "Noto Color Emoji";
     font-size: var(--font-size-lg);
     color: var(--text-secondary);
     margin-bottom: 0.25rem;
