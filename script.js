@@ -451,6 +451,53 @@ class RetroTVChannels {
     }
 }
 
+// Expandable Tech Stack
+class ExpandableTechStack {
+    constructor() {
+        this.expandBtn = document.getElementById('expandTechStack');
+        this.techContent = document.getElementById('techContent');
+        this.init();
+    }
+
+    init() {
+        if (!this.expandBtn || !this.techContent) return;
+        
+        this.expandBtn.addEventListener('click', () => this.toggle());
+    }
+
+    toggle() {
+        const isExpanded = this.techContent.classList.contains('expanded');
+        
+        if (isExpanded) {
+            this.collapse();
+        } else {
+            this.expand();
+        }
+    }
+
+    expand() {
+        this.techContent.classList.add('expanded');
+        this.expandBtn.classList.add('expanded');
+        this.expandBtn.innerHTML = '<i data-feather="minus"></i>';
+        
+        // Re-initialize feather icons for the new minus icon
+        if (typeof feather !== 'undefined') {
+            feather.replace();
+        }
+    }
+
+    collapse() {
+        this.techContent.classList.remove('expanded');
+        this.expandBtn.classList.remove('expanded');
+        this.expandBtn.innerHTML = '<i data-feather="plus"></i>';
+        
+        // Re-initialize feather icons for the new plus icon
+        if (typeof feather !== 'undefined') {
+            feather.replace();
+        }
+    }
+}
+
 // Initialize everything when DOM is loaded
 document.addEventListener('DOMContentLoaded', () => {
     // Initialize Feather icons
@@ -468,6 +515,7 @@ document.addEventListener('DOMContentLoaded', () => {
     new SmoothScroll();
     new ScrollToTop();
     new RetroTVChannels();
+    new ExpandableTechStack();
 
     // Add loading complete class for CSS animations
     document.body.classList.add('loaded');

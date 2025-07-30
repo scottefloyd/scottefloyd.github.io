@@ -233,37 +233,64 @@
                         <p class="project-description">A mobile application designed to help outdoor enthusiasts discover and share scenic river locations, complete with community features, safety information, and accessibility details.</p>
                         
                         <div class="project-highlights-section">
-                            <h3>Key Features & Tech Stack</h3>
-                            <div class="project-highlights">
-                            <div class="highlight-card">
-                                <div class="card-header">
-                                    <div class="card-icon">
-                                        <i data-feather="star"></i>
-                                    </div>
-                                    <h4>Key Features</h4>
-                                </div>
-                                <ul>
-                                    <li><strong>Smart Location Discovery:</strong> AI-powered river spot recommendations based on user preferences</li>
-                                    <li><strong>Community Hub:</strong> User-generated reviews, photos, and real-time condition updates</li>
-                                    <li><strong>Safety First:</strong> Comprehensive safety ratings, accessibility info, and hazard alerts</li>
-                                    <li><strong>Weather Integration:</strong> Live weather, water levels, and optimal timing suggestions</li>
-                                    <li><strong>Social Features:</strong> Connect with fellow outdoor enthusiasts and share experiences</li>
-                                </ul>
-                            </div>
-                            <div class="highlight-card">
+                            <h3>Tech Stack</h3>
+                            <div class="expandable-tech-stack">
                                 <div class="card-header">
                                     <div class="card-icon">
                                         <i data-feather="code"></i>
                                     </div>
-                                    <h4>Tech Stack</h4>
+                                    <h4>Technical Implementation</h4>
+                                    <button class="expand-btn" id="expandTechStack">
+                                        <i data-feather="plus"></i>
+                                    </button>
                                 </div>
-                                <ul>
-                                    <li><strong>React Native & Expo:</strong> Cross-platform mobile development with native performance</li>
-                                    <li><strong>Firebase Suite:</strong> Authentication, Firestore database, and cloud storage</li>
-                                    <li><strong>Google Maps Platform:</strong> Advanced mapping, geocoding, and places API</li>
-                                    <li><strong>OpenWeather API:</strong> Real-time weather data and forecasting</li>
-                                    <li><strong>Figma & FigJam:</strong> Design system, prototyping, and collaborative planning</li>
-                                </ul>
+                                <div class="tech-content" id="techContent">
+                                    <div class="tech-section">
+                                        <h5>Frontend</h5>
+                                        <ul>
+                                            <li><strong>Framework:</strong> React 18 with TypeScript</li>
+                                            <li><strong>Build Tool:</strong> Vite for development and production builds</li>
+                                            <li><strong>UI Library:</strong> shadcn/ui components (built on Radix UI primitives)</li>
+                                            <li><strong>Styling:</strong> Tailwind CSS with custom theming</li>
+                                            <li><strong>Routing:</strong> Wouter for lightweight client-side routing</li>
+                                            <li><strong>State Management:</strong> TanStack Query (React Query) for server state</li>
+                                            <li><strong>Maps:</strong> MapLibre GL JS for interactive mapping</li>
+                                            <li><strong>Icons:</strong> Lucide React and React Icons</li>
+                                        </ul>
+                                    </div>
+                                    
+                                    <div class="tech-section">
+                                        <h5>Backend</h5>
+                                        <ul>
+                                            <li><strong>Runtime:</strong> Node.js with Express.js</li>
+                                            <li><strong>Language:</strong> TypeScript with ES modules</li>
+                                            <li><strong>Database:</strong> PostgreSQL (Neon serverless)</li>
+                                            <li><strong>Session Management:</strong> Express sessions with PostgreSQL storage</li>
+                                            <li><strong>Payment Processing:</strong> Stripe integration</li>
+                                        </ul>
+                                    </div>
+                                    
+                                    <div class="tech-section">
+                                        <h5>Development Tools</h5>
+                                        <ul>
+                                            <li><strong>Package Manager:</strong> npm</li>
+                                            <li><strong>Type Checking:</strong> TypeScript with strict configuration</li>
+                                            <li><strong>Database Migrations:</strong> Drizzle Kit</li>
+                                            <li><strong>Environment:</strong> Development with hot reloading via Vite</li>
+                                        </ul>
+                                    </div>
+                                    
+                                    <div class="tech-section">
+                                        <h5>Key Libraries</h5>
+                                        <ul>
+                                            <li><strong>Validation:</strong> Zod schemas for runtime type checking</li>
+                                            <li><strong>Date Handling:</strong> date-fns</li>
+                                            <li><strong>Geospatial:</strong> Haversine formula for distance calculations</li>
+                                            <li><strong>File Handling:</strong> Sharp for image processing</li>
+                                            <li><strong>WebSockets:</strong> ws library for real-time features</li>
+                                        </ul>
+                                    </div>
+                                </div>
                             </div>
                         </div>
                         </div>
