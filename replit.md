@@ -98,9 +98,12 @@ The application follows a simple client-side architecture with no backend depend
 - **Added new "Current Work" section**: Created comprehensive section showcasing SPOTR app development with timeline phases, project status, and development progression
 - **Restructured navigation**: Added "Current Work" and "Past Projects" navigation items to properly organize content
 - **Updated hero CTA**: Changed primary button to link to Current Work section instead of projects
-- **Renamed projects section**: Changed "Featured Projects" to "Past Projects" with updated tagline: "A collection of my past work spanning bootcamps, work deliverables, and personal project"
+- **Renamed projects section**: Changed "Featured Projects" to "Past Projects" with updated tagline: "A collection of my past work spanning bootcamps, work deliverables, and personal projects"
 - **SPOTR app showcase**: Detailed timeline showing UX Research → Wireframes → Hi-Fi Prototype → Gen-AI Development → Test Automation phases with current progress status
 - **Updated SPOTR app description**: Changed from general river location discovery to specific Michigan river shuttling service focus
+- **Refined Past Projects copy**: Updated subtitle to final version: "A collection of my past work spanning bootcamps, work deliverables, and personal projects"
+- **Fixed Current Work layout**: Resolved HTML structure issue preventing proper 50/50 column layout for SPOTR app image
+- **Enhanced status section alignment**: Added flexbox styling to properly align "IN PROGRESS" badge with phase indicator text
 - **Updated project timeline status**: UX research, wireframes, and hi-fi prototypes marked as completed with visual "COMPLETE" badges; Gen-AI development currently in progress; test automation in planning stage
 - **Redesigned Current Work layout**: Created two-column layout with project description on left and status/timeline on right; changed section description to be more generic about product development lifecycle
 - **Enhanced completed phase indicators**: Added distinctive "✓ COMPLETE" badges to first three timeline phases for clear visual separation
