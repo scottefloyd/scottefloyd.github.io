@@ -1572,12 +1572,77 @@ body {
     margin-bottom: var(--space-16);
 }
 
+/* Expandable Skill Categories */
+.expandable-skill-category {
+    background: var(--bg-card);
+    border: 1px solid var(--border-color);
+    border-radius: 16px;
+    overflow: hidden;
+    transition: var(--transition);
+}
+
+.skill-category-header {
+    display: flex;
+    justify-content: space-between;
+    align-items: center;
+    padding: var(--space-6);
+    cursor: pointer;
+    background: linear-gradient(135deg, var(--bg-card) 0%, rgba(79, 70, 229, 0.02) 100%);
+    border-bottom: 1px solid var(--border-color);
+}
+
+.skill-category-header:hover {
+    background: linear-gradient(135deg, var(--bg-card) 0%, rgba(79, 70, 229, 0.05) 100%);
+}
+
 .skills-narrative .skill-category h3 {
     font-family: ui-sans-serif, system-ui, sans-serif;
     font-size: var(--font-size-xl);
-    font-weight: 400;
-    margin-bottom: var(--space-6);
+    font-weight: 600;
+    margin: 0;
     color: var(--accent-primary);
+}
+
+.skill-expand-btn {
+    background: var(--accent-primary);
+    color: white;
+    border: none;
+    border-radius: 50%;
+    width: 32px;
+    height: 32px;
+    display: flex;
+    align-items: center;
+    justify-content: center;
+    cursor: pointer;
+    transition: var(--transition);
+    flex-shrink: 0;
+}
+
+.skill-expand-btn:hover {
+    background: var(--accent-secondary);
+    transform: scale(1.1);
+}
+
+.skill-expand-btn svg {
+    width: 16px;
+    height: 16px;
+    transition: transform 0.3s ease;
+}
+
+.skill-expand-btn.expanded svg {
+    transform: rotate(0deg);
+}
+
+.skill-items {
+    max-height: 0;
+    overflow: hidden;
+    transition: max-height 0.4s ease, padding 0.3s ease;
+    padding: 0 var(--space-6);
+}
+
+.skill-items.expanded {
+    max-height: 1000px;
+    padding: var(--space-6);
 }
 
 .skill-items {

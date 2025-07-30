@@ -542,9 +542,14 @@
             </div>
             
             <div class="skills-narrative">
-                <div class="skill-category">
-                    <h3>Test Automation & Quality</h3>
-                    <div class="skill-items">
+                <div class="skill-category expandable-skill-category">
+                    <div class="skill-category-header">
+                        <h3>Test Automation & Quality</h3>
+                        <button class="skill-expand-btn expanded" data-target="test-automation">
+                            <i data-feather="minus"></i>
+                        </button>
+                    </div>
+                    <div class="skill-items expanded" id="test-automation">
                         <div class="skill-item">
                             <h4>Cypress & Playwright</h4>
                             <p>Designed and executed automated test cases for e-commerce features at Illumina, covering cart functionality, form validation, and navigation flows across international site variations.</p>
@@ -560,9 +565,14 @@
                     </div>
                 </div>
                 
-                <div class="skill-category">
-                    <h3>Development & Programming</h3>
-                    <div class="skill-items">
+                <div class="skill-category expandable-skill-category">
+                    <div class="skill-category-header">
+                        <h3>Development & Programming</h3>
+                        <button class="skill-expand-btn" data-target="development">
+                            <i data-feather="plus"></i>
+                        </button>
+                    </div>
+                    <div class="skill-items" id="development">
                         <div class="skill-item">
                             <h4>JavaScript & TypeScript</h4>
                             <p>Built automated test scripts and developed UIs using modern JavaScript frameworks, with extensive experience in TypeScript for type-safe automation solutions.</p>
@@ -578,9 +588,14 @@
                     </div>
                 </div>
                 
-                <div class="skill-category">
-                    <h3>DevOps & Collaboration</h3>
-                    <div class="skill-items">
+                <div class="skill-category expandable-skill-category">
+                    <div class="skill-category-header">
+                        <h3>DevOps & Collaboration</h3>
+                        <button class="skill-expand-btn" data-target="devops">
+                            <i data-feather="plus"></i>
+                        </button>
+                    </div>
+                    <div class="skill-items" id="devops">
                         <div class="skill-item">
                             <h4>Azure DevOps & CI/CD</h4>
                             <p>Integrated automated tests into CI/CD pipelines, collaborating with developers and PMs to ensure smooth deployment processes and maintain code quality standards.</p>
@@ -609,7 +624,8 @@
                 <div class="tool-item">HTML5</div>
                 <div class="tool-item">SASS</div>
                 <div class="tool-item">Figma</div>
-                <div class="tool-item">Cucumber/Gherkin</div>
+                <div class="tool-item">Cucumber</div>
+                <div class="tool-item">Gherkin</div>
             </div>
         </div>
     </section>

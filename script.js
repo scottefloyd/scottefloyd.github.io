@@ -264,6 +264,51 @@ class ProjectFilter {
     }
 }
 
+// Expandable Skills Manager
+class ExpandableSkills {
+    constructor() {
+        this.expandButtons = document.querySelectorAll('.skill-expand-btn');
+        this.init();
+    }
+
+    init() {
+        this.expandButtons.forEach(button => {
+            button.addEventListener('click', (e) => this.toggleSkillCategory(e));
+        });
+    }
+
+    toggleSkillCategory(e) {
+        e.preventDefault();
+        e.stopPropagation();
+        
+        const button = e.currentTarget;
+        const targetId = button.getAttribute('data-target');
+        const skillItems = document.getElementById(targetId);
+        const icon = button.querySelector('i');
+        
+        if (!skillItems || !icon) return;
+        
+        const isExpanded = skillItems.classList.contains('expanded');
+        
+        if (isExpanded) {
+            // Collapse
+            skillItems.classList.remove('expanded');
+            button.classList.remove('expanded');
+            icon.setAttribute('data-feather', 'plus');
+        } else {
+            // Expand
+            skillItems.classList.add('expanded');
+            button.classList.add('expanded');
+            icon.setAttribute('data-feather', 'minus');
+        }
+        
+        // Re-render feather icons
+        if (typeof feather !== 'undefined') {
+            feather.replace();
+        }
+    }
+}
+
 // Contact Form Handler
 class ContactForm {
     constructor() {
@@ -517,6 +562,7 @@ document.addEventListener('DOMContentLoaded', () => {
     new NavigationManager();
     new AnimationObserver();
     new ProjectFilter();
+    new ExpandableSkills();
     new ContactForm();
     new SmoothScroll();
     new ScrollToTop();
