@@ -401,6 +401,7 @@ body {
 }
 
 .section-title {
+    font-family: ui-sans-serif, system-ui, sans-serif, "Apple Color Emoji", "Segoe UI Emoji", "Segoe UI Symbol", "Noto Color Emoji";
     font-size: var(--font-size-4xl);
     font-weight: 800;
     margin-bottom: var(--space-8);
@@ -419,6 +420,7 @@ body {
 }
 
 .highlight-item h3 {
+    font-family: ui-sans-serif, system-ui, sans-serif, "Apple Color Emoji", "Segoe UI Emoji", "Segoe UI Symbol", "Noto Color Emoji";
     font-size: var(--font-size-xl);
     font-weight: 700;
     margin-bottom: var(--space-4);
@@ -479,6 +481,7 @@ body {
 }
 
 .card-header h4 {
+    font-family: ui-sans-serif, system-ui, sans-serif, "Apple Color Emoji", "Segoe UI Emoji", "Segoe UI Symbol", "Noto Color Emoji";
     font-size: var(--font-size-lg);
     font-weight: 600;
 }
@@ -651,6 +654,7 @@ body {
 }
 
 .project-content h3 {
+    font-family: ui-sans-serif, system-ui, sans-serif, "Apple Color Emoji", "Segoe UI Emoji", "Segoe UI Symbol", "Noto Color Emoji";
     font-size: var(--font-size-xl);
     font-weight: 700;
     margin-bottom: var(--space-3);
@@ -675,6 +679,7 @@ body {
 }
 
 .skill-category h3 {
+    font-family: ui-sans-serif, system-ui, sans-serif, "Apple Color Emoji", "Segoe UI Emoji", "Segoe UI Symbol", "Noto Color Emoji";
     font-size: var(--font-size-xl);
     font-weight: 700;
     margin-bottom: var(--space-6);
@@ -854,6 +859,7 @@ body {
 }
 
 .contact-form h3 {
+    font-family: ui-sans-serif, system-ui, sans-serif, "Apple Color Emoji", "Segoe UI Emoji", "Segoe UI Symbol", "Noto Color Emoji";
     font-size: var(--font-size-2xl);
     font-weight: 700;
     margin-bottom: var(--space-3);
@@ -939,6 +945,7 @@ body {
 }
 
 .footer-info h3 {
+    font-family: ui-sans-serif, system-ui, sans-serif, "Apple Color Emoji", "Segoe UI Emoji", "Segoe UI Symbol", "Noto Color Emoji";
     font-size: var(--font-size-xl);
     font-weight: 700;
     margin-bottom: var(--space-2);
