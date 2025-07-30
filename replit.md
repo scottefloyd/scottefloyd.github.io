@@ -1,5 +1,15 @@
 # Scott Floyd - QA Automation Expert & AI Consultant Portfolio
 
+## Repository Description
+A personal portfolio website for Scott Floyd, showcasing expertise in QA automation, test engineering, and AI consulting services. Features a modern, responsive design with interactive elements and comprehensive project showcases.
+
+Stack:
+- Vanilla HTML/CSS/JavaScript
+- Modern responsive design
+- Dark/light theme support
+- Interactive animations and transitions
+- Mobile-first approach
+
 ## Overview
 
 This is a personal portfolio website for Scott Floyd, showcasing his expertise in QA automation with Playwright and AI consulting services. The project is a modern, responsive single-page application (SPA) built with vanilla HTML, CSS, and JavaScript, featuring a clean design with dark/light theme support.
