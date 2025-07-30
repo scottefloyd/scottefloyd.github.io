@@ -167,6 +167,7 @@ The application follows a simple client-side architecture with no backend depend
 - **Added "Projects On Deck" section**: Created new horizontal two-column layout within Current Work section showcasing upcoming client projects in planning pipeline; features Eagle Video Solutions (website) and Meal Prep Service (web app) with "PLANNING STAGE" status badges, custom orange/amber styling, and responsive mobile design
 - **Enhanced Skills & Expertise section**: Implemented single master toggle that expands/collapses all skill categories simultaneously; added Playwright to tools list; replaced individual category toggles with one "Show All Details" button for simplified user experience
 - **Google Analytics integration**: Added comprehensive GA4 tracking with environment variable injection; tracks page views, contact form submissions, project clicks, navigation interactions, skills toggles, and theme changes; includes proper error handling and privacy considerations
+- **Contact form setup**: Integrated Formspree for functional contact form submissions; includes loading states, success/error messages, form validation, and analytics tracking; requires Formspree account setup to complete activation
 - **Removed tech stack from hero section**: Eliminated the tech stack list (Cypress, TypeScript, Agile, Playwright, GenAI) for cleaner hero design
 - **Refined expertise cards**: Updated descriptions to be more accurate and professional:
   - Test Automation: "Ensuring quality with top automation frameworks"
