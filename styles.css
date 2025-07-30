@@ -741,6 +741,55 @@ body {
     background: oklab(0.944144 0.00154236 -0.00510991 / 0.3);
 }
 
+.skills-narrative {
+    display: grid;
+    grid-template-columns: repeat(auto-fit, minmax(350px, 1fr));
+    gap: var(--space-8);
+    margin-bottom: var(--space-16);
+}
+
+.skills-narrative .skill-category h3 {
+    font-family: ui-sans-serif, system-ui, sans-serif;
+    font-size: var(--font-size-xl);
+    font-weight: 400;
+    margin-bottom: var(--space-6);
+    color: var(--accent-primary);
+}
+
+.skill-items {
+    display: flex;
+    flex-direction: column;
+    gap: var(--space-6);
+}
+
+.skill-item {
+    background: var(--bg-card);
+    border: 1px solid var(--border-color);
+    border-radius: 16px;
+    padding: var(--space-6);
+    transition: var(--transition);
+}
+
+.skill-item:hover {
+    border-color: var(--accent-primary);
+    transform: translateY(-2px);
+    box-shadow: var(--shadow-lg);
+}
+
+.skill-item h4 {
+    font-family: ui-sans-serif, system-ui, sans-serif;
+    font-size: var(--font-size-lg);
+    font-weight: 600;
+    margin-bottom: var(--space-3);
+    color: var(--text-primary);
+}
+
+.skill-item p {
+    color: var(--text-secondary);
+    line-height: 1.6;
+    margin: 0;
+}
+
 .skills-categories {
     display: grid;
     grid-template-columns: repeat(auto-fit, minmax(300px, 1fr));
