@@ -1,5 +1,62 @@
 // Modern Portfolio JavaScript
 
+// Google Analytics Integration
+class GoogleAnalytics {
+    constructor() {
+        this.measurementId = window.ENV?.GA_MEASUREMENT_ID || null;
+        if (this.measurementId && this.measurementId !== 'PLACEHOLDER_GA_ID') {
+            this.init();
+        } else {
+            console.warn('Google Analytics: Missing or invalid measurement ID');
+        }
+    }
+
+    init() {
+        // Check if we're in a browser environment and have the measurement ID
+        if (typeof window === 'undefined') return;
+        
+        // Initialize Google Analytics
+        this.loadGoogleAnalytics();
+        this.trackPageView(window.location.pathname);
+    }
+
+    loadGoogleAnalytics() {
+        // Add Google Analytics script to the head
+        const script1 = document.createElement('script');
+        script1.async = true;
+        script1.src = `https://www.googletagmanager.com/gtag/js?id=${this.measurementId}`;
+        document.head.appendChild(script1);
+
+        // Initialize gtag
+        const script2 = document.createElement('script');
+        script2.textContent = `
+            window.dataLayer = window.dataLayer || [];
+            function gtag(){dataLayer.push(arguments);}
+            gtag('js', new Date());
+            gtag('config', '${this.measurementId}');
+        `;
+        document.head.appendChild(script2);
+    }
+
+    trackPageView(url) {
+        if (typeof window === 'undefined' || !window.gtag) return;
+        
+        window.gtag('config', this.measurementId, {
+            page_path: url
+        });
+    }
+
+    trackEvent(action, category = 'engagement', label = '', value = 1) {
+        if (typeof window === 'undefined' || !window.gtag) return;
+        
+        window.gtag('event', action, {
+            event_category: category,
+            event_label: label,
+            value: value,
+        });
+    }
+}
+
 // Theme Management
 class ThemeManager {
     constructor() {
@@ -615,6 +672,9 @@ document.addEventListener('DOMContentLoaded', () => {
         feather.replace();
     }
 
+    // Initialize Google Analytics
+    const analytics = new GoogleAnalytics();
+
     // Initialize all components
     new ThemeManager();
     new CyclingText();
@@ -627,6 +687,54 @@ document.addEventListener('DOMContentLoaded', () => {
     new ScrollToTop();
     new RetroTVChannels();
     new ExpandableTechStack();
+
+    // Add analytics tracking to key interactions
+    const setupAnalyticsTracking = () => {
+        // Track contact form submissions
+        const contactForm = document.getElementById('contactForm');
+        if (contactForm) {
+            contactForm.addEventListener('submit', () => {
+                analytics.trackEvent('contact_form_submit', 'contact', 'portfolio_contact');
+            });
+        }
+
+        // Track project link clicks
+        const projectLinks = document.querySelectorAll('.project-link');
+        projectLinks.forEach(link => {
+            link.addEventListener('click', (e) => {
+                const projectCard = e.target.closest('.project-card');
+                const projectTitle = projectCard?.querySelector('h3')?.textContent || 'unknown';
+                analytics.trackEvent('project_view', 'projects', projectTitle);
+            });
+        });
+
+        // Track skills section expansions
+        const skillsToggle = document.getElementById('skillsMasterToggle');
+        if (skillsToggle) {
+            skillsToggle.addEventListener('click', () => {
+                analytics.trackEvent('skills_toggle', 'engagement', 'skills_expansion');
+            });
+        }
+
+        // Track navigation link clicks
+        const navLinks = document.querySelectorAll('.nav-link');
+        navLinks.forEach(link => {
+            link.addEventListener('click', (e) => {
+                const section = e.target.getAttribute('href')?.replace('#', '') || 'unknown';
+                analytics.trackEvent('navigation_click', 'navigation', section);
+            });
+        });
+
+        // Track theme toggle
+        const themeToggle = document.getElementById('themeToggle');
+        if (themeToggle) {
+            themeToggle.addEventListener('click', () => {
+                analytics.trackEvent('theme_toggle', 'ui', 'dark_light_mode');
+            });
+        }
+    };
+
+    setupAnalyticsTracking();
 
     // Add loading complete class for CSS animations
     document.body.classList.add('loaded');

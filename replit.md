@@ -67,7 +67,8 @@ The application follows a simple client-side architecture with no backend depend
 
 1. **Google Fonts**: Inter font family for typography
 2. **Feather Icons**: Icon library for UI elements (sun/moon, hamburger menu)
-3. **CDN Delivery**: Both dependencies loaded via CDN for performance
+3. **Google Analytics**: GA4 tracking for user behavior analytics and insights
+4. **CDN Delivery**: Font and icon dependencies loaded via CDN for performance
 
 **Rationale for CDN Usage**: 
 - Reduces bundle size
@@ -165,6 +166,7 @@ The application follows a simple client-side architecture with no backend depend
 - **Updated cycling text**: Changed to "Human, Quality Engineer, Problem Solver, Bug Hunter, Gen-AI Tinkerer, Collaborator, Idea Guy" with "Hire a Creative" prefix
 - **Added "Projects On Deck" section**: Created new horizontal two-column layout within Current Work section showcasing upcoming client projects in planning pipeline; features Eagle Video Solutions (website) and Meal Prep Service (web app) with "PLANNING STAGE" status badges, custom orange/amber styling, and responsive mobile design
 - **Enhanced Skills & Expertise section**: Implemented single master toggle that expands/collapses all skill categories simultaneously; added Playwright to tools list; replaced individual category toggles with one "Show All Details" button for simplified user experience
+- **Google Analytics integration**: Added comprehensive GA4 tracking with environment variable injection; tracks page views, contact form submissions, project clicks, navigation interactions, skills toggles, and theme changes; includes proper error handling and privacy considerations
 - **Removed tech stack from hero section**: Eliminated the tech stack list (Cypress, TypeScript, Agile, Playwright, GenAI) for cleaner hero design
 - **Refined expertise cards**: Updated descriptions to be more accurate and professional:
   - Test Automation: "Ensuring quality with top automation frameworks"
