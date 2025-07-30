@@ -1261,7 +1261,7 @@ body {
 
 .project-filters {
     display: flex;
-    justify-content: flex-start;
+    justify-content: center;
     gap: 0;
     margin-bottom: var(--space-16);
     background: var(--bg-secondary);
@@ -1272,6 +1272,7 @@ body {
 }
 
 .filter-btn {
+    flex: 1;
     background: transparent;
     border: none;
     border-radius: 8px;
@@ -1282,6 +1283,7 @@ body {
     transition: var(--transition);
     font-size: var(--font-size-sm);
     white-space: nowrap;
+    text-align: center;
 }
 
 .filter-btn:hover {
