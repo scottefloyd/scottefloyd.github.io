@@ -98,7 +98,7 @@ The application follows a simple client-side architecture with no backend depend
 - **Added new "Current Work" section**: Created comprehensive section showcasing SPOTR app development with timeline phases, project status, and development progression
 - **Restructured navigation**: Added "Current Work" and "Past Projects" navigation items to properly organize content
 - **Updated hero CTA**: Changed primary button to link to Current Work section instead of projects
-- **Renamed projects section**: Changed "Featured Projects" to "Past Projects" with updated tagline: "A collection of my past work spanning bootcamps, work deliverable, and personal projects"
+- **Renamed projects section**: Changed "Featured Projects" to "Past Projects" with updated tagline: "A collection of my past work spanning bootcamps, work deliverables, and personal project"
 - **SPOTR app showcase**: Detailed timeline showing UX Research → Wireframes → Hi-Fi Prototype → Gen-AI Development → Test Automation phases with current progress status
 - **Updated SPOTR app description**: Changed from general river location discovery to specific Michigan river shuttling service focus
 - **Updated project timeline status**: UX research, wireframes, and hi-fi prototypes marked as completed with visual "COMPLETE" badges; Gen-AI development currently in progress; test automation in planning stage
