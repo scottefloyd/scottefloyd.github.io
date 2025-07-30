@@ -442,22 +442,40 @@ class ContactForm {
         e.preventDefault();
         
         const submitButton = this.form.querySelector('button[type="submit"]');
+        const formData = new FormData(this.form);
         
         // Show loading state
         submitButton.classList.add('loading');
         submitButton.disabled = true;
         
         try {
-            // Simulate form submission (replace with actual endpoint)
-            await new Promise(resolve => setTimeout(resolve, 2000));
-            
-            // Show success message
-            this.showMessage('Thank you! Your message has been sent successfully.', 'success');
-            this.form.reset();
+            const response = await fetch(this.form.action, {
+                method: 'POST',
+                body: formData,
+                headers: {
+                    'Accept': 'application/json'
+                }
+            });
+
+            if (response.ok) {
+                // Show success message
+                this.showMessage('Thank you! Your message has been sent successfully. I\'ll get back to you soon!', 'success');
+                this.form.reset();
+                
+                // Track successful form submission
+                if (window.gtag) {
+                    window.gtag('event', 'contact_form_submit', {
+                        event_category: 'contact',
+                        event_label: 'portfolio_contact_success'
+                    });
+                }
+            } else {
+                throw new Error('Form submission failed');
+            }
             
         } catch (error) {
             console.error('Form submission error:', error);
-            this.showMessage('Sorry, there was an error sending your message. Please try again.', 'error');
+            this.showMessage('Sorry, there was an error sending your message. Please try again or contact me directly at hello@scottfloyd.com', 'error');
         } finally {
             // Reset button state
             submitButton.classList.remove('loading');
