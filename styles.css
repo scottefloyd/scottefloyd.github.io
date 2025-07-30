@@ -693,24 +693,7 @@ body {
     overflow: hidden;
 }
 
-.project-image::after {
-    content: '';
-    position: absolute;
-    top: 0;
-    left: 0;
-    right: 0;
-    bottom: 0;
-    background: linear-gradient(135deg, 
-        rgba(79, 70, 229, 0.4) 0%,
-        rgba(124, 58, 237, 0.4) 25%,
-        rgba(6, 182, 212, 0.4) 50%,
-        rgba(16, 185, 129, 0.4) 75%,
-        rgba(245, 158, 11, 0.4) 100%
-    );
-    pointer-events: none;
-    z-index: 1;
-    transition: all 0.3s ease;
-}
+
 
 .project-image img {
     width: 100%;
@@ -723,10 +706,6 @@ body {
 .project-card:hover .project-image img {
     filter: grayscale(0%) brightness(1);
     transform: scale(1.05);
-}
-
-.project-card:hover .project-image::after {
-    opacity: 0.2;
 }
 
 .pdf-badge {

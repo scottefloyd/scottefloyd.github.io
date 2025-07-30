@@ -144,4 +144,4 @@ The application follows a simple client-side architecture with no backend depend
 - Added subtle corner gradients to hero section (teal top-right, yellow bottom-left) matching Figma reference
 - Restructured "My Story" section with centered title, left-justified story text, "What Drives Me" gradient box on right, and expertise cards at bottom
 - Applied custom oklab color scheme throughout (story, skills, footer sections) and removed all borders for clean, modern appearance
-- **Enhanced project image styling**: Applied grayscale filters to all project images with cycling text-inspired gradient overlays (indigo, purple, cyan, emerald, amber) for cohesive visual branding
+- **Enhanced project image styling**: Applied grayscale filters to all project images with clean hover effects that restore original colors for cohesive visual branding
