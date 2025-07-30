@@ -258,7 +258,7 @@ body {
     font-size: clamp(3rem, 6vw, 5rem);
     font-weight: 500;
     line-height: 1.1;
-    margin-bottom: var(--space-1);
+    margin-bottom: 0.5rem;
     letter-spacing: -0.02em;
     text-align: center;
     display: flex;
@@ -266,7 +266,7 @@ body {
     justify-content: center;
     flex-wrap: nowrap;
     overflow: visible;
-    gap: 0.075em;
+    gap: 0.25em;
 }
 
 .creative-text {
@@ -313,7 +313,7 @@ body {
 .hero-description {
     font-size: var(--font-size-lg);
     color: var(--text-secondary);
-    margin-bottom: var(--space-2);
+    margin-bottom: 0.5rem;
     margin-top: 0;
     max-width: 600px;
     margin-left: auto;
