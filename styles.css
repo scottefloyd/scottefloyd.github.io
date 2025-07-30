@@ -647,16 +647,23 @@ body {
 }
 
 .project-link {
-    width: 48px;
-    height: 48px;
+    width: 56px;
+    height: 56px;
     background: white;
     border-radius: 50%;
     display: flex;
     align-items: center;
     justify-content: center;
-    color: var(--bg-primary);
+    color: #1a1a1a;
     transition: var(--transition);
     text-decoration: none;
+    box-shadow: 0 4px 12px rgba(0, 0, 0, 0.15);
+}
+
+.project-link svg {
+    width: 24px;
+    height: 24px;
+    stroke-width: 2.5;
 }
 
 .project-link:hover {
