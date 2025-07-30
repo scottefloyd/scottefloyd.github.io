@@ -1603,34 +1603,35 @@ body {
     color: var(--accent-primary);
 }
 
-.skill-expand-btn {
+.skills-master-toggle {
     background: var(--accent-primary);
     color: white;
     border: none;
-    border-radius: 50%;
-    width: 32px;
-    height: 32px;
+    border-radius: 12px;
+    padding: 12px 20px;
     display: flex;
     align-items: center;
-    justify-content: center;
+    gap: 8px;
     cursor: pointer;
     transition: var(--transition);
-    flex-shrink: 0;
+    font-size: 14px;
+    font-weight: 600;
+    margin-top: 16px;
 }
 
-.skill-expand-btn:hover {
+.skills-master-toggle:hover {
     background: var(--accent-secondary);
-    transform: scale(1.1);
+    transform: translateY(-2px);
 }
 
-.skill-expand-btn svg {
+.skills-master-toggle svg {
     width: 16px;
     height: 16px;
     transition: transform 0.3s ease;
 }
 
-.skill-expand-btn.expanded svg {
-    transform: rotate(0deg);
+.skills-master-toggle.expanded svg {
+    transform: rotate(180deg);
 }
 
 .skill-items-container {

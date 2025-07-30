@@ -267,44 +267,43 @@ class ProjectFilter {
 // Expandable Skills Manager
 class ExpandableSkills {
     constructor() {
-        this.expandButtons = document.querySelectorAll('.skill-expand-btn');
+        this.masterToggle = document.getElementById('skillsMasterToggle');
+        this.skillContainers = document.querySelectorAll('.skill-items-container');
+        this.isExpanded = false;
         this.init();
     }
 
     init() {
-        // Wait for feather icons to render before setting up event listeners
-        setTimeout(() => {
-            this.expandButtons.forEach(button => {
-                button.addEventListener('click', (e) => this.toggleSkillCategory(e));
-            });
-        }, 100);
+        if (this.masterToggle) {
+            this.masterToggle.addEventListener('click', (e) => this.toggleAllSkills(e));
+        }
     }
 
-    toggleSkillCategory(e) {
+    toggleAllSkills(e) {
         e.preventDefault();
         e.stopPropagation();
         
-        const button = e.currentTarget;
-        const targetId = button.getAttribute('data-target');
-        const skillItemsContainer = document.getElementById(targetId);
+        this.isExpanded = !this.isExpanded;
         
-        if (!skillItemsContainer) {
-            console.log('Missing container:', targetId);
-            return;
-        }
+        const toggleText = this.masterToggle.querySelector('span');
+        const icon = this.masterToggle.querySelector('i');
         
-        const isExpanded = skillItemsContainer.classList.contains('expanded');
-        
-        if (isExpanded) {
-            // Collapse
-            skillItemsContainer.classList.remove('expanded');
-            button.classList.remove('expanded');
-            button.innerHTML = '<i data-feather="plus"></i>';
+        if (this.isExpanded) {
+            // Expand all
+            this.skillContainers.forEach(container => {
+                container.classList.add('expanded');
+            });
+            this.masterToggle.classList.add('expanded');
+            toggleText.textContent = 'Hide All Details';
+            icon.setAttribute('data-feather', 'chevron-up');
         } else {
-            // Expand
-            skillItemsContainer.classList.add('expanded');
-            button.classList.add('expanded');
-            button.innerHTML = '<i data-feather="minus"></i>';
+            // Collapse all
+            this.skillContainers.forEach(container => {
+                container.classList.remove('expanded');
+            });
+            this.masterToggle.classList.remove('expanded');
+            toggleText.textContent = 'Show All Details';
+            icon.setAttribute('data-feather', 'chevron-down');
         }
         
         // Re-render feather icons
