@@ -432,7 +432,7 @@ body {
 
 .drives-me-box h3 {
     font-family: ui-sans-serif, system-ui, sans-serif, "Apple Color Emoji", "Segoe UI Emoji", "Segoe UI Symbol", "Noto Color Emoji";
-    font-size: var(--font-size-xl);
+    font-size: calc(var(--font-size-xl) * 1.3);
     font-weight: 400;
     margin-bottom: var(--space-6);
     color: var(--text-primary);
@@ -446,7 +446,7 @@ body {
 
 .drives-me-box li {
     color: var(--text-secondary);
-    padding: var(--space-3) 0;
+    padding: var(--space-1) 0;
     position: relative;
     padding-left: var(--space-6);
     font-size: var(--font-size-base);
@@ -456,7 +456,7 @@ body {
     content: '•';
     position: absolute;
     left: 0;
-    color: var(--accent-primary);
+    color: black;
     font-weight: bold;
 }
 
