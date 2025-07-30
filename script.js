@@ -107,9 +107,16 @@ class NavigationManager {
     }
 
     handleNavClick(e) {
+        const href = e.target.getAttribute('href');
+        
+        // If link contains a different page (like index.html#section), allow normal navigation
+        if (href.includes('.html')) {
+            return; // Let the browser handle the navigation
+        }
+        
+        // Only prevent default for same-page anchor links
         e.preventDefault();
-        const targetId = e.target.getAttribute('href');
-        const targetSection = document.querySelector(targetId);
+        const targetSection = document.querySelector(href);
         
         if (targetSection) {
             targetSection.scrollIntoView({
