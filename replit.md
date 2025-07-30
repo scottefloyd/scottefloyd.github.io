@@ -154,6 +154,7 @@ The application follows a simple client-side architecture with no backend depend
   - Enhanced filtering JavaScript to match both categories and individual tags
 - **Updated cycling text**: Changed to "Human, Quality Engineer, Problem Solver, Bug Hunter, Gen-AI Tinkerer, Collaborator, Idea Guy" with "Hire a Creative" prefix
 - **Added "Projects On Deck" section**: Created new horizontal two-column layout within Current Work section showcasing upcoming client projects in planning pipeline; features Eagle Video Solutions (website) and Meal Prep Service (web app) with "PLANNING STAGE" status badges, custom orange/amber styling, and responsive mobile design
+- **Enhanced Skills & Expertise section**: Implemented collapsible skill categories with +/- toggle buttons; each category shows only skill titles by default with full descriptions appearing on expand; split Cucumber/Gherkin into separate tool items; Test Automation starts expanded while other categories start collapsed for compact layout
 - **Removed tech stack from hero section**: Eliminated the tech stack list (Cypress, TypeScript, Agile, Playwright, GenAI) for cleaner hero design
 - **Refined expertise cards**: Updated descriptions to be more accurate and professional:
   - Test Automation: "Ensuring quality with top automation frameworks"

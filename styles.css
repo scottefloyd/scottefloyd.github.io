@@ -1633,16 +1633,35 @@ body {
     transform: rotate(0deg);
 }
 
-.skill-items {
+.skill-items-container {
     max-height: 0;
     overflow: hidden;
-    transition: max-height 0.4s ease, padding 0.3s ease;
-    padding: 0 var(--space-6);
+    transition: max-height 0.4s ease;
 }
 
-.skill-items.expanded {
+.skill-items-container.expanded {
     max-height: 1000px;
+}
+
+.skill-items {
+    display: flex;
+    flex-direction: column;
+    gap: var(--space-6);
     padding: var(--space-6);
+}
+
+.skill-description {
+    max-height: 0;
+    overflow: hidden;
+    transition: max-height 0.3s ease, padding 0.3s ease, margin 0.3s ease;
+    margin: 0;
+    padding: 0;
+}
+
+.skill-items-container.expanded .skill-description {
+    max-height: 200px;
+    margin-top: var(--space-3);
+    padding-top: 0;
 }
 
 .skill-items {

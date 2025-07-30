@@ -283,21 +283,21 @@ class ExpandableSkills {
         
         const button = e.currentTarget;
         const targetId = button.getAttribute('data-target');
-        const skillItems = document.getElementById(targetId);
+        const skillItemsContainer = document.getElementById(targetId);
         const icon = button.querySelector('i');
         
-        if (!skillItems || !icon) return;
+        if (!skillItemsContainer || !icon) return;
         
-        const isExpanded = skillItems.classList.contains('expanded');
+        const isExpanded = skillItemsContainer.classList.contains('expanded');
         
         if (isExpanded) {
             // Collapse
-            skillItems.classList.remove('expanded');
+            skillItemsContainer.classList.remove('expanded');
             button.classList.remove('expanded');
             icon.setAttribute('data-feather', 'plus');
         } else {
             // Expand
-            skillItems.classList.add('expanded');
+            skillItemsContainer.classList.add('expanded');
             button.classList.add('expanded');
             icon.setAttribute('data-feather', 'minus');
         }
