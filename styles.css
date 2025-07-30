@@ -772,9 +772,22 @@ body {
     margin: 0 auto;
 }
 
-.project-hero {
-    text-align: center;
+.project-overview {
+    display: grid;
+    grid-template-columns: 1fr 1fr;
+    gap: var(--space-16);
+    align-items: start;
     margin-bottom: var(--space-16);
+}
+
+.project-description-column {
+    padding-right: var(--space-8);
+}
+
+.project-status-column {
+    display: flex;
+    flex-direction: column;
+    gap: var(--space-6);
 }
 
 .project-title {
@@ -797,8 +810,7 @@ body {
 
 .project-status {
     display: flex;
-    align-items: center;
-    justify-content: center;
+    align-items: flex-start;
     gap: var(--space-4);
     flex-wrap: wrap;
 }
@@ -839,7 +851,22 @@ body {
 
 .timeline-phase.completed {
     border-color: var(--accent-primary);
-    background: rgba(79, 70, 229, 0.02);
+    background: rgba(79, 70, 229, 0.05);
+    position: relative;
+}
+
+.timeline-phase.completed::after {
+    content: '✓ COMPLETE';
+    position: absolute;
+    top: var(--space-4);
+    right: var(--space-4);
+    background: var(--accent-primary);
+    color: white;
+    font-size: 10px;
+    font-weight: 700;
+    letter-spacing: 0.5px;
+    padding: 4px 8px;
+    border-radius: 12px;
 }
 
 .timeline-phase.in-progress {
@@ -989,6 +1016,26 @@ body {
     
     .tv-screen {
         height: 100px;
+    }
+    
+    .project-overview {
+        grid-template-columns: 1fr;
+        gap: var(--space-8);
+        text-align: center;
+    }
+    
+    .project-description-column {
+        padding-right: 0;
+        order: 1;
+    }
+    
+    .project-status-column {
+        order: 2;
+        align-items: center;
+    }
+    
+    .project-status {
+        justify-content: center;
     }
     
     .timeline-phase {
