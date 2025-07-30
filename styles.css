@@ -774,27 +774,28 @@ body {
 
 .project-overview {
     display: grid;
-    grid-template-columns: 1fr 300px;
-    gap: var(--space-12);
+    grid-template-columns: 1fr 1fr;
+    gap: var(--space-16);
     align-items: start;
     margin-bottom: var(--space-8);
 }
 
 .project-description-column {
-    min-width: 0; /* Prevents grid item from overflowing */
+    min-width: 0;
+    max-width: 100%;
+    padding-right: var(--space-4);
 }
 
 .project-image-column {
     display: flex;
-    justify-content: center;
+    justify-content: flex-start;
     align-items: flex-start;
-    position: sticky;
-    top: var(--space-8);
+    padding-left: var(--space-4);
 }
 
 .app-preview {
     width: 100%;
-    max-width: 280px;
+    max-width: 320px;
     text-align: center;
 }
 
