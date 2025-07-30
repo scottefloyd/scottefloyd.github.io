@@ -272,9 +272,12 @@ class ExpandableSkills {
     }
 
     init() {
-        this.expandButtons.forEach(button => {
-            button.addEventListener('click', (e) => this.toggleSkillCategory(e));
-        });
+        // Wait for feather icons to render before setting up event listeners
+        setTimeout(() => {
+            this.expandButtons.forEach(button => {
+                button.addEventListener('click', (e) => this.toggleSkillCategory(e));
+            });
+        }, 100);
     }
 
     toggleSkillCategory(e) {
@@ -284,9 +287,11 @@ class ExpandableSkills {
         const button = e.currentTarget;
         const targetId = button.getAttribute('data-target');
         const skillItemsContainer = document.getElementById(targetId);
-        const icon = button.querySelector('i');
         
-        if (!skillItemsContainer || !icon) return;
+        if (!skillItemsContainer) {
+            console.log('Missing container:', targetId);
+            return;
+        }
         
         const isExpanded = skillItemsContainer.classList.contains('expanded');
         
@@ -294,12 +299,12 @@ class ExpandableSkills {
             // Collapse
             skillItemsContainer.classList.remove('expanded');
             button.classList.remove('expanded');
-            icon.setAttribute('data-feather', 'plus');
+            button.innerHTML = '<i data-feather="plus"></i>';
         } else {
             // Expand
             skillItemsContainer.classList.add('expanded');
             button.classList.add('expanded');
-            icon.setAttribute('data-feather', 'minus');
+            button.innerHTML = '<i data-feather="minus"></i>';
         }
         
         // Re-render feather icons
