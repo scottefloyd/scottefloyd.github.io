@@ -118,7 +118,7 @@ The application follows a simple client-side architecture with no backend depend
   - Added subtle PDF badges positioned at bottom of project content with light styling
   - Enhanced filtering JavaScript to match both categories and individual tags
 - **Updated cycling text**: Changed to "Human, Quality Engineer, Problem Solver, Bug Hunter, Gen-AI Tinkerer, Collaborator, Idea Guy" with "I'm a Creative" prefix
-- **Updated tech stack**: Changed to "Cypress, TypeScript, Agile, Playwright, GenAI" in hero section
+- **Removed tech stack from hero section**: Eliminated the tech stack list (Cypress, TypeScript, Agile, Playwright, GenAI) for cleaner hero design
 - **Refined expertise cards**: Updated descriptions to be more accurate and professional:
   - Test Automation: "Ensuring quality with top automation frameworks"
   - Design & UX: "Foundational knowledge of best practices in design & UX" 
