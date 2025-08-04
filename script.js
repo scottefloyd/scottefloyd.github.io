@@ -764,17 +764,25 @@ class ExpandableTechStack {
 
 // Initialize everything when DOM is loaded
 document.addEventListener('DOMContentLoaded', () => {
+    console.log('DOM Content Loaded - Starting portfolio initialization...');
+    
     // Initialize Feather icons
     if (typeof feather !== 'undefined') {
         feather.replace();
+        console.log('Feather icons initialized');
     }
 
     // Initialize Google Analytics
     const analytics = new GoogleAnalytics();
 
     // Initialize all components
+    console.log('Initializing ThemeManager...');
     new ThemeManager();
+    
+    console.log('Initializing CyclingText...');
     new CyclingText();
+    
+    console.log('Initializing NavigationManager...');
     new NavigationManager();
     new AnimationObserver();
     new ProjectFilter();
