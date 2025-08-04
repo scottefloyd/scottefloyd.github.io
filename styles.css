@@ -2352,7 +2352,7 @@ body {
     }
     
     .theme-toggle {
-        display: none;
+        display: none !important;
     }
     
     .mobile-theme-toggle {
