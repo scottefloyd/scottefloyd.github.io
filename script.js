@@ -154,8 +154,19 @@ class NavigationManager {
         console.log('NavigationManager initialized:', {
             navToggle: !!this.navToggle,
             navMenu: !!this.navMenu,
-            navLinks: this.navLinks.length
+            navLinks: this.navLinks.length,
+            navToggleElement: this.navToggle,
+            navMenuElement: this.navMenu
         });
+        
+        // Additional debugging for DOM elements
+        if (!this.navToggle) {
+            console.error('Nav toggle button not found! Looking for .nav-toggle');
+            console.log('Available nav elements:', document.querySelector('.nav')?.innerHTML);
+        }
+        if (!this.navMenu) {
+            console.error('Nav menu not found! Looking for .nav-menu');
+        }
         
         this.init();
     }
@@ -170,7 +181,11 @@ class NavigationManager {
                 if (isProcessing) return;
                 isProcessing = true;
                 
-                console.log('Menu toggle clicked');
+                console.log('Menu toggle clicked - event details:', {
+                    target: e.target,
+                    currentTarget: e.currentTarget,
+                    type: e.type
+                });
                 this.toggleMobileMenu();
                 
                 // Reset processing flag after a short delay
@@ -178,6 +193,8 @@ class NavigationManager {
                     isProcessing = false;
                 }, 300);
             });
+            
+            console.log('Click event listener added to nav-toggle');
             
             // Add CSS touch-action to prevent passive event issues
             this.navToggle.style.touchAction = 'manipulation';
