@@ -1,6 +1,27 @@
 // Modern Portfolio JavaScript
 console.log('Scott Floyd Portfolio - Script.js loaded successfully!');
 
+// Immediate test to ensure basic functionality
+(function() {
+    console.log('Immediate script execution test');
+    
+    // Test if we can find basic elements
+    setTimeout(() => {
+        const navToggle = document.querySelector('.nav-toggle');
+        const navMenu = document.querySelector('.nav-menu');
+        console.log('Element check:', { navToggle: !!navToggle, navMenu: !!navMenu });
+        
+        if (navToggle && navMenu) {
+            console.log('Adding immediate click handler...');
+            navToggle.addEventListener('click', function() {
+                console.log('IMMEDIATE HANDLER: Menu clicked!');
+                navToggle.classList.toggle('active');
+                navMenu.classList.toggle('active');
+            });
+        }
+    }, 100);
+})();
+
 // Google Analytics Integration
 class GoogleAnalytics {
     constructor() {
