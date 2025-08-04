@@ -1,0 +1,33 @@
+4866-fc957e93cbdfca46.js:1 Unrecognized feature: 'ambient-light-sensor'.
+
+4866-fc957e93cbdfca46.js:1 Unrecognized feature: 'battery'.
+4866-fc957e93cbdfca46.js:1 Unrecognized feature: 'execution-while-not-rendered'.
+4866-fc957e93cbdfca46.js:1 Unrecognized feature: 'execution-while-out-of-viewport'.
+4866-fc957e93cbdfca46.js:1 Unrecognized feature: 'layout-animations'.
+4866-fc957e93cbdfca46.js:1 Unrecognized feature: 'legacy-image-formats'.
+4866-fc957e93cbdfca46.js:1 Unrecognized feature: 'navigation-override'.
+4866-fc957e93cbdfca46.js:1 Unrecognized feature: 'oversized-images'.
+4866-fc957e93cbdfca46.js:1 Unrecognized feature: 'publickey-credentials'.
+4866-fc957e93cbdfca46.js:1 Unrecognized feature: 'speaker-selection'.
+4866-fc957e93cbdfca46.js:1 Unrecognized feature: 'unoptimized-images'.
+4866-fc957e93cbdfca46.js:1 Unrecognized feature: 'unsized-media'.
+4866-fc957e93cbdfca46.js:1 Unrecognized feature: 'pointer-lock'.
+4866-fc957e93cbdfca46.js:1 Allow attribute will take precedence over 'allowfullscreen'.
+4866-fc957e93cbdfca46.js:1 Allow attribute will take precedence over 'allowpaymentrequest'.
+workspace_iframe.html:32 Error while parsing the 'sandbox' attribute: 'allow-downloads-without-user-activation' is an invalid sandbox flag.
+workspace_iframe.html:32 Unrecognized feature: 'ambient-light-sensor'.
+workspace_iframe.html:32 Unrecognized feature: 'battery'.
+workspace_iframe.html:32 Unrecognized feature: 'execution-while-not-rendered'.
+workspace_iframe.html:32 Unrecognized feature: 'execution-while-out-of-viewport'.
+workspace_iframe.html:32 Unrecognized feature: 'layout-animations'.
+workspace_iframe.html:32 Unrecognized feature: 'legacy-image-formats'.
+workspace_iframe.html:32 Unrecognized feature: 'navigation-override'.
+workspace_iframe.html:32 Unrecognized feature: 'oversized-images'.
+workspace_iframe.html:32 Unrecognized feature: 'publickey-credentials'.
+workspace_iframe.html:32 Unrecognized feature: 'speaker-selection'.
+workspace_iframe.html:32 Unrecognized feature: 'unoptimized-images'.
+workspace_iframe.html:32 Unrecognized feature: 'unsized-media'.
+workspace_iframe.html:32 Allow attribute will take precedence over 'allowfullscreen'.
+workspace_iframe.html:32 Allow attribute will take precedence over 'allowpaymentrequest'.
+﻿
+

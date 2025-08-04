@@ -1,4 +1,5 @@
 // Modern Portfolio JavaScript
+console.log('Scott Floyd Portfolio - Script.js loaded successfully!');
 
 // Google Analytics Integration
 class GoogleAnalytics {
