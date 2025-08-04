@@ -150,23 +150,50 @@ class NavigationManager {
         this.navMenu = document.querySelector('.nav-menu');
         this.navLinks = document.querySelectorAll('.nav-link');
         this.sections = document.querySelectorAll('section[id]');
+        
+        console.log('NavigationManager initialized:', {
+            navToggle: !!this.navToggle,
+            navMenu: !!this.navMenu,
+            navLinks: this.navLinks.length
+        });
+        
         this.init();
     }
 
     init() {
         // Mobile menu toggle with touch support
         if (this.navToggle) {
+            // Primary click handler
             this.navToggle.addEventListener('click', (e) => {
                 e.preventDefault();
                 e.stopPropagation();
+                console.log('Click event triggered on nav-toggle');
                 this.toggleMobileMenu();
             });
             
-            // Add touch support for mobile devices
-            this.navToggle.addEventListener('touchstart', (e) => {
+            // Touch support for mobile devices
+            this.navToggle.addEventListener('touchend', (e) => {
                 e.preventDefault();
                 e.stopPropagation();
+                console.log('Touch event triggered on nav-toggle');
                 this.toggleMobileMenu();
+            });
+            
+            // Prevent double firing on mobile
+            let touchStarted = false;
+            this.navToggle.addEventListener('touchstart', (e) => {
+                touchStarted = true;
+                console.log('Touch started on nav-toggle');
+            });
+            
+            // Alternative: Use pointer events for better mobile support
+            this.navToggle.addEventListener('pointerdown', (e) => {
+                if (!touchStarted) {
+                    e.preventDefault();
+                    console.log('Pointer event triggered on nav-toggle');
+                    this.toggleMobileMenu();
+                }
+                touchStarted = false;
             });
         }
         
@@ -194,7 +221,11 @@ class NavigationManager {
             this.navToggle.classList.toggle('active');
             this.navMenu.classList.toggle('active');
             
+            // Force a repaint to ensure CSS changes take effect
+            this.navMenu.offsetHeight;
+            
             console.log('Menu active state:', this.navMenu.classList.contains('active')); // Debug log
+            console.log('Menu display style:', window.getComputedStyle(this.navMenu).display); // Debug log
         } else {
             console.error('Navigation elements not found:', {
                 navToggle: !!this.navToggle,

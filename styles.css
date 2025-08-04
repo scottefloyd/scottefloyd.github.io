@@ -2354,6 +2354,11 @@ body {
     .nav-toggle {
         display: flex;
         margin-left: var(--space-4);
+        position: relative;
+        z-index: 1000;
+        pointer-events: auto;
+        -webkit-tap-highlight-color: rgba(79, 70, 229, 0.3);
+        tap-highlight-color: rgba(79, 70, 229, 0.3);
     }
     
     .theme-toggle {
