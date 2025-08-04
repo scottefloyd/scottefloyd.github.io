@@ -224,6 +224,19 @@ body {
     background: none;
     border: none;
     cursor: pointer;
+    padding: 8px;
+    border-radius: 8px;
+    transition: var(--transition);
+    -webkit-tap-highlight-color: transparent;
+    touch-action: manipulation;
+}
+
+.nav-toggle:hover {
+    background: var(--bg-secondary);
+}
+
+.nav-toggle:active {
+    transform: scale(0.95);
 }
 
 .nav-toggle span {
@@ -2319,6 +2332,14 @@ body {
         padding: var(--space-4) var(--space-6);
         border-bottom: 1px solid var(--border-color);
         text-align: left;
+        font-size: var(--font-size-lg);
+        -webkit-tap-highlight-color: rgba(79, 70, 229, 0.2);
+        touch-action: manipulation;
+    }
+    
+    .nav-link:hover {
+        background: var(--bg-secondary);
+        color: var(--accent-primary);
     }
     
     .nav-link:last-child {

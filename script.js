@@ -131,9 +131,20 @@ class NavigationManager {
     }
 
     init() {
-        // Mobile menu toggle
+        // Mobile menu toggle with touch support
         if (this.navToggle) {
-            this.navToggle.addEventListener('click', () => this.toggleMobileMenu());
+            this.navToggle.addEventListener('click', (e) => {
+                e.preventDefault();
+                e.stopPropagation();
+                this.toggleMobileMenu();
+            });
+            
+            // Add touch support for mobile devices
+            this.navToggle.addEventListener('touchstart', (e) => {
+                e.preventDefault();
+                e.stopPropagation();
+                this.toggleMobileMenu();
+            });
         }
         
         // Close mobile menu when clicking links
@@ -154,8 +165,19 @@ class NavigationManager {
     }
 
     toggleMobileMenu() {
-        this.navToggle?.classList.toggle('active');
-        this.navMenu?.classList.toggle('active');
+        console.log('Mobile menu toggle clicked'); // Debug log
+        
+        if (this.navToggle && this.navMenu) {
+            this.navToggle.classList.toggle('active');
+            this.navMenu.classList.toggle('active');
+            
+            console.log('Menu active state:', this.navMenu.classList.contains('active')); // Debug log
+        } else {
+            console.error('Navigation elements not found:', {
+                navToggle: !!this.navToggle,
+                navMenu: !!this.navMenu
+            });
+        }
     }
 
     closeMobileMenu() {
