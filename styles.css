@@ -262,6 +262,17 @@ body {
     margin-right: var(--space-8);
 }
 
+/* Hide desktop theme toggle on mobile */
+@media (max-width: 768px) {
+    .theme-toggle {
+        display: none !important;
+    }
+    
+    .mobile-theme-toggle {
+        display: block;
+    }
+}
+
 .theme-toggle:hover {
     background: var(--bg-secondary);
     color: var(--text-primary);
@@ -270,6 +281,22 @@ body {
 .theme-toggle i {
     width: 20px;
     height: 20px;
+}
+
+/* Hide mobile theme toggle on desktop */
+.mobile-theme-toggle {
+    display: none;
+}
+
+/* Hide desktop theme toggle on mobile */
+@media (max-width: 768px) {
+    .theme-toggle {
+        display: none !important;
+    }
+    
+    .mobile-theme-toggle {
+        display: block;
+    }
 }
 
 /* Hero Section */
@@ -2349,10 +2376,6 @@ body {
     .nav-toggle {
         display: flex;
         margin-left: var(--space-4);
-    }
-    
-    .theme-toggle {
-        display: none !important;
     }
     
     .mobile-theme-toggle {
