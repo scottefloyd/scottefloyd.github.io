@@ -1,0 +1,199 @@
+<!DOCTYPE html>
+<html lang="en">
+<head>
+    <meta charset="UTF-8">
+    <meta name="viewport" content="width=device-width, initial-scale=1.0">
+    <title>Mobile Menu Test</title>
+    <style>
+        * { margin: 0; padding: 0; box-sizing: border-box; }
+        body { font-family: Arial, sans-serif; }
+        
+        .nav {
+            background: #fff;
+            padding: 1rem;
+            border-bottom: 1px solid #ddd;
+            position: relative;
+        }
+        
+        .nav-container {
+            display: flex;
+            justify-content: space-between;
+            align-items: center;
+            max-width: 1200px;
+            margin: 0 auto;
+        }
+        
+        .nav-logo {
+            font-size: 1.5rem;
+            font-weight: bold;
+            text-decoration: none;
+            color: #333;
+        }
+        
+        .nav-menu {
+            display: flex;
+            list-style: none;
+            gap: 2rem;
+            margin: 0;
+            padding: 0;
+        }
+        
+        .nav-menu a {
+            text-decoration: none;
+            color: #333;
+            font-weight: 500;
+        }
+        
+        .nav-toggle {
+            display: none;
+            flex-direction: column;
+            gap: 4px;
+            background: none;
+            border: none;
+            cursor: pointer;
+            padding: 8px;
+            border-radius: 4px;
+        }
+        
+        .nav-toggle span {
+            width: 24px;
+            height: 3px;
+            background: #333;
+            transition: 0.3s ease;
+        }
+        
+        .nav-toggle.active span:nth-child(1) {
+            transform: rotate(45deg) translate(5px, 5px);
+        }
+        
+        .nav-toggle.active span:nth-child(2) {
+            opacity: 0;
+        }
+        
+        .nav-toggle.active span:nth-child(3) {
+            transform: rotate(-45deg) translate(7px, -6px);
+        }
+        
+        @media (max-width: 768px) {
+            .nav-menu {
+                display: none;
+                position: absolute;
+                top: 100%;
+                left: 0;
+                right: 0;
+                background: #fff;
+                border-top: 1px solid #ddd;
+                flex-direction: column;
+                padding: 1rem 0;
+                box-shadow: 0 2px 5px rgba(0,0,0,0.1);
+            }
+            
+            .nav-menu.active {
+                display: flex;
+            }
+            
+            .nav-menu li {
+                width: 100%;
+            }
+            
+            .nav-menu a {
+                display: block;
+                padding: 1rem 2rem;
+                border-bottom: 1px solid #eee;
+            }
+            
+            .nav-toggle {
+                display: flex;
+            }
+        }
+        
+        .content {
+            padding: 2rem;
+            max-width: 1200px;
+            margin: 0 auto;
+        }
+        
+        .debug {
+            background: #f5f5f5;
+            padding: 1rem;
+            margin: 1rem 0;
+            border-radius: 4px;
+            font-family: monospace;
+            font-size: 0.9rem;
+        }
+    </style>
+</head>
+<body>
+    <nav class="nav">
+        <div class="nav-container">
+            <a href="#" class="nav-logo">Test Site</a>
+            <ul class="nav-menu">
+                <li><a href="#home">Home</a></li>
+                <li><a href="#about">About</a></li>
+                <li><a href="#services">Services</a></li>
+                <li><a href="#contact">Contact</a></li>
+            </ul>
+            <button class="nav-toggle">
+                <span></span>
+                <span></span>
+                <span></span>
+            </button>
+        </div>
+    </nav>
+    
+    <div class="content">
+        <h1>Mobile Menu Test</h1>
+        <p>This is a simplified test page to check if the mobile menu works.</p>
+        
+        <div class="debug" id="debug">
+            <strong>Debug Info:</strong><br>
+            Script loaded: <span id="script-status">No</span><br>
+            Elements found: <span id="elements-status">Checking...</span><br>
+            Click events: <span id="click-status">None</span>
+        </div>
+        
+        <p><strong>Instructions:</strong></p>
+        <ul>
+            <li>On mobile/narrow screens, you should see a hamburger menu (three lines) in the top right</li>
+            <li>Clicking it should show/hide the navigation menu</li>
+            <li>The debug info above will show what's working</li>
+        </ul>
+    </div>
+
+    <script>
+        console.log('Test script loaded successfully!');
+        document.getElementById('script-status').textContent = 'Yes';
+        
+        document.addEventListener('DOMContentLoaded', () => {
+            console.log('DOM loaded - initializing test...');
+            
+            const navToggle = document.querySelector('.nav-toggle');
+            const navMenu = document.querySelector('.nav-menu');
+            const elementsStatus = document.getElementById('elements-status');
+            const clickStatus = document.getElementById('click-status');
+            
+            // Check if elements are found
+            if (navToggle && navMenu) {
+                elementsStatus.textContent = 'Found nav-toggle and nav-menu';
+                console.log('Elements found:', { navToggle, navMenu });
+                
+                // Add click event
+                navToggle.addEventListener('click', (e) => {
+                    console.log('Menu button clicked!');
+                    clickStatus.textContent = 'Menu button clicked at ' + new Date().toLocaleTimeString();
+                    
+                    navToggle.classList.toggle('active');
+                    navMenu.classList.toggle('active');
+                    
+                    console.log('Menu active:', navMenu.classList.contains('active'));
+                });
+                
+                console.log('Click event listener added');
+            } else {
+                elementsStatus.textContent = 'ERROR: Elements not found!';
+                console.error('Elements not found:', { navToggle, navMenu });
+            }
+        });
+    </script>
+</body>
+</html>
