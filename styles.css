@@ -2357,8 +2357,10 @@ body {
         position: relative;
         z-index: 1000;
         pointer-events: auto;
-        -webkit-tap-highlight-color: rgba(79, 70, 229, 0.3);
-        tap-highlight-color: rgba(79, 70, 229, 0.3);
+        -webkit-tap-highlight-color: rgba(79, 70, 229, 0.2);
+        tap-highlight-color: rgba(79, 70, 229, 0.2);
+        user-select: none;
+        -webkit-user-select: none;
     }
     
     .theme-toggle {

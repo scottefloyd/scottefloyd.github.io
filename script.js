@@ -161,40 +161,26 @@ class NavigationManager {
     }
 
     init() {
-        // Mobile menu toggle with touch support
+        // Mobile menu toggle with better mobile support
         if (this.navToggle) {
-            // Primary click handler
+            let isProcessing = false;
+            
+            // Use click event only - it works on both desktop and mobile
             this.navToggle.addEventListener('click', (e) => {
-                e.preventDefault();
-                e.stopPropagation();
-                console.log('Click event triggered on nav-toggle');
+                if (isProcessing) return;
+                isProcessing = true;
+                
+                console.log('Menu toggle clicked');
                 this.toggleMobileMenu();
+                
+                // Reset processing flag after a short delay
+                setTimeout(() => {
+                    isProcessing = false;
+                }, 300);
             });
             
-            // Touch support for mobile devices
-            this.navToggle.addEventListener('touchend', (e) => {
-                e.preventDefault();
-                e.stopPropagation();
-                console.log('Touch event triggered on nav-toggle');
-                this.toggleMobileMenu();
-            });
-            
-            // Prevent double firing on mobile
-            let touchStarted = false;
-            this.navToggle.addEventListener('touchstart', (e) => {
-                touchStarted = true;
-                console.log('Touch started on nav-toggle');
-            });
-            
-            // Alternative: Use pointer events for better mobile support
-            this.navToggle.addEventListener('pointerdown', (e) => {
-                if (!touchStarted) {
-                    e.preventDefault();
-                    console.log('Pointer event triggered on nav-toggle');
-                    this.toggleMobileMenu();
-                }
-                touchStarted = false;
-            });
+            // Add CSS touch-action to prevent passive event issues
+            this.navToggle.style.touchAction = 'manipulation';
         }
         
         // Close mobile menu when clicking links
