@@ -259,7 +259,7 @@ body {
     justify-content: center;
     color: var(--text-secondary);
     transition: var(--transition);
-    margin-right: var(--space-4);
+    margin-right: var(--space-8);
 }
 
 .theme-toggle:hover {
