@@ -61,6 +61,7 @@ class GoogleAnalytics {
 class ThemeManager {
     constructor() {
         this.themeToggle = document.getElementById('themeToggle');
+        this.themeToggleMobile = document.getElementById('themeToggleMobile');
         this.currentTheme = localStorage.getItem('theme') || 'light';
         this.init();
     }
@@ -71,6 +72,10 @@ class ThemeManager {
         if (this.themeToggle) {
             this.themeToggle.addEventListener('click', () => this.toggleTheme());
         }
+        
+        if (this.themeToggleMobile) {
+            this.themeToggleMobile.addEventListener('click', () => this.toggleTheme());
+        }
     }
 
     setTheme(theme) {
@@ -78,15 +83,33 @@ class ThemeManager {
         document.documentElement.setAttribute('data-theme', theme);
         localStorage.setItem('theme', theme);
         
-        // Update toggle icon
-        if (this.themeToggle) {
-            const icon = this.themeToggle.querySelector('i');
+        // Update toggle icons and text
+        const updateToggle = (toggle, isMobile = false) => {
+            if (!toggle) return;
+            
+            const icon = toggle.querySelector('i');
+            const span = toggle.querySelector('span');
+            
             if (icon) {
                 icon.setAttribute('data-feather', theme === 'dark' ? 'sun' : 'moon');
-                if (typeof feather !== 'undefined') {
-                    feather.replace();
-                }
             }
+            
+            if (span && isMobile) {
+                span.textContent = theme === 'dark' ? 'Light Mode' : 'Dark Mode';
+            }
+        };
+        
+        updateToggle(this.themeToggle, false);
+        updateToggle(this.themeToggleMobile, true);
+        
+        // Replace feather icons
+        if (typeof feather !== 'undefined') {
+            feather.replace();
+        }
+        
+        // Track theme change
+        if (window.analytics) {
+            window.analytics.trackEvent('theme_change', 'ui_interaction', theme);
         }
     }
 
