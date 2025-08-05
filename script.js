@@ -306,7 +306,7 @@ class ExpandableSections {
         const skillCategories = document.querySelectorAll('.expandable-skill-category');
         const masterToggle = document.getElementById('skillsMasterToggle');
         
-        // Individual category toggles - only "Test Automation & Quality" should expand
+        // Individual category toggles - all are clickable, but only first shows content
         skillCategories.forEach(category => {
             const header = category.querySelector('.skill-category-header');
             const container = category.querySelector('.skill-items-container');
@@ -314,19 +314,22 @@ class ExpandableSections {
             
             if (header && container) {
                 header.addEventListener('click', () => {
-                    // Only expand if this is "Test Automation & Quality" (which has content)
-                    if (categoryTitle === 'Test Automation & Quality') {
-                        const isExpanded = container.classList.contains('expanded');
-                        
-                        if (isExpanded) {
-                            container.classList.remove('expanded');
-                            header.classList.remove('expanded');
-                        } else {
-                            container.classList.add('expanded');
-                            header.classList.add('expanded');
+                    // First, close all sections
+                    skillCategories.forEach(otherCategory => {
+                        const otherContainer = otherCategory.querySelector('.skill-items-container');
+                        const otherHeader = otherCategory.querySelector('.skill-category-header');
+                        if (otherContainer && otherHeader) {
+                            otherContainer.classList.remove('expanded');
+                            otherHeader.classList.remove('expanded');
                         }
+                    });
+                    
+                    // Then, only expand if this is "Test Automation & Quality" (which has content)
+                    if (categoryTitle === 'Test Automation & Quality') {
+                        container.classList.add('expanded');
+                        header.classList.add('expanded');
                     }
-                    // Other categories do nothing when clicked
+                    // Other categories close but don't expand (since they have no content)
                 });
             }
         });

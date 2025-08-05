@@ -1635,17 +1635,17 @@ body {
     transition: all 0.3s ease;
 }
 
-/* Only first category should be clickable */
-.expandable-skill-category:first-child .skill-category-header {
-    cursor: pointer;
+/* All categories should be clickable */
+.skill-category-header {
+    cursor: pointer !important;
 }
 
-/* Only first category should have hover effects */
-.expandable-skill-category:first-child .skill-category-header:hover {
+/* All categories should have hover effects */
+.skill-category-header:hover {
     background: linear-gradient(135deg, var(--bg-card) 0%, rgba(79, 70, 229, 0.05) 100%);
 }
 
-.expandable-skill-category:first-child .skill-category-header:hover h3 {
+.skill-category-header:hover h3 {
     color: var(--accent-secondary);
 }
 
