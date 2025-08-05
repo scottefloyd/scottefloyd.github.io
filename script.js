@@ -1,58 +1,106 @@
-// Modern Portfolio JavaScript
+// Modern Portfolio JavaScript - Clean Version
 
-// Google Analytics Integration
-class GoogleAnalytics {
+// Navigation Management
+class NavigationManager {
     constructor() {
-        this.measurementId = window.ENV?.GA_MEASUREMENT_ID || null;
-        if (this.measurementId && this.measurementId !== 'PLACEHOLDER_GA_ID') {
-            this.init();
-        } else {
-            console.warn('Google Analytics: Missing or invalid measurement ID');
-        }
+        this.nav = document.querySelector('.nav');
+        this.navToggle = document.querySelector('.nav-toggle');
+        this.navMenu = document.querySelector('.nav-menu');
+        this.navLinks = document.querySelectorAll('.nav-link');
+        this.sections = document.querySelectorAll('section[id]');
+        
+        this.init();
     }
 
     init() {
-        // Check if we're in a browser environment and have the measurement ID
-        if (typeof window === 'undefined') return;
+        // Mobile menu toggle
+        if (this.navToggle && this.navMenu) {
+            this.navToggle.addEventListener('click', (e) => {
+                e.preventDefault();
+                e.stopPropagation();
+                this.toggleMobileMenu();
+            });
+        }
         
-        // Initialize Google Analytics
-        this.loadGoogleAnalytics();
-        this.trackPageView(window.location.pathname);
-    }
-
-    loadGoogleAnalytics() {
-        // Add Google Analytics script to the head
-        const script1 = document.createElement('script');
-        script1.async = true;
-        script1.src = `https://www.googletagmanager.com/gtag/js?id=${this.measurementId}`;
-        document.head.appendChild(script1);
-
-        // Initialize gtag
-        const script2 = document.createElement('script');
-        script2.textContent = `
-            window.dataLayer = window.dataLayer || [];
-            function gtag(){dataLayer.push(arguments);}
-            gtag('js', new Date());
-            gtag('config', '${this.measurementId}');
-        `;
-        document.head.appendChild(script2);
-    }
-
-    trackPageView(url) {
-        if (typeof window === 'undefined' || !window.gtag) return;
-        
-        window.gtag('config', this.measurementId, {
-            page_path: url
+        // Close mobile menu when clicking links
+        this.navLinks.forEach(link => {
+            link.addEventListener('click', () => this.closeMobileMenu());
         });
+
+        // Smooth scrolling for navigation links
+        this.navLinks.forEach(link => {
+            link.addEventListener('click', (e) => this.handleNavClick(e));
+        });
+
+        // Scroll effects
+        window.addEventListener('scroll', () => this.handleScroll());
+        
+        // Set initial active link
+        this.updateActiveLink();
     }
 
-    trackEvent(action, category = 'engagement', label = '', value = 1) {
-        if (typeof window === 'undefined' || !window.gtag) return;
+    toggleMobileMenu() {
+        if (this.navToggle && this.navMenu) {
+            this.navToggle.classList.toggle('active');
+            this.navMenu.classList.toggle('active');
+        }
+    }
+
+    closeMobileMenu() {
+        this.navToggle?.classList.remove('active');
+        this.navMenu?.classList.remove('active');
+    }
+
+    handleNavClick(e) {
+        const href = e.target.getAttribute('href');
         
-        window.gtag('event', action, {
-            event_category: category,
-            event_label: label,
-            value: value,
+        if (href.includes('.html')) {
+            return;
+        }
+        
+        e.preventDefault();
+        const targetSection = document.querySelector(href);
+        
+        if (targetSection) {
+            targetSection.scrollIntoView({
+                behavior: 'smooth',
+                block: 'start'
+            });
+            
+            setTimeout(() => {
+                this.updateActiveLink();
+            }, 100);
+        }
+    }
+
+    handleScroll() {
+        this.updateActiveNavBackground();
+        this.updateActiveLink();
+    }
+
+    updateActiveNavBackground() {
+        const scrolled = window.pageYOffset > 50;
+        this.nav?.classList.toggle('scrolled', scrolled);
+    }
+
+    updateActiveLink() {
+        const scrollPosition = window.pageYOffset + 100;
+        
+        let current = '';
+        this.sections.forEach(section => {
+            const sectionTop = section.offsetTop;
+            const sectionHeight = section.offsetHeight;
+            
+            if (scrollPosition >= sectionTop && scrollPosition < sectionTop + sectionHeight) {
+                current = section.getAttribute('id');
+            }
+        });
+
+        this.navLinks.forEach(link => {
+            link.classList.remove('active');
+            if (link.getAttribute('href') === '#' + current) {
+                link.classList.add('active');
+            }
         });
     }
 }
@@ -82,655 +130,36 @@ class ThemeManager {
         this.currentTheme = theme;
         document.documentElement.setAttribute('data-theme', theme);
         localStorage.setItem('theme', theme);
+        this.updateThemeIcons();
+    }
+
+    updateThemeIcons() {
+        const isDark = this.currentTheme === 'dark';
+        const iconName = isDark ? 'sun' : 'moon';
+        const themeText = isDark ? 'Light Mode' : 'Dark Mode';
         
-        // Update toggle icons and text
-        const updateToggle = (toggle, isMobile = false) => {
-            if (!toggle) return;
-            
-            const icon = toggle.querySelector('i');
-            const span = toggle.querySelector('span');
-            
-            if (icon) {
-                icon.setAttribute('data-feather', theme === 'dark' ? 'sun' : 'moon');
+        [this.themeToggle, this.themeToggleMobile].forEach(toggle => {
+            if (toggle) {
+                const icon = toggle.querySelector('i');
+                const span = toggle.querySelector('span');
+                
+                if (icon) {
+                    icon.setAttribute('data-feather', iconName);
+                }
+                if (span) {
+                    span.textContent = themeText;
+                }
             }
-            
-            if (span && isMobile) {
-                span.textContent = theme === 'dark' ? 'Light Mode' : 'Dark Mode';
-            }
-        };
+        });
         
-        updateToggle(this.themeToggle, false);
-        updateToggle(this.themeToggleMobile, true);
-        
-        // Replace feather icons
         if (typeof feather !== 'undefined') {
             feather.replace();
-        }
-        
-        // Track theme change
-        if (window.analytics) {
-            window.analytics.trackEvent('theme_change', 'ui_interaction', theme);
         }
     }
 
     toggleTheme() {
         const newTheme = this.currentTheme === 'light' ? 'dark' : 'light';
         this.setTheme(newTheme);
-    }
-}
-
-// Cycling Text Animation
-class CyclingText {
-    constructor() {
-        this.cyclingWords = document.querySelectorAll('.cycling-word');
-        this.currentIndex = 0;
-        this.init();
-    }
-
-    init() {
-        if (this.cyclingWords.length > 0) {
-            this.startCycling();
-        }
-    }
-
-    startCycling() {
-        setInterval(() => {
-            this.cyclingWords[this.currentIndex].classList.remove('active');
-            this.currentIndex = (this.currentIndex + 1) % this.cyclingWords.length;
-            this.cyclingWords[this.currentIndex].classList.add('active');
-        }, 2000); // Change every 2 seconds
-    }
-}
-
-// Navigation Management
-class NavigationManager {
-    constructor() {
-        this.nav = document.querySelector('.nav');
-        this.navToggle = document.querySelector('.nav-toggle');
-        this.navMenu = document.querySelector('.nav-menu');
-        this.navLinks = document.querySelectorAll('.nav-link');
-        this.sections = document.querySelectorAll('section[id]');
-        
-        // Mobile menu is now ready
-        
-        this.init();
-    }
-
-    init() {
-        // Mobile menu toggle with better mobile support
-        if (this.navToggle) {
-            let isProcessing = false;
-            
-            // Use click event only - it works on both desktop and mobile
-            this.navToggle.addEventListener('click', (e) => {
-                if (isProcessing) return;
-                isProcessing = true;
-                
-                this.toggleMobileMenu();
-                
-                // Reset processing flag after a short delay
-                setTimeout(() => {
-                    isProcessing = false;
-                }, 300);
-            });
-            
-            // Add CSS touch-action to prevent passive event issues
-            this.navToggle.style.touchAction = 'manipulation';
-        }
-        
-        // Close mobile menu when clicking links
-        this.navLinks.forEach(link => {
-            link.addEventListener('click', () => this.closeMobileMenu());
-        });
-
-        // Smooth scrolling for navigation links
-        this.navLinks.forEach(link => {
-            link.addEventListener('click', (e) => this.handleNavClick(e));
-        });
-
-        // Scroll effects
-        window.addEventListener('scroll', () => this.handleScroll());
-        
-        // Set initial active link
-        this.updateActiveLink();
-    }
-
-    toggleMobileMenu() {
-        if (this.navToggle && this.navMenu) {
-            const isCurrentlyActive = this.navMenu.classList.contains('active');
-            
-            if (isCurrentlyActive) {
-                this.navToggle.classList.remove('active');
-                this.navMenu.classList.remove('active');
-            } else {
-                this.navToggle.classList.add('active');
-                this.navMenu.classList.add('active');
-            }
-        }
-    }
-
-    closeMobileMenu() {
-        this.navToggle?.classList.remove('active');
-        this.navMenu?.classList.remove('active');
-    }
-
-    handleNavClick(e) {
-        const href = e.target.getAttribute('href');
-        
-        // If link contains a different page (like index.html#section), allow normal navigation
-        if (href.includes('.html')) {
-            return; // Let the browser handle the navigation
-        }
-        
-        // Only prevent default for same-page anchor links
-        e.preventDefault();
-        const targetSection = document.querySelector(href);
-        
-        if (targetSection) {
-            targetSection.scrollIntoView({
-                behavior: 'smooth',
-                block: 'start'
-            });
-        }
-    }
-
-    handleScroll() {
-        this.updateActiveLink();
-    }
-
-    updateActiveLink() {
-        let current = '';
-        
-        this.sections.forEach(section => {
-            const sectionTop = section.offsetTop - 100;
-            const sectionHeight = section.offsetHeight;
-            
-            if (window.scrollY >= sectionTop && window.scrollY < sectionTop + sectionHeight) {
-                current = section.getAttribute('id');
-            }
-        });
-
-        this.navLinks.forEach(link => {
-            link.classList.remove('active');
-            if (link.getAttribute('href') === `#${current}`) {
-                link.classList.add('active');
-            }
-        });
-    }
-}
-
-// Intersection Observer for Animations
-class AnimationObserver {
-    constructor() {
-        this.observerOptions = {
-            threshold: 0.1,
-            rootMargin: '0px 0px -50px 0px'
-        };
-        this.init();
-    }
-
-    init() {
-        this.observeSkillBars();
-        this.observeCards();
-    }
-
-    observeSkillBars() {
-        const skillBars = document.querySelectorAll('.progress');
-        const observer = new IntersectionObserver((entries) => {
-            entries.forEach(entry => {
-                if (entry.isIntersecting) {
-                    const width = entry.target.getAttribute('data-width');
-                    entry.target.style.width = width + '%';
-                }
-            });
-        }, this.observerOptions);
-
-        skillBars.forEach(bar => observer.observe(bar));
-    }
-
-    observeCards() {
-        const cards = document.querySelectorAll('.expertise-card, .project-card, .skill-bar');
-        const observer = new IntersectionObserver((entries) => {
-            entries.forEach((entry, index) => {
-                if (entry.isIntersecting) {
-                    setTimeout(() => {
-                        entry.target.style.opacity = '1';
-                        entry.target.style.transform = 'translateY(0)';
-                    }, index * 100);
-                }
-            });
-        }, this.observerOptions);
-
-        cards.forEach(card => {
-            card.style.opacity = '0';
-            card.style.transform = 'translateY(30px)';
-            card.style.transition = 'opacity 0.6s ease, transform 0.6s ease';
-            observer.observe(card);
-        });
-    }
-}
-
-// Project Filtering
-class ProjectFilter {
-    constructor() {
-        this.filterButtons = document.querySelectorAll('.filter-btn');
-        this.projectCards = document.querySelectorAll('.project-card');
-        this.init();
-    }
-
-    init() {
-        // Set default active filter to UX Design
-        const defaultFilter = document.querySelector('[data-filter="ux-design"]');
-        if (defaultFilter) {
-            this.filterProjects({ target: defaultFilter });
-        }
-        
-        this.filterButtons.forEach(button => {
-            button.addEventListener('click', (e) => this.filterProjects(e));
-        });
-    }
-
-    filterProjects(e) {
-        const filter = e.target.getAttribute('data-filter');
-        
-        // Update active button
-        this.filterButtons.forEach(btn => btn.classList.remove('active'));
-        e.target.classList.add('active');
-        
-        // Filter projects
-        this.projectCards.forEach(card => {
-            const category = card.getAttribute('data-category');
-            const tags = card.getAttribute('data-tags');
-            const tagList = tags ? tags.split(',') : [];
-            
-            let shouldShow = false;
-            
-            if (filter === 'all') {
-                shouldShow = true;
-            } else if (category === filter) {
-                shouldShow = true;
-            } else if (tagList.includes(filter)) {
-                shouldShow = true;
-            }
-            
-            if (shouldShow) {
-                card.classList.remove('hidden');
-                card.style.display = 'block';
-                card.style.opacity = '1';
-                card.style.transform = 'scale(1)';
-            } else {
-                card.classList.add('hidden');
-                card.style.opacity = '0';
-                card.style.transform = 'scale(0.8)';
-                setTimeout(() => {
-                    if (card.classList.contains('hidden')) {
-                        card.style.display = 'none';
-                    }
-                }, 300);
-            }
-        });
-    }
-}
-
-// Expandable Skills Manager
-class ExpandableSkills {
-    constructor() {
-        this.masterToggle = document.getElementById('skillsMasterToggle');
-        this.skillContainers = document.querySelectorAll('.skill-items-container');
-        this.isExpanded = false;
-        this.init();
-    }
-
-    init() {
-        if (this.masterToggle) {
-            this.masterToggle.addEventListener('click', (e) => this.toggleAllSkills(e));
-        }
-        
-        // Add click listeners to category headers
-        const categoryHeaders = document.querySelectorAll('.skill-category-header');
-        categoryHeaders.forEach(header => {
-            header.style.cursor = 'pointer';
-            header.addEventListener('click', (e) => this.toggleSingleCategory(e));
-        });
-    }
-    
-    toggleSingleCategory(e) {
-        e.preventDefault();
-        e.stopPropagation();
-        
-        const header = e.currentTarget;
-        const category = header.closest('.skill-category');
-        const container = category.querySelector('.skill-items-container');
-        
-        if (!container) return;
-        
-        const isExpanded = container.classList.contains('expanded');
-        
-        if (isExpanded) {
-            container.classList.remove('expanded');
-        } else {
-            container.classList.add('expanded');
-        }
-        
-        // Update master toggle state based on all categories
-        this.updateMasterToggleState();
-    }
-    
-    updateMasterToggleState() {
-        const expandedContainers = document.querySelectorAll('.skill-items-container.expanded');
-        const allExpanded = expandedContainers.length === this.skillContainers.length;
-        const noneExpanded = expandedContainers.length === 0;
-        
-        this.isExpanded = allExpanded;
-        
-        const toggleText = this.masterToggle.querySelector('span');
-        const icon = this.masterToggle.querySelector('i');
-        
-        if (allExpanded) {
-            this.masterToggle.classList.add('expanded');
-            if (toggleText) toggleText.textContent = 'Hide All Details';
-            if (icon) icon.setAttribute('data-feather', 'chevron-up');
-        } else {
-            this.masterToggle.classList.remove('expanded');
-            if (toggleText) toggleText.textContent = 'Show All Details';
-            if (icon) icon.setAttribute('data-feather', 'chevron-down');
-        }
-        
-        // Re-render feather icons
-        if (typeof feather !== 'undefined') {
-            feather.replace();
-        }
-    }
-
-    toggleAllSkills(e) {
-        e.preventDefault();
-        e.stopPropagation();
-        
-        this.isExpanded = !this.isExpanded;
-        
-        const toggleText = this.masterToggle.querySelector('span');
-        const icon = this.masterToggle.querySelector('i');
-        
-        if (this.isExpanded) {
-            // Expand all
-            this.skillContainers.forEach(container => {
-                container.classList.add('expanded');
-            });
-            this.masterToggle.classList.add('expanded');
-            if (toggleText) toggleText.textContent = 'Hide All Details';
-            if (icon) icon.setAttribute('data-feather', 'chevron-up');
-        } else {
-            // Collapse all
-            this.skillContainers.forEach(container => {
-                container.classList.remove('expanded');
-            });
-            this.masterToggle.classList.remove('expanded');
-            if (toggleText) toggleText.textContent = 'Show All Details';
-            if (icon) icon.setAttribute('data-feather', 'chevron-down');
-        }
-        
-        // Re-render feather icons
-        if (typeof feather !== 'undefined') {
-            feather.replace();
-        }
-    }
-}
-
-// Contact Form Handler
-class ContactForm {
-    constructor() {
-        this.form = document.getElementById('contactForm');
-        this.init();
-    }
-
-    init() {
-        if (this.form) {
-            this.form.addEventListener('submit', (e) => this.handleSubmit(e));
-        }
-    }
-
-    async handleSubmit(e) {
-        e.preventDefault();
-        
-        const submitButton = this.form.querySelector('button[type="submit"]');
-        const formData = new FormData(this.form);
-        
-        // Show loading state
-        submitButton.classList.add('loading');
-        submitButton.disabled = true;
-        
-        try {
-            const response = await fetch(this.form.action, {
-                method: 'POST',
-                body: formData,
-                headers: {
-                    'Accept': 'application/json'
-                }
-            });
-
-            if (response.ok) {
-                // Show success message
-                this.showMessage('Thank you! Your message has been sent successfully. I\'ll get back to you soon!', 'success');
-                this.form.reset();
-                
-                // Track successful form submission
-                if (window.gtag) {
-                    window.gtag('event', 'contact_form_submit', {
-                        event_category: 'contact',
-                        event_label: 'portfolio_contact_success'
-                    });
-                }
-            } else {
-                throw new Error('Form submission failed');
-            }
-            
-        } catch (error) {
-            console.error('Form submission error:', error);
-            this.showMessage('Sorry, there was an error sending your message. Please try again or contact me directly at hello@scottfloyd.com', 'error');
-        } finally {
-            // Reset button state
-            submitButton.classList.remove('loading');
-            submitButton.disabled = false;
-        }
-    }
-
-    showMessage(message, type) {
-        // Remove existing messages
-        const existingMessages = document.querySelectorAll('.form-message');
-        existingMessages.forEach(msg => msg.remove());
-        
-        // Create new message
-        const messageDiv = document.createElement('div');
-        messageDiv.className = `form-message ${type}`;
-        messageDiv.textContent = message;
-        messageDiv.style.cssText = `
-            padding: 1rem;
-            border-radius: 8px;
-            margin-top: 1rem;
-            font-weight: 600;
-            ${type === 'success' 
-                ? 'background: #dcfce7; color: #166534; border: 1px solid #bbf7d0;' 
-                : 'background: #fef2f2; color: #dc2626; border: 1px solid #fecaca;'
-            }
-        `;
-        
-        this.form.appendChild(messageDiv);
-        
-        // Auto-remove after 5 seconds
-        setTimeout(() => {
-            messageDiv.remove();
-        }, 5000);
-    }
-}
-
-// Smooth scroll performance optimization
-class SmoothScroll {
-    constructor() {
-        this.init();
-    }
-
-    init() {
-        // Polyfill for smooth scrolling in older browsers
-        if (!('scrollBehavior' in document.documentElement.style)) {
-            this.addSmoothScrollPolyfill();
-        }
-    }
-
-    addSmoothScrollPolyfill() {
-        const links = document.querySelectorAll('a[href^="#"]');
-        
-        links.forEach(link => {
-            link.addEventListener('click', (e) => {
-                e.preventDefault();
-                const targetId = link.getAttribute('href');
-                const targetElement = document.querySelector(targetId);
-                
-                if (targetElement) {
-                    this.smoothScrollTo(targetElement.offsetTop - 80, 800);
-                }
-            });
-        });
-    }
-
-    smoothScrollTo(targetPosition, duration) {
-        const startPosition = window.pageYOffset;
-        const distance = targetPosition - startPosition;
-        let startTime = null;
-
-        const animation = (currentTime) => {
-            if (startTime === null) startTime = currentTime;
-            const timeElapsed = currentTime - startTime;
-            const run = this.easeInOutQuart(timeElapsed, startPosition, distance, duration);
-            window.scrollTo(0, run);
-            
-            if (timeElapsed < duration) {
-                requestAnimationFrame(animation);
-            }
-        };
-
-        requestAnimationFrame(animation);
-    }
-
-    easeInOutQuart(t, b, c, d) {
-        t /= d / 2;
-        if (t < 1) return c / 2 * t * t * t * t + b;
-        t -= 2;
-        return -c / 2 * (t * t * t * t - 2) + b;
-    }
-}
-
-// Scroll to Top Button
-class ScrollToTop {
-    constructor() {
-        this.button = document.getElementById('scrollToTop');
-        this.init();
-    }
-
-    init() {
-        if (!this.button) return;
-
-        // Show/hide button based on scroll position
-        window.addEventListener('scroll', () => this.toggleVisibility());
-        
-        // Handle click to scroll to top
-        this.button.addEventListener('click', () => this.scrollToTop());
-    }
-
-    toggleVisibility() {
-        const scrolled = window.pageYOffset;
-        const threshold = 300; // Show after scrolling 300px
-
-        if (scrolled > threshold) {
-            this.button.classList.add('visible');
-        } else {
-            this.button.classList.remove('visible');
-        }
-    }
-
-    scrollToTop() {
-        window.scrollTo({
-            top: 0,
-            behavior: 'smooth'
-        });
-    }
-}
-
-// Retro TV Channel Switcher
-class RetroTVChannels {
-    constructor() {
-        this.channels = document.querySelectorAll('.channel-item');
-        this.currentChannel = 0;
-        this.init();
-    }
-
-    init() {
-        if (this.channels.length > 0) {
-            this.startChannelCycling();
-        }
-    }
-
-    startChannelCycling() {
-        setInterval(() => {
-            this.switchChannel();
-        }, 4000); // Switch every 4 seconds
-    }
-
-    switchChannel() {
-        // Hide current channel
-        this.channels[this.currentChannel].classList.remove('active');
-        
-        // Move to next channel
-        this.currentChannel = (this.currentChannel + 1) % this.channels.length;
-        
-        // Show new channel
-        this.channels[this.currentChannel].classList.add('active');
-    }
-}
-
-// Expandable Tech Stack
-class ExpandableTechStack {
-    constructor() {
-        this.expandBtn = document.getElementById('expandTechStack');
-        this.techContent = document.getElementById('techContent');
-        this.init();
-    }
-
-    init() {
-        if (!this.expandBtn || !this.techContent) return;
-        
-        this.expandBtn.addEventListener('click', () => this.toggle());
-    }
-
-    toggle() {
-        const isExpanded = this.techContent.classList.contains('expanded');
-        
-        if (isExpanded) {
-            this.collapse();
-        } else {
-            this.expand();
-        }
-    }
-
-    expand() {
-        this.techContent.classList.add('expanded');
-        this.expandBtn.classList.add('expanded');
-        this.expandBtn.innerHTML = '<i data-feather="minus"></i>';
-        
-        // Re-initialize feather icons for the new minus icon
-        if (typeof feather !== 'undefined') {
-            feather.replace();
-        }
-    }
-
-    collapse() {
-        this.techContent.classList.remove('expanded');
-        this.expandBtn.classList.remove('expanded');
-        this.expandBtn.innerHTML = '<i data-feather="plus"></i>';
-        
-        // Re-initialize feather icons for the new plus icon
-        if (typeof feather !== 'undefined') {
-            feather.replace();
-        }
     }
 }
 
@@ -741,98 +170,7 @@ document.addEventListener('DOMContentLoaded', () => {
         feather.replace();
     }
 
-    // Initialize Google Analytics
-    const analytics = new GoogleAnalytics();
-
-    // Initialize all components
+    // Initialize components
     new ThemeManager();
-    new CyclingText();
     new NavigationManager();
-    new AnimationObserver();
-    new ProjectFilter();
-    new ExpandableSkills();
-    new ContactForm();
-    new SmoothScroll();
-    new ScrollToTop();
-    new RetroTVChannels();
-    new ExpandableTechStack();
-
-    // Add analytics tracking to key interactions
-    const setupAnalyticsTracking = () => {
-        // Track contact form submissions
-        const contactForm = document.getElementById('contactForm');
-        if (contactForm) {
-            contactForm.addEventListener('submit', () => {
-                analytics.trackEvent('contact_form_submit', 'contact', 'portfolio_contact');
-            });
-        }
-
-        // Track project link clicks
-        const projectLinks = document.querySelectorAll('.project-link');
-        projectLinks.forEach(link => {
-            link.addEventListener('click', (e) => {
-                const projectCard = e.target.closest('.project-card');
-                const projectTitle = projectCard?.querySelector('h3')?.textContent || 'unknown';
-                analytics.trackEvent('project_view', 'projects', projectTitle);
-            });
-        });
-
-        // Track skills section expansions
-        const skillsToggle = document.getElementById('skillsMasterToggle');
-        if (skillsToggle) {
-            skillsToggle.addEventListener('click', () => {
-                analytics.trackEvent('skills_toggle', 'engagement', 'skills_expansion');
-            });
-        }
-
-        // Track navigation link clicks
-        const navLinks = document.querySelectorAll('.nav-link');
-        navLinks.forEach(link => {
-            link.addEventListener('click', (e) => {
-                const section = e.target.getAttribute('href')?.replace('#', '') || 'unknown';
-                analytics.trackEvent('navigation_click', 'navigation', section);
-            });
-        });
-
-        // Track theme toggle
-        const themeToggle = document.getElementById('themeToggle');
-        if (themeToggle) {
-            themeToggle.addEventListener('click', () => {
-                analytics.trackEvent('theme_toggle', 'ui', 'dark_light_mode');
-            });
-        }
-    };
-
-    setupAnalyticsTracking();
-
-    // Add loading complete class for CSS animations
-    document.body.classList.add('loaded');
 });
-
-// Handle window resize for responsive adjustments
-let resizeTimeout;
-window.addEventListener('resize', () => {
-    clearTimeout(resizeTimeout);
-    resizeTimeout = setTimeout(() => {
-        // Recalculate any position-dependent elements
-        const nav = document.querySelector('.nav');
-        if (nav) {
-            nav.style.transform = 'translateY(0)';
-        }
-    }, 250);
-});
-
-// Error handling for missing elements
-window.addEventListener('error', (e) => {
-    console.warn('Script error handled:', e.message);
-});
-
-// Export for potential module usage
-if (typeof module !== 'undefined' && module.exports) {
-    module.exports = {
-        NavigationManager,
-        AnimationObserver,
-        ProjectFilter,
-        ContactForm
-    };
-}
