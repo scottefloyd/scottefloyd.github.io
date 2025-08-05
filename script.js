@@ -163,6 +163,112 @@ class ThemeManager {
     }
 }
 
+// Cycling Text Animation
+class CyclingText {
+    constructor() {
+        this.cyclingWords = document.querySelectorAll('.cycling-word');
+        this.currentIndex = 0;
+        this.init();
+    }
+
+    init() {
+        if (this.cyclingWords.length > 0) {
+            this.startCycling();
+        }
+    }
+
+    startCycling() {
+        setInterval(() => {
+            this.cyclingWords[this.currentIndex].classList.remove('active');
+            this.currentIndex = (this.currentIndex + 1) % this.cyclingWords.length;
+            this.cyclingWords[this.currentIndex].classList.add('active');
+        }, 2000);
+    }
+}
+
+// Scroll to Top Button
+class ScrollToTop {
+    constructor() {
+        this.button = document.getElementById('scrollToTop');
+        this.init();
+    }
+
+    init() {
+        if (!this.button) return;
+
+        window.addEventListener('scroll', () => this.toggleVisibility());
+        this.button.addEventListener('click', () => this.scrollToTop());
+    }
+
+    toggleVisibility() {
+        const scrolled = window.pageYOffset;
+        const threshold = 300;
+
+        if (scrolled > threshold) {
+            this.button.classList.add('visible');
+        } else {
+            this.button.classList.remove('visible');
+        }
+    }
+
+    scrollToTop() {
+        window.scrollTo({
+            top: 0,
+            behavior: 'smooth'
+        });
+    }
+}
+
+// Google Analytics Integration
+class GoogleAnalytics {
+    constructor() {
+        this.measurementId = window.ENV?.GA_MEASUREMENT_ID || null;
+        if (this.measurementId && this.measurementId !== 'PLACEHOLDER_GA_ID') {
+            this.init();
+        }
+    }
+
+    init() {
+        if (typeof window === 'undefined') return;
+        this.loadGoogleAnalytics();
+        this.trackPageView(window.location.pathname);
+    }
+
+    loadGoogleAnalytics() {
+        const script1 = document.createElement('script');
+        script1.async = true;
+        script1.src = `https://www.googletagmanager.com/gtag/js?id=${this.measurementId}`;
+        document.head.appendChild(script1);
+
+        const script2 = document.createElement('script');
+        script2.textContent = `
+            window.dataLayer = window.dataLayer || [];
+            function gtag(){dataLayer.push(arguments);}
+            gtag('js', new Date());
+            gtag('config', '${this.measurementId}');
+        `;
+        document.head.appendChild(script2);
+    }
+
+    trackPageView(url) {
+        if (typeof window === 'undefined' || !window.gtag) return;
+        
+        window.gtag('config', this.measurementId, {
+            page_path: url
+        });
+    }
+
+    trackEvent(action, category = 'engagement', label = '', value = 1) {
+        if (typeof window === 'undefined' || !window.gtag) return;
+        
+        window.gtag('event', action, {
+            event_category: category,
+            event_label: label,
+            value: value,
+        });
+    }
+}
+
 // Initialize everything when DOM is loaded
 document.addEventListener('DOMContentLoaded', () => {
     // Initialize Feather icons
@@ -171,6 +277,9 @@ document.addEventListener('DOMContentLoaded', () => {
     }
 
     // Initialize components
+    new GoogleAnalytics();
     new ThemeManager();
+    new CyclingText();
     new NavigationManager();
+    new ScrollToTop();
 });

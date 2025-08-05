@@ -6,6 +6,10 @@ This is a personal portfolio website for Scott Floyd, showcasing his expertise i
 ## User Preferences
 Preferred communication style: Simple, everyday language.
 
+## Recent Changes
+- **Mobile Menu Fixed** (Aug 4, 2025): Resolved multiple click issues and improved touch targets for Samsung Galaxy S25 mobile compatibility. Desktop theme toggle properly hidden on mobile, theme toggle moved to mobile flyout menu.
+- **Clean JavaScript Implementation**: Removed debug logging and conflicting event handlers that were causing mobile menu reliability issues.
+
 ## System Architecture
 The application follows a client-side architecture built with vanilla HTML, CSS, and JavaScript, with no backend dependencies.
 
