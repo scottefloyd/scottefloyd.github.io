@@ -306,30 +306,7 @@ class ExpandableSections {
         const skillCategories = document.querySelectorAll('.expandable-skill-category');
         const masterToggle = document.getElementById('skillsMasterToggle');
         
-        // Individual category toggles
-        skillCategories.forEach(category => {
-            const header = category.querySelector('.skill-category-header');
-            const container = category.querySelector('.skill-items-container');
-            
-            if (header && container) {
-                header.addEventListener('click', () => {
-                    const isExpanded = container.classList.contains('expanded');
-                    
-                    if (isExpanded) {
-                        container.classList.remove('expanded');
-                        header.classList.remove('expanded');
-                    } else {
-                        container.classList.add('expanded');
-                        header.classList.add('expanded');
-                    }
-                    
-                    // Update master toggle state
-                    this.updateMasterToggleState();
-                });
-            }
-        });
-        
-        // Master toggle functionality
+        // Master toggle functionality only - no individual category toggles
         if (masterToggle) {
             masterToggle.addEventListener('click', () => {
                 const allExpanded = this.areAllSkillsExpanded();
