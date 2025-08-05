@@ -4,13 +4,13 @@ test.describe('Skills & Expertise Section Tests', () => {
   test.beforeEach(async ({ page }) => {
     await page.goto('/');
     // Navigate to skills section
-    await page.locator('#skills').scrollIntoViewIfNeeded();
+    await page.locator('.skills-expertise').scrollIntoViewIfNeeded();
   });
 
   test('should display skills section correctly', async ({ page }) => {
     // Check section title and subtitle
-    await expect(page.locator('#skills .section-title')).toContainText('Skills & Expertise');
-    await expect(page.locator('#skills .section-subtitle')).toBeVisible();
+    await expect(page.locator('.skills-expertise .section-title')).toContainText('Skills & Expertise');
+    await expect(page.locator('.skills-expertise .section-subtitle')).toBeVisible();
     
     // Check all three skill categories are present
     await expect(page.locator('.skills-category').nth(0)).toBeVisible();
@@ -35,7 +35,7 @@ test.describe('Skills & Expertise Section Tests', () => {
   });
 
   test('should have working "Show All Details" toggle', async ({ page }) => {
-    const showAllButton = page.locator('.show-all-btn');
+    const showAllButton = page.locator('#skillsMasterToggle');
     
     // Check button is present
     await expect(showAllButton).toBeVisible();
@@ -44,9 +44,9 @@ test.describe('Skills & Expertise Section Tests', () => {
     await showAllButton.click();
     
     // All skill contents should be visible
-    await expect(page.locator('.skills-content').nth(0)).toBeVisible();
-    await expect(page.locator('.skills-content').nth(1)).toBeVisible();
-    await expect(page.locator('.skills-content').nth(2)).toBeVisible();
+    await expect(page.locator('.skill-items').nth(0)).toBeVisible();
+    await expect(page.locator('.skill-items').nth(1)).toBeVisible();
+    await expect(page.locator('.skill-items').nth(2)).toBeVisible();
     
     // Button text should change
     await expect(showAllButton).toContainText('Hide All Details');
@@ -55,9 +55,9 @@ test.describe('Skills & Expertise Section Tests', () => {
     await showAllButton.click();
     
     // All contents should be hidden
-    await expect(page.locator('.skills-content').nth(0)).not.toBeVisible();
-    await expect(page.locator('.skills-content').nth(1)).not.toBeVisible();
-    await expect(page.locator('.skills-content').nth(2)).not.toBeVisible();
+    await expect(page.locator('.skill-items').nth(0)).not.toBeVisible();
+    await expect(page.locator('.skill-items').nth(1)).not.toBeVisible();
+    await expect(page.locator('.skill-items').nth(2)).not.toBeVisible();
   });
 
   test('should display correct skill categories', async ({ page }) => {

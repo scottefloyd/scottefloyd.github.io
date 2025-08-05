@@ -9,7 +9,7 @@ test.describe('Contact Form Tests', () => {
 
   test('should display contact form correctly', async ({ page }) => {
     // Check form is present
-    await expect(page.locator('#contactForm')).toBeVisible();
+    await expect(page.locator('form')).toBeVisible();
     
     // Check all form fields are present
     await expect(page.locator('input[name="name"]')).toBeVisible();

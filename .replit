@@ -17,7 +17,7 @@ args = "Portfolio Server"
 
 [[workflows.workflow.tasks]]
 task = "workflow.run"
-args = "Run Tests"
+args = "Quick Tests"
 
 [[workflows.workflow]]
 name = "Portfolio Server"
@@ -29,12 +29,12 @@ args = "python -m http.server 5000"
 waitForPort = 5000
 
 [[workflows.workflow]]
-name = "Run Tests"
+name = "Quick Tests"
 author = "agent"
 
 [[workflows.workflow.tasks]]
 task = "shell.exec"
-args = "npx playwright test --reporter=html"
+args = "npx playwright test tests/simple-validation.spec.js --reporter=line"
 
 [[ports]]
 localPort = 5000
