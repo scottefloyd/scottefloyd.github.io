@@ -1986,11 +1986,11 @@ body {
 }
 
 .resume-title {
-    font-family: ui-sans-serif, system-ui, sans-serif;
+    font-family: 'Inter', sans-serif !important;
     font-size: var(--font-size-4xl);
-    font-weight: 400;
+    font-weight: 700 !important;
     margin-bottom: var(--space-4);
-    color: var(--text-primary);
+    color: var(--text-primary) !important;
 }
 
 .resume-subtitle {

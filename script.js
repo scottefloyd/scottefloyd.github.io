@@ -1,4 +1,4 @@
-// Portfolio JavaScript - Final Clean Version
+// Portfolio JavaScript - Production Version
 
 // Navigation Management  
 class NavigationManager {
@@ -13,7 +13,7 @@ class NavigationManager {
     }
 
     init() {
-        // Mobile menu toggle - simple and clean
+        // Mobile menu toggle
         if (this.navToggle && this.navMenu) {
             this.navToggle.addEventListener('click', (e) => {
                 e.preventDefault();
