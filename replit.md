@@ -7,6 +7,10 @@ This is a personal portfolio website for Scott Floyd, showcasing his expertise i
 Preferred communication style: Simple, everyday language.
 
 ## Recent Changes
+- **Skills & Expertise Interactive Functionality** (Aug 5, 2025): Implemented accordion-style skill categories with full content display. All three sections (Test Automation & Quality, Development & Programming, DevOps & Collaboration) are clickable with detailed skill descriptions. Master "Show All Details" toggle works across all sections.
+- **Mobile Cycling Text Centering** (Aug 5, 2025): Added mobile-specific CSS to center the cycling text after "Hire a Creative" on mobile devices while maintaining desktop layout.
+- **Hero Content Layout Fix** (Aug 5, 2025): Resolved hero section positioning issues with proper centering and restored correct layout across all screen sizes.
+- **Resume Page Feature Parity** (Aug 5, 2025): Added missing scroll-to-top button, dark mode toggle in mobile menu, and fixed navigation consistency between main and resume pages.
 - **Mobile Menu Fixed** (Aug 4, 2025): Resolved multiple click issues and improved touch targets for Samsung Galaxy S25 mobile compatibility. Desktop theme toggle properly hidden on mobile, theme toggle moved to mobile flyout menu.
 - **Clean JavaScript Implementation**: Removed debug logging and conflicting event handlers that were causing mobile menu reliability issues.
 
