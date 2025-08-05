@@ -306,34 +306,31 @@ class ExpandableSections {
         const skillCategories = document.querySelectorAll('.expandable-skill-category');
         const masterToggle = document.getElementById('skillsMasterToggle');
         
-        // Individual category toggles - only expand the clicked one
+        // Individual category toggles - only "Development & Programming" should expand
         skillCategories.forEach(category => {
             const header = category.querySelector('.skill-category-header');
             const container = category.querySelector('.skill-items-container');
+            const categoryTitle = header?.querySelector('h3')?.textContent;
             
             if (header && container) {
                 header.addEventListener('click', () => {
-                    const isExpanded = container.classList.contains('expanded');
-                    
-                    // Close all other categories first
+                    // Close all categories first
                     skillCategories.forEach(otherCategory => {
-                        if (otherCategory !== category) {
-                            const otherContainer = otherCategory.querySelector('.skill-items-container');
-                            const otherHeader = otherCategory.querySelector('.skill-category-header');
-                            if (otherContainer && otherHeader) {
-                                otherContainer.classList.remove('expanded');
-                                otherHeader.classList.remove('expanded');
-                            }
+                        const otherContainer = otherCategory.querySelector('.skill-items-container');
+                        const otherHeader = otherCategory.querySelector('.skill-category-header');
+                        if (otherContainer && otherHeader) {
+                            otherContainer.classList.remove('expanded');
+                            otherHeader.classList.remove('expanded');
                         }
                     });
                     
-                    // Toggle the clicked category
-                    if (isExpanded) {
-                        container.classList.remove('expanded');
-                        header.classList.remove('expanded');
-                    } else {
-                        container.classList.add('expanded');
-                        header.classList.add('expanded');
+                    // Only expand if this is "Development & Programming" (which has content)
+                    if (categoryTitle === 'Development & Programming') {
+                        const isExpanded = container.classList.contains('expanded');
+                        if (!isExpanded) {
+                            container.classList.add('expanded');
+                            header.classList.add('expanded');
+                        }
                     }
                     
                     // Update master toggle state
