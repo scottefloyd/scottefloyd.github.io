@@ -15,8 +15,15 @@ console.log('Scott Floyd Portfolio - Script.js loaded successfully!');
             console.log('Adding immediate click handler...');
             navToggle.addEventListener('click', function() {
                 console.log('IMMEDIATE HANDLER: Menu clicked!');
-                navToggle.classList.toggle('active');
-                navMenu.classList.toggle('active');
+                const isActive = navMenu.classList.contains('active');
+                
+                if (isActive) {
+                    navToggle.classList.remove('active');
+                    navMenu.classList.remove('active');
+                } else {
+                    navToggle.classList.add('active');
+                    navMenu.classList.add('active');
+                }
             });
         }
     }, 100);
@@ -243,11 +250,17 @@ class NavigationManager {
         console.log('Mobile menu toggle clicked'); // Debug log
         
         if (this.navToggle && this.navMenu) {
-            this.navToggle.classList.toggle('active');
-            this.navMenu.classList.toggle('active');
+            const isCurrentlyActive = this.navMenu.classList.contains('active');
             
-            // Force a repaint to ensure CSS changes take effect
-            this.navMenu.offsetHeight;
+            if (isCurrentlyActive) {
+                this.navToggle.classList.remove('active');
+                this.navMenu.classList.remove('active');
+                console.log('Menu closed');
+            } else {
+                this.navToggle.classList.add('active');
+                this.navMenu.classList.add('active');
+                console.log('Menu opened');
+            }
             
             console.log('Menu active state:', this.navMenu.classList.contains('active')); // Debug log
             console.log('Menu display style:', window.getComputedStyle(this.navMenu).display); // Debug log
