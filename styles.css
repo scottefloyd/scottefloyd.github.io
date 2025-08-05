@@ -2538,8 +2538,15 @@ body {
     .cycling-text {
         min-width: 300px;
         text-align: center;
-        display: block;
+        display: flex;
+        justify-content: center;
         margin: 0 auto;
+    }
+    
+    .cycling-text .cycling-word {
+        position: relative;
+        left: 50%;
+        transform: translateX(-50%);
     }
 }
 
@@ -2552,8 +2559,15 @@ body {
     .cycling-text {
         min-width: 250px;
         text-align: center;
-        display: block;
+        display: flex;
+        justify-content: center;
         margin: 0 auto;
+    }
+    
+    .cycling-text .cycling-word {
+        position: relative;
+        left: 50%;
+        transform: translateX(-50%);
     }
     
     .section-title {
