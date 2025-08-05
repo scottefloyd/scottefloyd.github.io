@@ -266,6 +266,92 @@ class GoogleAnalytics {
     }
 }
 
+// Expandable Sections Management
+class ExpandableSections {
+    constructor() {
+        this.init();
+    }
+
+    init() {
+        // Tech Stack expandable functionality
+        this.initTechStack();
+        
+        // Skills expandable functionality
+        this.initSkillCategories();
+        
+        // Project filters functionality
+        this.initProjectFilters();
+    }
+
+    initTechStack() {
+        const expandBtn = document.getElementById('expandTechStack');
+        const techContent = document.getElementById('techContent');
+        
+        if (expandBtn && techContent) {
+            expandBtn.addEventListener('click', () => {
+                const isExpanded = techContent.classList.contains('expanded');
+                
+                if (isExpanded) {
+                    techContent.classList.remove('expanded');
+                    expandBtn.classList.remove('expanded');
+                } else {
+                    techContent.classList.add('expanded');
+                    expandBtn.classList.add('expanded');
+                }
+            });
+        }
+    }
+
+    initSkillCategories() {
+        const skillCategories = document.querySelectorAll('.expandable-skill-category');
+        
+        skillCategories.forEach(category => {
+            const header = category.querySelector('.skill-category-header');
+            const container = category.querySelector('.skill-items-container');
+            
+            if (header && container) {
+                header.addEventListener('click', () => {
+                    const isExpanded = container.classList.contains('expanded');
+                    
+                    if (isExpanded) {
+                        container.classList.remove('expanded');
+                        header.classList.remove('expanded');
+                    } else {
+                        container.classList.add('expanded');
+                        header.classList.add('expanded');
+                    }
+                });
+            }
+        });
+    }
+
+    initProjectFilters() {
+        const filterButtons = document.querySelectorAll('.filter-btn');
+        const projectCards = document.querySelectorAll('.project-card');
+        
+        filterButtons.forEach(btn => {
+            btn.addEventListener('click', () => {
+                const filter = btn.getAttribute('data-filter');
+                
+                // Update active button
+                filterButtons.forEach(b => b.classList.remove('active'));
+                btn.classList.add('active');
+                
+                // Filter projects
+                projectCards.forEach(card => {
+                    const tags = card.getAttribute('data-tags');
+                    
+                    if (tags && tags.includes(filter)) {
+                        card.style.display = 'block';
+                    } else {
+                        card.style.display = 'none';
+                    }
+                });
+            });
+        });
+    }
+}
+
 // Initialize everything when DOM is loaded
 document.addEventListener('DOMContentLoaded', () => {
     // Initialize Feather icons
@@ -279,4 +365,5 @@ document.addEventListener('DOMContentLoaded', () => {
     new CyclingText();
     new NavigationManager();
     new ScrollToTop();
+    new ExpandableSections();
 });
