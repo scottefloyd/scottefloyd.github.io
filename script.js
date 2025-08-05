@@ -304,7 +304,9 @@ class ExpandableSections {
 
     initSkillCategories() {
         const skillCategories = document.querySelectorAll('.expandable-skill-category');
+        const masterToggle = document.getElementById('skillsMasterToggle');
         
+        // Individual category toggles
         skillCategories.forEach(category => {
             const header = category.querySelector('.skill-category-header');
             const container = category.querySelector('.skill-items-container');
@@ -320,9 +322,65 @@ class ExpandableSections {
                         container.classList.add('expanded');
                         header.classList.add('expanded');
                     }
+                    
+                    // Update master toggle state
+                    this.updateMasterToggleState();
                 });
             }
         });
+        
+        // Master toggle functionality
+        if (masterToggle) {
+            masterToggle.addEventListener('click', () => {
+                const allExpanded = this.areAllSkillsExpanded();
+                
+                skillCategories.forEach(category => {
+                    const container = category.querySelector('.skill-items-container');
+                    const header = category.querySelector('.skill-category-header');
+                    
+                    if (container && header) {
+                        if (allExpanded) {
+                            container.classList.remove('expanded');
+                            header.classList.remove('expanded');
+                        } else {
+                            container.classList.add('expanded');
+                            header.classList.add('expanded');
+                        }
+                    }
+                });
+                
+                // Update master toggle state
+                this.updateMasterToggleState();
+            });
+        }
+    }
+    
+    areAllSkillsExpanded() {
+        const skillContainers = document.querySelectorAll('.skill-items-container');
+        return Array.from(skillContainers).every(container => container.classList.contains('expanded'));
+    }
+    
+    updateMasterToggleState() {
+        const masterToggle = document.getElementById('skillsMasterToggle');
+        if (!masterToggle) return;
+        
+        const allExpanded = this.areAllSkillsExpanded();
+        const toggleText = masterToggle.querySelector('span');
+        const toggleIcon = masterToggle.querySelector('i');
+        
+        if (toggleText) {
+            toggleText.textContent = allExpanded ? 'Hide All Details' : 'Show All Details';
+        }
+        
+        if (toggleIcon) {
+            toggleIcon.setAttribute('data-feather', allExpanded ? 'chevron-up' : 'chevron-down');
+            // Re-initialize feather icons for this specific icon
+            if (typeof feather !== 'undefined') {
+                feather.replace();
+            }
+        }
+        
+        masterToggle.classList.toggle('expanded', allExpanded);
     }
 
     initProjectFilters() {
