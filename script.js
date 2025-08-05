@@ -1,33 +1,4 @@
 // Modern Portfolio JavaScript
-console.log('Scott Floyd Portfolio - Script.js loaded successfully!');
-
-// Immediate test to ensure basic functionality
-(function() {
-    console.log('Immediate script execution test');
-    
-    // Test if we can find basic elements
-    setTimeout(() => {
-        const navToggle = document.querySelector('.nav-toggle');
-        const navMenu = document.querySelector('.nav-menu');
-        console.log('Element check:', { navToggle: !!navToggle, navMenu: !!navMenu });
-        
-        if (navToggle && navMenu) {
-            console.log('Adding immediate click handler...');
-            navToggle.addEventListener('click', function() {
-                console.log('IMMEDIATE HANDLER: Menu clicked!');
-                const isActive = navMenu.classList.contains('active');
-                
-                if (isActive) {
-                    navToggle.classList.remove('active');
-                    navMenu.classList.remove('active');
-                } else {
-                    navToggle.classList.add('active');
-                    navMenu.classList.add('active');
-                }
-            });
-        }
-    }, 100);
-})();
 
 // Google Analytics Integration
 class GoogleAnalytics {
@@ -180,22 +151,7 @@ class NavigationManager {
         this.navLinks = document.querySelectorAll('.nav-link');
         this.sections = document.querySelectorAll('section[id]');
         
-        console.log('NavigationManager initialized:', {
-            navToggle: !!this.navToggle,
-            navMenu: !!this.navMenu,
-            navLinks: this.navLinks.length,
-            navToggleElement: this.navToggle,
-            navMenuElement: this.navMenu
-        });
-        
-        // Additional debugging for DOM elements
-        if (!this.navToggle) {
-            console.error('Nav toggle button not found! Looking for .nav-toggle');
-            console.log('Available nav elements:', document.querySelector('.nav')?.innerHTML);
-        }
-        if (!this.navMenu) {
-            console.error('Nav menu not found! Looking for .nav-menu');
-        }
+        // Mobile menu is now ready
         
         this.init();
     }
@@ -210,11 +166,6 @@ class NavigationManager {
                 if (isProcessing) return;
                 isProcessing = true;
                 
-                console.log('Menu toggle clicked - event details:', {
-                    target: e.target,
-                    currentTarget: e.currentTarget,
-                    type: e.type
-                });
                 this.toggleMobileMenu();
                 
                 // Reset processing flag after a short delay
@@ -222,8 +173,6 @@ class NavigationManager {
                     isProcessing = false;
                 }, 300);
             });
-            
-            console.log('Click event listener added to nav-toggle');
             
             // Add CSS touch-action to prevent passive event issues
             this.navToggle.style.touchAction = 'manipulation';
@@ -247,28 +196,16 @@ class NavigationManager {
     }
 
     toggleMobileMenu() {
-        console.log('Mobile menu toggle clicked'); // Debug log
-        
         if (this.navToggle && this.navMenu) {
             const isCurrentlyActive = this.navMenu.classList.contains('active');
             
             if (isCurrentlyActive) {
                 this.navToggle.classList.remove('active');
                 this.navMenu.classList.remove('active');
-                console.log('Menu closed');
             } else {
                 this.navToggle.classList.add('active');
                 this.navMenu.classList.add('active');
-                console.log('Menu opened');
             }
-            
-            console.log('Menu active state:', this.navMenu.classList.contains('active')); // Debug log
-            console.log('Menu display style:', window.getComputedStyle(this.navMenu).display); // Debug log
-        } else {
-            console.error('Navigation elements not found:', {
-                navToggle: !!this.navToggle,
-                navMenu: !!this.navMenu
-            });
         }
     }
 
@@ -799,25 +736,17 @@ class ExpandableTechStack {
 
 // Initialize everything when DOM is loaded
 document.addEventListener('DOMContentLoaded', () => {
-    console.log('DOM Content Loaded - Starting portfolio initialization...');
-    
     // Initialize Feather icons
     if (typeof feather !== 'undefined') {
         feather.replace();
-        console.log('Feather icons initialized');
     }
 
     // Initialize Google Analytics
     const analytics = new GoogleAnalytics();
 
     // Initialize all components
-    console.log('Initializing ThemeManager...');
     new ThemeManager();
-    
-    console.log('Initializing CyclingText...');
     new CyclingText();
-    
-    console.log('Initializing NavigationManager...');
     new NavigationManager();
     new AnimationObserver();
     new ProjectFilter();
