@@ -318,6 +318,7 @@ body {
     text-align: center;
     max-width: 800px;
     margin: 0 auto;
+    margin: 0 auto;
 }
 
 .hero-badge {
@@ -2538,15 +2539,13 @@ body {
     .cycling-text {
         min-width: 300px;
         text-align: center;
-        display: flex;
         justify-content: center;
         margin: 0 auto;
     }
     
-    .cycling-text .cycling-word {
-        position: relative;
-        left: 50%;
-        transform: translateX(-50%);
+    .cycling-word {
+        left: 50% !important;
+        transform: translateX(-50%) !important;
     }
 }
 
@@ -2559,15 +2558,8 @@ body {
     .cycling-text {
         min-width: 250px;
         text-align: center;
-        display: flex;
         justify-content: center;
         margin: 0 auto;
-    }
-    
-    .cycling-text .cycling-word {
-        position: relative;
-        left: 50%;
-        transform: translateX(-50%);
     }
     
     .section-title {
