@@ -1,0 +1,115 @@
+<!DOCTYPE html>
+<html lang="en">
+<head>
+    <meta charset="UTF-8">
+    <meta name="viewport" content="width=device-width, initial-scale=1.0">
+    <title>Test Report Viewer - Scott Floyd Portfolio</title>
+    <style>
+        body {
+            font-family: 'Inter', Arial, sans-serif;
+            background: linear-gradient(135deg, #667eea 0%, #764ba2 100%);
+            margin: 0;
+            padding: 20px;
+            min-height: 100vh;
+            display: flex;
+            align-items: center;
+            justify-content: center;
+        }
+        .container {
+            background: white;
+            border-radius: 12px;
+            padding: 30px;
+            box-shadow: 0 20px 40px rgba(0,0,0,0.1);
+            text-align: center;
+            max-width: 500px;
+            width: 100%;
+        }
+        h1 {
+            color: #333;
+            margin-bottom: 10px;
+        }
+        p {
+            color: #666;
+            margin-bottom: 30px;
+        }
+        .btn {
+            display: inline-block;
+            background: #667eea;
+            color: white;
+            padding: 12px 24px;
+            text-decoration: none;
+            border-radius: 8px;
+            font-weight: 500;
+            transition: background 0.3s ease;
+            margin: 5px;
+        }
+        .btn:hover {
+            background: #5a6fd8;
+        }
+        .btn-secondary {
+            background: #6c757d;
+        }
+        .btn-secondary:hover {
+            background: #5a6268;
+        }
+        .status {
+            background: #d4edda;
+            color: #155724;
+            padding: 10px;
+            border-radius: 6px;
+            margin: 20px 0;
+            border: 1px solid #c3e6cb;
+        }
+        iframe {
+            width: 100%;
+            height: 70vh;
+            border: 2px solid #ddd;
+            border-radius: 8px;
+            margin-top: 20px;
+        }
+    </style>
+</head>
+<body>
+    <div class="container">
+        <h1>Portfolio Test Results</h1>
+        <p>Automated quality assurance validation for Scott Floyd's portfolio website</p>
+        
+        <div class="status">
+            <strong>Latest Test Run:</strong> 83.3% Success Rate<br>
+            10 tests passed, 2 tests failed
+        </div>
+        
+        <a href="tests/validation-report.html" class="btn" target="_blank">
+            View Detailed Test Report
+        </a>
+        
+        <a href="javascript:loadReport()" class="btn btn-secondary">
+            Load Report Below
+        </a>
+        
+        <a href="index.html" class="btn btn-secondary">
+            Back to Portfolio
+        </a>
+        
+        <div id="reportContainer" style="display: none;">
+            <iframe id="reportFrame" src=""></iframe>
+        </div>
+    </div>
+
+    <script>
+        function loadReport() {
+            const container = document.getElementById('reportContainer');
+            const frame = document.getElementById('reportFrame');
+            
+            if (container.style.display === 'none') {
+                container.style.display = 'block';
+                frame.src = 'tests/validation-report.html';
+                document.querySelector('.container').style.maxWidth = '90%';
+            } else {
+                container.style.display = 'none';
+                document.querySelector('.container').style.maxWidth = '500px';
+            }
+        }
+    </script>
+</body>
+</html>
