@@ -2537,6 +2537,9 @@ body {
     
     .cycling-text {
         min-width: 300px;
+        text-align: center;
+        display: block;
+        margin: 0 auto;
     }
 }
 
@@ -2548,6 +2551,9 @@ body {
     
     .cycling-text {
         min-width: 250px;
+        text-align: center;
+        display: block;
+        margin: 0 auto;
     }
     
     .section-title {
