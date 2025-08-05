@@ -1629,12 +1629,19 @@ body {
     justify-content: space-between;
     align-items: center;
     padding: var(--space-6);
-    cursor: default;
+    cursor: pointer;
     background: linear-gradient(135deg, var(--bg-card) 0%, rgba(79, 70, 229, 0.02) 100%);
     border-bottom: 1px solid var(--border-color);
+    transition: all 0.3s ease;
 }
 
-/* Removed hover effects since headers are no longer clickable */
+.skill-category-header:hover {
+    background: linear-gradient(135deg, var(--bg-card) 0%, rgba(79, 70, 229, 0.05) 100%);
+}
+
+.skill-category-header:hover h3 {
+    color: var(--accent-secondary);
+}
 
 .skills-narrative .skill-category h3 {
     font-family: ui-sans-serif, system-ui, sans-serif;
