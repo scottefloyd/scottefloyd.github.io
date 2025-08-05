@@ -1,9 +1,9 @@
-// Modern Portfolio JavaScript - Clean Version
+// Portfolio JavaScript - Final Clean Version
 
-// Navigation Management
+// Navigation Management  
 class NavigationManager {
     constructor() {
-        this.nav = document.querySelector('.nav');
+        this.nav = document.querySelector('.nav, .navbar');
         this.navToggle = document.querySelector('.nav-toggle');
         this.navMenu = document.querySelector('.nav-menu');
         this.navLinks = document.querySelectorAll('.nav-link');
@@ -13,11 +13,10 @@ class NavigationManager {
     }
 
     init() {
-        // Mobile menu toggle
+        // Mobile menu toggle - simple and clean
         if (this.navToggle && this.navMenu) {
             this.navToggle.addEventListener('click', (e) => {
                 e.preventDefault();
-                e.stopPropagation();
                 this.toggleMobileMenu();
             });
         }
@@ -40,10 +39,8 @@ class NavigationManager {
     }
 
     toggleMobileMenu() {
-        if (this.navToggle && this.navMenu) {
-            this.navToggle.classList.toggle('active');
-            this.navMenu.classList.toggle('active');
-        }
+        this.navToggle.classList.toggle('active');
+        this.navMenu.classList.toggle('active');
     }
 
     closeMobileMenu() {
@@ -54,8 +51,8 @@ class NavigationManager {
     handleNavClick(e) {
         const href = e.target.getAttribute('href');
         
-        if (href.includes('.html')) {
-            return;
+        if (href && href.includes('.html')) {
+            return; // Let browser handle page navigation
         }
         
         e.preventDefault();
@@ -67,9 +64,7 @@ class NavigationManager {
                 block: 'start'
             });
             
-            setTimeout(() => {
-                this.updateActiveLink();
-            }, 100);
+            setTimeout(() => this.updateActiveLink(), 100);
         }
     }
 
@@ -84,9 +79,11 @@ class NavigationManager {
     }
 
     updateActiveLink() {
-        const scrollPosition = window.pageYOffset + 100;
+        if (!this.sections.length) return;
         
+        const scrollPosition = window.pageYOffset + 100;
         let current = '';
+        
         this.sections.forEach(section => {
             const sectionTop = section.offsetTop;
             const sectionHeight = section.offsetHeight;
