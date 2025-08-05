@@ -1287,15 +1287,21 @@ body {
     }
     
     .drives-me-box {
-        text-align: left;
+        text-align: left !important;
     }
     
     .drives-me-box ul {
-        text-align: left;
+        text-align: left !important;
     }
     
     .drives-me-box li {
-        text-align: left;
+        text-align: left !important;
+        margin-left: 0 !important;
+        padding-left: var(--space-6) !important;
+    }
+    
+    .drives-me-box li::before {
+        left: 0 !important;
     }
     
     .contact-content {
