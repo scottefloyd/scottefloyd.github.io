@@ -2009,6 +2009,7 @@ body {
     font-weight: 700 !important;
     margin-bottom: var(--space-4);
     color: var(--text-primary) !important;
+    text-decoration: none !important;
 }
 
 .resume-subtitle {
