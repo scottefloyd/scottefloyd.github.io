@@ -1629,17 +1629,23 @@ body {
     justify-content: space-between;
     align-items: center;
     padding: var(--space-6);
-    cursor: pointer;
+    cursor: default;
     background: linear-gradient(135deg, var(--bg-card) 0%, rgba(79, 70, 229, 0.02) 100%);
     border-bottom: 1px solid var(--border-color);
     transition: all 0.3s ease;
 }
 
-.skill-category-header:hover {
+/* Only first category should be clickable */
+.expandable-skill-category:first-child .skill-category-header {
+    cursor: pointer;
+}
+
+/* Only first category should have hover effects */
+.expandable-skill-category:first-child .skill-category-header:hover {
     background: linear-gradient(135deg, var(--bg-card) 0%, rgba(79, 70, 229, 0.05) 100%);
 }
 
-.skill-category-header:hover h3 {
+.expandable-skill-category:first-child .skill-category-header:hover h3 {
     color: var(--accent-secondary);
 }
 

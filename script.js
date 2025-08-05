@@ -306,7 +306,7 @@ class ExpandableSections {
         const skillCategories = document.querySelectorAll('.expandable-skill-category');
         const masterToggle = document.getElementById('skillsMasterToggle');
         
-        // Individual category toggles - only "Development & Programming" should expand
+        // Individual category toggles - only "Test Automation & Quality" should expand
         skillCategories.forEach(category => {
             const header = category.querySelector('.skill-category-header');
             const container = category.querySelector('.skill-items-container');
@@ -314,42 +314,11 @@ class ExpandableSections {
             
             if (header && container) {
                 header.addEventListener('click', () => {
-                    // Close all categories first
-                    skillCategories.forEach(otherCategory => {
-                        const otherContainer = otherCategory.querySelector('.skill-items-container');
-                        const otherHeader = otherCategory.querySelector('.skill-category-header');
-                        if (otherContainer && otherHeader) {
-                            otherContainer.classList.remove('expanded');
-                            otherHeader.classList.remove('expanded');
-                        }
-                    });
-                    
-                    // Only expand if this is "Development & Programming" (which has content)
-                    if (categoryTitle === 'Development & Programming') {
+                    // Only expand if this is "Test Automation & Quality" (which has content)
+                    if (categoryTitle === 'Test Automation & Quality') {
                         const isExpanded = container.classList.contains('expanded');
-                        if (!isExpanded) {
-                            container.classList.add('expanded');
-                            header.classList.add('expanded');
-                        }
-                    }
-                    
-                    // Update master toggle state
-                    this.updateMasterToggleState();
-                });
-            }
-        });
-        
-        // Master toggle functionality - expand/collapse all
-        if (masterToggle) {
-            masterToggle.addEventListener('click', () => {
-                const allExpanded = this.areAllSkillsExpanded();
-                
-                skillCategories.forEach(category => {
-                    const container = category.querySelector('.skill-items-container');
-                    const header = category.querySelector('.skill-category-header');
-                    
-                    if (container && header) {
-                        if (allExpanded) {
+                        
+                        if (isExpanded) {
                             container.classList.remove('expanded');
                             header.classList.remove('expanded');
                         } else {
@@ -357,10 +326,46 @@ class ExpandableSections {
                             header.classList.add('expanded');
                         }
                     }
+                    // Other categories do nothing when clicked
                 });
-                
-                // Update master toggle state
-                this.updateMasterToggleState();
+            }
+        });
+        
+        // Master toggle functionality - only affects "Test Automation & Quality"
+        if (masterToggle) {
+            masterToggle.addEventListener('click', () => {
+                const firstCategory = skillCategories[0]; // Test Automation & Quality
+                if (firstCategory) {
+                    const container = firstCategory.querySelector('.skill-items-container');
+                    const header = firstCategory.querySelector('.skill-category-header');
+                    
+                    if (container && header) {
+                        const isExpanded = container.classList.contains('expanded');
+                        
+                        if (isExpanded) {
+                            container.classList.remove('expanded');
+                            header.classList.remove('expanded');
+                        } else {
+                            container.classList.add('expanded');
+                            header.classList.add('expanded');
+                        }
+                        
+                        // Update button text and icon
+                        const toggleText = masterToggle.querySelector('span');
+                        const toggleIcon = masterToggle.querySelector('i');
+                        
+                        if (toggleText) {
+                            toggleText.textContent = container.classList.contains('expanded') ? 'Hide All Details' : 'Show All Details';
+                        }
+                        
+                        if (toggleIcon) {
+                            toggleIcon.setAttribute('data-feather', container.classList.contains('expanded') ? 'chevron-up' : 'chevron-down');
+                            if (typeof feather !== 'undefined') {
+                                feather.replace();
+                            }
+                        }
+                    }
+                }
             });
         }
     }
