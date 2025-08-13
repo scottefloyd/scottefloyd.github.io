@@ -1,8 +1,9 @@
 const { test, expect } = require('@playwright/test');
+const { navigateTo, setupPage } = require('./test-utils');
 
 test.describe('Skills & Expertise Section Tests', () => {
   test.beforeEach(async ({ page }) => {
-    await page.goto('/');
+    await setupPage(page, '/');
     // Navigate to skills section
     await page.locator('.skills-expertise').scrollIntoViewIfNeeded();
   });

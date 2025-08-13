@@ -1,0 +1,320 @@
+# Page snapshot
+
+```yaml
+- navigation:
+  - link "Scott Floyd":
+    - /url: "#home"
+  - list:
+    - listitem:
+      - link "Home":
+        - /url: "#home"
+    - listitem:
+      - link "My Story":
+        - /url: "#story"
+    - listitem:
+      - link "Current Work":
+        - /url: "#current-work"
+    - listitem:
+      - link "Past Projects":
+        - /url: "#projects"
+    - listitem:
+      - link "Resume":
+        - /url: resume.html
+    - listitem:
+      - link "Contact":
+        - /url: "#contact"
+  - button:
+    - img
+- heading "Hire a Creative Human Quality Engineer Problem Solver Bug Hunter Gen-AI Tinkerer Collaborator Idea Guy" [level=1]
+- paragraph: From catching bugs before they reach users to building AI solutions that streamline workflows - I help businesses deliver quality software with confidence.
+- link "View My Work":
+  - /url: "#current-work"
+  - text: View My Work
+  - img
+- link "My Story":
+  - /url: "#story"
+- link:
+  - /url: "#story"
+  - img
+- heading "My Story" [level=2]
+- paragraph: As I grew up, my imagination was fed with a steady diet of Popular Science and Engineering magazines, James Bond movies, Inspector Gadget cartoons, and a healthy dose of MacGyver episodes. These weren't just entertainment—they were blueprints for possibility.
+- paragraph: "The curiosity these sources inspired continues today, but with a twist: what seemed like pure science fiction in those magazines is now reality. Voice-activated assistants, AI that writes code, devices that fit in your pocket yet possess more computing power than entire buildings once held."
+- paragraph: The desire to invent and improve runs deep in the American spirit—it's as fundamental as apple pie.
+- paragraph: That mindset shapes everything I do today. I'm not just using tools—I'm imagining new ways to solve old challenges. Every project becomes a chance to channel that childhood wonder into real solutions that make people's lives better.
+- heading "What Fuels Me 🚀" [level=3]
+- list:
+  - listitem: • Coffee ☕
+  - listitem: • Creating seamless user experiences
+  - listitem: • Building relationships
+  - listitem: • Automating the complex
+  - listitem: • Pushing creative boundaries
+  - listitem: • Continuous learning and growth
+- img
+- heading "Test Automation" [level=4]
+- paragraph: Ensuring quality with top automation frameworks
+- img
+- heading "Design & UX" [level=4]
+- paragraph: Foundational knowledge of best practices in design & UX
+- img
+- heading "Development" [level=4]
+- paragraph: Experience collaborating with dev teams on complex projects
+- img
+- heading "Vibe Coding" [level=4]
+- paragraph: Jumping into the Brave New World of GenAI
+- heading "Current Work" [level=2]
+- paragraph: Projects planned or under development
+- heading "SPOTR App" [level=3]
+- paragraph: Connect with local drivers for river shuttling services in Michigan. Get dropped off upstream and picked up downstream - it's that simple.
+- heading "Tech Stack" [level=3]
+- img
+- heading "Technical Implementation" [level=4]
+- button:
+  - img
+- heading "Frontend" [level=5]
+- list:
+  - listitem:
+    - strong: "Framework:"
+    - text: React 18 with TypeScript
+  - listitem:
+    - strong: "Build Tool:"
+    - text: Vite for development and production builds
+  - listitem:
+    - strong: "UI Library:"
+    - text: shadcn/ui components (built on Radix UI primitives)
+  - listitem:
+    - strong: "Styling:"
+    - text: Tailwind CSS with custom theming
+  - listitem:
+    - strong: "Routing:"
+    - text: Wouter for lightweight client-side routing
+  - listitem:
+    - strong: "State Management:"
+    - text: TanStack Query (React Query) for server state
+  - listitem:
+    - strong: "Maps:"
+    - text: MapLibre GL JS for interactive mapping
+  - listitem:
+    - strong: "Icons:"
+    - text: Lucide React and React Icons
+- heading "Backend" [level=5]
+- list:
+  - listitem:
+    - strong: "Runtime:"
+    - text: Node.js with Express.js
+  - listitem:
+    - strong: "Language:"
+    - text: TypeScript with ES modules
+  - listitem:
+    - strong: "Database:"
+    - text: PostgreSQL (Neon serverless)
+  - listitem:
+    - strong: "Session Management:"
+    - text: Express sessions with PostgreSQL storage
+  - listitem:
+    - strong: "Payment Processing:"
+    - text: Stripe integration
+- heading "Development Tools" [level=5]
+- list:
+  - listitem:
+    - strong: "Package Manager:"
+    - text: npm
+  - listitem:
+    - strong: "Type Checking:"
+    - text: TypeScript with strict configuration
+  - listitem:
+    - strong: "Database Migrations:"
+    - text: Drizzle Kit
+  - listitem:
+    - strong: "Environment:"
+    - text: Development with hot reloading via Vite
+- heading "Key Libraries" [level=5]
+- list:
+  - listitem:
+    - strong: "Validation:"
+    - text: Zod schemas for runtime type checking
+  - listitem:
+    - strong: "Date Handling:"
+    - text: date-fns
+  - listitem:
+    - strong: "Geospatial:"
+    - text: Haversine formula for distance calculations
+  - listitem:
+    - strong: "File Handling:"
+    - text: Sharp for image processing
+  - listitem:
+    - strong: "WebSockets:"
+    - text: ws library for real-time features
+- img "SPOTR App Preview"
+- text: IN PROGRESS Research → Design → Prototype → Development → Testing
+- img
+- heading "UX Research & Planning" [level=4]
+- paragraph: User personas, competitive analysis, and feature planning using FigJam boards
+- link "View Research Board":
+  - /url: https://www.figma.com/board/X7TUfeV4ryFyeahpv8HSkX/River-Spotting-App
+  - img
+  - text: View Research Board
+- text: ✓ COMPLETE
+- img
+- heading "Wireframes & User Flow" [level=4]
+- paragraph: Low-fidelity wireframes mapping core user journeys and app architecture
+- link "View Wireframes":
+  - /url: https://www.figma.com/design/tJRQdPA3Vy4M7M6sYm1rhn/SPOTR-Wireframes
+  - img
+  - text: View Wireframes
+- text: ✓ COMPLETE
+- img
+- heading "High-Fidelity Prototype" [level=4]
+- paragraph: Interactive prototype with refined UI design and micro-interactions
+- text: Visual interface and component library completed ✓ COMPLETE
+- img
+- heading "Gen-AI Development" [level=4]
+- paragraph: Leveraging AI tools for rapid development and feature implementation
+- text: Currently building React Native application
+- img
+- heading "Test Automation" [level=4]
+- paragraph: Comprehensive testing strategy using Playwright and mobile testing frameworks
+- text: Planning QA automation and test case development
+- heading "Projects On Deck" [level=2]
+- paragraph: Upcoming client projects in the planning pipeline, ready to launch into development
+- img
+- text: PLANNING STAGE
+- heading "Eagle Video Solutions" [level=3]
+- paragraph: WEBSITE
+- paragraph: West Michigan based video surveillance company focused on system upgrades, offering on-site and cloud video storage.
+- img
+- text: PLANNING STAGE
+- heading "Meal Prep Service" [level=3]
+- paragraph: WEB APP
+- paragraph: West Michigan based business meal prep app to streamline customer meal ordering.
+- heading "Past Projects" [level=2]
+- paragraph: A collection of my past work spanning bootcamps, work deliverables, and personal projects
+- button "UX Design"
+- button "UX Research"
+- button "Prototyping"
+- button "User Testing"
+- button "Task Analysis"
+- button "Usability"
+- button "Front-End Dev"
+- article:
+  - img "Rent-All case study preview"
+  - link:
+    - /url: rent-all-case-study.html
+    - img
+  - text: UX Research UX Design Prototyping
+  - heading "Rent-All Case Study" [level=3]
+  - paragraph: Design process for an app that enables people to make money by renting out their unused household items. Full UX design from concept to prototype.
+- article:
+  - img "Cyclist case study preview"
+  - link:
+    - /url: cyclist-case-study.html
+    - img
+  - text: UX Research User Testing
+  - heading "Cyclist Community Website" [level=3]
+  - paragraph: Design process from concept to high fidelity for a website to support community biking, helping cyclists find bike shops, trails, and service centers.
+- article:
+  - img "City Website Task Analysis preview"
+  - link:
+    - /url: assets/a2-task-analysis.pdf
+    - img
+  - text: Task Analysis Usability
+  - heading "City Website Task Analysis" [level=3]
+  - paragraph: Task analysis conducted on Ann Arbor's dated, overly technical city website to identify usability issues and improvement opportunities.
+  - text: PDF
+- article:
+  - img "Photobook Usability Report preview"
+  - link:
+    - /url: assets/usability-report-summary.pdf
+    - img
+  - text: UX Research Usability
+  - heading "Photobook Usability Report" [level=3]
+  - paragraph: Comprehensive usability analysis of digital photobook design UI, examining user interactions and interface effectiveness.
+  - text: PDF
+- article:
+  - img "Boogie Battle Mobile App preview"
+  - link:
+    - /url: assets/boogie-battle-report.pdf
+    - img
+  - text: Front-End Dev UX Design
+  - heading "Boogie Battle Mobile App" [level=3]
+  - paragraph: Final project for a front-end web development bootcamp, showcasing mobile app development skills and user experience design.
+  - text: PDF
+- article:
+  - img "Extreme Sports App Survey preview"
+  - link:
+    - /url: assets/comp-app-survey.pdf
+    - img
+  - text: UX Research
+  - heading "Extreme Sports App Survey" [level=3]
+  - paragraph: Survey and analysis of an app concept for extreme sports competitions, exploring user needs and market opportunities in the adventure sports space.
+  - text: PDF
+- heading "Skills & Expertise" [level=2]
+- paragraph: A diverse skill set spanning design, development, and automation
+- button "Show All Details":
+  - text: Show All Details
+  - img
+- heading "Test Automation & Quality" [level=3]
+- heading "Cypress & Playwright" [level=4]
+- paragraph: Designed and executed automated test cases for e-commerce features at Illumina, covering cart functionality, form validation, and navigation flows across international site variations.
+- heading "Selenium & Protractor" [level=4]
+- paragraph: Led automated testing initiatives at BASF for global cloud-based products, building comprehensive test scripts and contributing to test strategy design for multiple user workflows.
+- heading "API Testing with Postman" [level=4]
+- paragraph: Validated API requests and responses during frontend/backend integration testing, ensuring smooth data flow and proper error handling across system boundaries.
+- heading "Development & Programming" [level=3]
+- heading "JavaScript & TypeScript" [level=4]
+- paragraph: Built automated test scripts and developed UIs using modern JavaScript frameworks, with extensive experience in TypeScript for type-safe automation solutions.
+- heading "C# & .NET Development" [level=4]
+- paragraph: Developed user interfaces and contributed to application development during cloud app development training, working with C# and Angular frameworks.
+- heading "Python & Scripting" [level=4]
+- paragraph: Applied Python for test automation tasks and data processing, leveraging its extensive libraries for quality assurance workflows and analysis.
+- heading "DevOps & Collaboration" [level=3]
+- heading "Azure DevOps & CI/CD" [level=4]
+- paragraph: Integrated automated tests into CI/CD pipelines, collaborating with developers and PMs to ensure smooth deployment processes and maintain code quality standards.
+- heading "Agile & Cross-functional Teams" [level=4]
+- paragraph: Worked in agile environments across multiple companies, participating in code reviews, sprint planning, and driving continuous improvement in testing practices.
+- heading "Accessibility & Compliance Testing" [level=4]
+- paragraph: Performed accessibility and functional testing to ensure W3C compliance, creating detailed QA reports and documentation for enterprise-level applications.
+- text: JIRA Azure DevOps Git Jenkins SQL REST API Node.js Angular HTML5 SASS Figma Cucumber Gherkin Playwright
+- heading "Testimonials" [level=2]
+- text: "\""
+- paragraph: "\"I had the pleasure of managing Scott directly at Illumina, where he supported several key marketing initiatives as a QA analyst. One of the largest projects we tackled together was a full website redesign, and Scott played a crucial role in validating hundreds of test cases across multiple browsers and devices."
+- paragraph: Scott brings a strong sense of ownership to his work. He's thoughtful, thorough, and pays close attention to the kind of detail that can easily get missed in fast-moving digital environments. He helped write and execute test plans that not only improved our confidence in deployments but also helped surface edge cases early in the process.
+- paragraph: He understands how to work across functions, including design, development, and strategy. Scott is dependable, self-motivated, and easy to work with.
+- paragraph: I highly recommend Scott for any team that values quality, accountability, and strong cross-functional collaboration."
+- heading "Burt Crismore" [level=4]
+- paragraph: Design & Digital Operations Manager
+- text: April 30, 2025
+- heading "Work With Me" [level=2]
+- paragraph: Ready to bring your ideas to life? Let's discuss your next project and see how we can work together.
+- text: First Name
+- textbox "First Name"
+- text: Last Name
+- textbox "Last Name"
+- text: Email
+- textbox "Email"
+- text: Project Type
+- combobox "Project Type":
+  - option "Select a project type" [selected]
+  - option "QA & Test Automation"
+  - option "AI Consulting"
+  - option "UX/UI Design"
+  - option "Complete Project"
+  - option "Other"
+- text: Message
+- textbox "Message"
+- button "Send Message":
+  - text: Send Message
+  - img
+- contentinfo:
+  - heading "Scott Floyd" [level=3]
+  - paragraph: QA Automation Expert & AI Consultant
+  - link "LinkedIn":
+    - /url: https://www.linkedin.com/in/scottefloyd/
+    - img
+  - link "GitHub":
+    - /url: https://github.com/scottefloyd
+    - img
+  - link "Email":
+    - /url: mailto:hello@scottfloyd.com
+    - img
+  - paragraph: © 2025 Scott Floyd. All rights reserved.
+```

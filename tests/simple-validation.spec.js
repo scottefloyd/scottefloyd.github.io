@@ -1,13 +1,14 @@
 const { test, expect } = require('@playwright/test');
+const { navigateTo, setupPage } = require('./test-utils');
 
 test.describe('Basic Site Validation', () => {
   test('should load homepage with correct title', async ({ page }) => {
-    await page.goto('/');
+    await setupPage(page, '/');
     await expect(page).toHaveTitle(/Scott Floyd - QA Automation & AI Solutions/);
   });
 
   test('should have main navigation elements', async ({ page }) => {
-    await page.goto('/');
+    await setupPage(page, '/');
     
     // Check navigation is present
     await expect(page.locator('nav.nav')).toBeVisible();
@@ -21,7 +22,7 @@ test.describe('Basic Site Validation', () => {
   });
 
   test('should have hero section with cycling text', async ({ page }) => {
-    await page.goto('/');
+    await setupPage(page, '/');
     
     await expect(page.locator('.hero-title')).toBeVisible();
     await expect(page.locator('.creative-text')).toContainText('Hire a Creative');
@@ -30,7 +31,7 @@ test.describe('Basic Site Validation', () => {
   });
 
   test('should have all main sections', async ({ page }) => {
-    await page.goto('/');
+    await setupPage(page, '/');
     
     await expect(page.locator('#story')).toBeVisible();
     await expect(page.locator('#current-work')).toBeVisible();
@@ -39,7 +40,7 @@ test.describe('Basic Site Validation', () => {
   });
 
   test('should have working theme toggle', async ({ page }) => {
-    await page.goto('/');
+    await setupPage(page, '/');
     
     const themeToggle = page.locator('.theme-toggle');
     await expect(themeToggle).toBeVisible();
@@ -52,7 +53,7 @@ test.describe('Basic Site Validation', () => {
   });
 
   test('should load resume page correctly', async ({ page }) => {
-    await page.goto('/resume.html');
+    await setupPage(page, '/resume.html');
     
     await expect(page).toHaveTitle(/Resume - Scott Floyd/);
     await expect(page.locator('.resume-hero')).toBeVisible();

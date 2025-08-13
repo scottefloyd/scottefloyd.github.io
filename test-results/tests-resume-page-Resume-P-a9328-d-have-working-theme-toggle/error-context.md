@@ -1,0 +1,117 @@
+# Page snapshot
+
+```yaml
+- navigation:
+  - link "Scott Floyd":
+    - /url: index.html
+  - list:
+    - listitem:
+      - link "Home":
+        - /url: index.html#home
+    - listitem:
+      - link "My Story":
+        - /url: index.html#story
+    - listitem:
+      - link "Current Work":
+        - /url: index.html#current-work
+    - listitem:
+      - link "Past Projects":
+        - /url: index.html#projects
+    - listitem:
+      - link "Resume":
+        - /url: resume.html
+    - listitem:
+      - link "Contact":
+        - /url: index.html#contact
+  - button:
+    - img
+- heading "Resume" [level=1]
+- paragraph: QA Engineer with 5+ years of experience in both manual and automated testing
+- link "Download PDF":
+  - /url: assets/Scott-Floyd-Resume-7-24-25_1753850208322.pdf
+  - img
+  - text: Download PDF
+- link "Get in Touch":
+  - /url: mailto:scottefloyd@gmail.com
+  - img
+  - text: Get in Touch
+- heading "Contact" [level=3]
+- img
+- text: scottefloyd@gmail.com
+- img
+- text: (734) 883-5606
+- img
+- link "scottefloyd.github.io":
+  - /url: https://scottefloyd.github.io/
+- img
+- link "LinkedIn Profile":
+  - /url: https://www.linkedin.com/in/scottefloyd/
+- heading "Technical Skills" [level=3]
+- heading "Automation Tools" [level=4]
+- text: Playwright Cypress Selenium Blazemeter Postman Protractor
+- heading "Languages" [level=4]
+- text: JavaScript TypeScript C# Java Python
+- heading "Frameworks & Methods" [level=4]
+- text: Cucumber/Gherkin Agile/Scrum CI/CD
+- heading "DevOps & Cloud" [level=4]
+- text: Azure DevOps Jenkins Git
+- heading "Education" [level=3]
+- heading "UX Design Bootcamp" [level=4]
+- paragraph: DevMountain, Remote
+- heading "Front-End Web Development Bootcamp" [level=4]
+- paragraph: Grand Circus, Detroit, MI
+- heading "Master of Library and Information Science" [level=4]
+- paragraph: Wayne State University, Detroit, MI
+- heading "Bachelor of English" [level=4]
+- paragraph: Michigan State University, East Lansing, MI
+- heading "Professional Summary" [level=3]
+- paragraph: QA Engineer with 5+ years of experience in both manual and automated testing for enterprise web and mobile applications. Proficient in designing robust test strategies, creating and executing automated test scripts using Cypress and Selenium, and supporting CI/CD pipelines. Skilled in API testing with Postman, cross-functional collaboration, and driving continuous improvement in agile teams.
+- heading "Professional Experience" [level=3]
+- heading "Quality Experience Analyst" [level=4]
+- text: Aug 2022 – May 2024 Via Technical at Illumina, Remote
+- list:
+  - listitem: • Designed and executed manual and automated test cases using Cypress for e-commerce features including cart, form validation, and navigation.
+  - listitem: • Performed accessibility and functional testing across web platforms to ensure compliance with W3C and product standards.
+  - listitem: • Created detailed test documentation and QA reports for international site variations and Adobe integrations.
+  - listitem: • Collaborated with developers and PMs to prioritize and verify fixes, ensuring smooth CI/CD integration.
+  - listitem: • Used Postman to validate API requests and responses during frontend/backend integration testing.
+- heading "QA Automation Developer" [level=4]
+- text: June 2020 – Aug 2022 Collabera at BASF, Remote
+- list:
+  - listitem: • Led automated testing initiative using Protractor and Cypress, supporting global cloud-based product.
+  - listitem: • Built and maintained API test scripts and contributed to test strategy design for multiple user workflows.
+  - listitem: • Participated in code reviews and testing standards across frontend and backend releases.
+  - listitem: • Acted as QA lead, identifying key regression cases and edge scenarios in early e-commerce integration.
+- heading "Cloud App Development Trainee" [level=4]
+- text: Sept 2019 – May 2020 Collabera at BASF, Remote
+- list:
+  - listitem: • Developed UIs using TypeScript, C#, Angular, HTML5, and SASS
+  - listitem: • Troubleshot and fixed bugs
+  - listitem: • Contributed user stories to improve application UX
+  - listitem: • Utilized Git for version control and JIRA for issue tracking
+- heading "Freelance Web Designer" [level=4]
+- text: Jan 2017 – Aug 2019 Independent Contractor
+- list:
+  - listitem: • Contracted with web development companies to build client sites that aligned with brand visions
+  - listitem: • Designed logos and digital assets using Adobe Illustrator and Photoshop
+  - listitem: • Built and maintained e-commerce sites on WooCommerce and Shopify platforms
+- heading "Customer Support" [level=4]
+- text: Mar 2014 – Jan 2017 Collage.com
+- list:
+  - listitem: • Provided customer support for an e-commerce photo product website
+  - listitem: • Troubleshot issues and collaborated with developers to resolve them
+  - listitem: • Compiled feedback from quantitative user surveys along with end-user feedback to improve product usability
+- contentinfo:
+  - heading "Scott Floyd" [level=3]
+  - paragraph: QA Automation Expert & AI Consultant
+  - link "LinkedIn":
+    - /url: https://www.linkedin.com/in/scottefloyd/
+    - img
+  - link "GitHub":
+    - /url: https://github.com/scottefloyd
+    - img
+  - link "Email":
+    - /url: mailto:scottefloyd@gmail.com
+    - img
+  - paragraph: © 2025 Scott Floyd. All rights reserved.
+```

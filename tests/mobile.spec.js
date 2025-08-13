@@ -1,10 +1,11 @@
 const { test, expect } = require('@playwright/test');
+const { navigateTo, setupPage } = require('./test-utils');
 
 test.describe('Mobile Tests', () => {
   test.use({ viewport: { width: 375, height: 667 } }); // iPhone SE size
 
   test.beforeEach(async ({ page }) => {
-    await page.goto('/');
+    await setupPage(page, '/');
   });
 
   test('should display mobile navigation correctly', async ({ page }) => {

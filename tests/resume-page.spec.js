@@ -1,8 +1,9 @@
 const { test, expect } = require('@playwright/test');
+const { navigateTo, setupPage } = require('./test-utils');
 
 test.describe('Resume Page Tests', () => {
   test.beforeEach(async ({ page }) => {
-    await page.goto('/resume.html');
+    await setupPage(page, '/resume.html');
   });
 
   test('should load resume page successfully', async ({ page }) => {

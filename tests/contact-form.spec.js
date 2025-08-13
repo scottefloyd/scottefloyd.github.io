@@ -1,8 +1,9 @@
 const { test, expect } = require('@playwright/test');
+const { navigateTo, setupPage } = require('./test-utils');
 
 test.describe('Contact Form Tests', () => {
   test.beforeEach(async ({ page }) => {
-    await page.goto('/');
+    await setupPage(page, '/');
     // Navigate to contact section
     await page.locator('#contact').scrollIntoViewIfNeeded();
   });

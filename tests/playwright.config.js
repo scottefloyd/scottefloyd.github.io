@@ -1,5 +1,15 @@
 // @ts-check
 const { defineConfig, devices } = require('@playwright/test');
+const { getBaseURL, getPort } = require('./env');
+
+// Get environment configuration
+const baseURL = getBaseURL();
+const port = getPort();
+
+console.log('Playwright Configuration:');
+console.log('  Base URL:', baseURL);
+console.log('  Port:', port);
+console.log('  NODE_ENV:', process.env.NODE_ENV);
 
 /**
  * @see https://playwright.dev/docs/test-configuration
@@ -19,11 +29,15 @@ module.exports = defineConfig({
   /* Shared settings for all the projects below. See https://playwright.dev/docs/api/class-testoptions. */
   use: {
     /* Base URL to use in actions like `await page.goto('/')`. */
-    baseURL: 'http://localhost:5000',
+    baseURL: baseURL,
     /* Collect trace when retrying the failed test. See https://playwright.dev/docs/trace-viewer */
     trace: 'on-first-retry',
     /* Take screenshot on failure */
     screenshot: 'only-on-failure',
+    /* Wait for network to be idle */
+    waitForLoadState: 'networkidle',
+    /* Additional timeout for navigation */
+    navigationTimeout: 30000,
   },
 
   /* Configure projects for major browsers */
@@ -33,14 +47,16 @@ module.exports = defineConfig({
       use: { 
         ...devices['Desktop Chrome'],
         headless: true,
+        baseURL: baseURL,
       },
     },
   ],
 
   /* Run your local dev server before starting the tests */
   webServer: {
-    command: 'python -m http.server 5000',
-    url: 'http://localhost:5000',
-    reuseExistingServer: !process.env.CI,
+    command: `python3 -m http.server ${port}`,
+    url: baseURL,
+    reuseExistingServer: true,
+    timeout: 120 * 1000,
   },
 });

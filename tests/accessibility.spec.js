@@ -1,8 +1,9 @@
 const { test, expect } = require('@playwright/test');
+const { navigateTo, setupPage } = require('./test-utils');
 
 test.describe('Accessibility Tests', () => {
   test('should have proper semantic HTML structure', async ({ page }) => {
-    await page.goto('/');
+    await setupPage(page, '/');
     
     // Check for proper heading hierarchy
     await expect(page.locator('h1')).toHaveCount(1);
@@ -17,7 +18,7 @@ test.describe('Accessibility Tests', () => {
   });
 
   test('should have proper ARIA labels and roles', async ({ page }) => {
-    await page.goto('/');
+    await setupPage(page, '/');
     
     // Check navigation has proper structure
     const nav = page.locator('nav');
@@ -42,7 +43,7 @@ test.describe('Accessibility Tests', () => {
   });
 
   test('should be keyboard navigable', async ({ page }) => {
-    await page.goto('/');
+    await setupPage(page, '/');
     
     // Test tab navigation through main navigation
     await page.keyboard.press('Tab');
@@ -60,7 +61,7 @@ test.describe('Accessibility Tests', () => {
   });
 
   test('should have sufficient color contrast', async ({ page }) => {
-    await page.goto('/');
+    await setupPage(page, '/');
     
     // Test both light and dark themes
     const themes = ['light', 'dark'];
@@ -81,7 +82,7 @@ test.describe('Accessibility Tests', () => {
   test('should handle reduced motion preferences', async ({ page }) => {
     // Set reduced motion preference
     await page.emulateMedia({ reducedMotion: 'reduce' });
-    await page.goto('/');
+    await setupPage(page, '/');
     
     // Check that content is still accessible
     await expect(page.locator('.hero-content')).toBeVisible();
@@ -93,7 +94,7 @@ test.describe('Accessibility Tests', () => {
   });
 
   test('should have proper image alt text', async ({ page }) => {
-    await page.goto('/');
+    await setupPage(page, '/');
     
     // Scroll through the page to load all images
     await page.locator('#projects').scrollIntoViewIfNeeded();
