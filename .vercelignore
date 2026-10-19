@@ -1,0 +1,9 @@
+/tests/
+/playwright-report/
+/test-results/
+/tests/**/*.spec.js
+node_modules/
+.DS_Store
+.idea/
+.vscode/
+
